@@ -177,6 +177,33 @@ src/mainThread/mainThread.c.s:
 	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/mainThread/mainThread.c.s
 .PHONY : src/mainThread/mainThread.c.s
 
+src/userInterface/userInterface.o: src/userInterface/userInterface.c.o
+
+.PHONY : src/userInterface/userInterface.o
+
+# target to build an object file
+src/userInterface/userInterface.c.o:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/userInterface/userInterface.c.o
+.PHONY : src/userInterface/userInterface.c.o
+
+src/userInterface/userInterface.i: src/userInterface/userInterface.c.i
+
+.PHONY : src/userInterface/userInterface.i
+
+# target to preprocess a source file
+src/userInterface/userInterface.c.i:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/userInterface/userInterface.c.i
+.PHONY : src/userInterface/userInterface.c.i
+
+src/userInterface/userInterface.s: src/userInterface/userInterface.c.s
+
+.PHONY : src/userInterface/userInterface.s
+
+# target to generate assembly for a file
+src/userInterface/userInterface.c.s:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/userInterface/userInterface.c.s
+.PHONY : src/userInterface/userInterface.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... src/mainThread/mainThread.o"
 	@echo "... src/mainThread/mainThread.i"
 	@echo "... src/mainThread/mainThread.s"
+	@echo "... src/userInterface/userInterface.o"
+	@echo "... src/userInterface/userInterface.i"
+	@echo "... src/userInterface/userInterface.s"
 .PHONY : help
 
 

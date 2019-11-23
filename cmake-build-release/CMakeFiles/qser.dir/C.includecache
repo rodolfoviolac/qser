@@ -6,21 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/main.c
-stdio.h
--
-pthread.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pthread.h
-math.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/math.h
-mainThread/mainThread.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h
-
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.c
 stdio.h
 -
+string.h
+-
+stdlib.h
+-
 mainThread.h
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h
+../userInterface/userInterface.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
 
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h
+
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
 

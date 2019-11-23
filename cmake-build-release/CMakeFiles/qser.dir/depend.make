@@ -6,4 +6,8 @@ CMakeFiles/qser.dir/src/main.c.o: ../src/mainThread/mainThread.h
 
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/mainThread/mainThread.c
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/mainThread/mainThread.h
+CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/userInterface/userInterface.h
+
+CMakeFiles/qser.dir/src/userInterface/userInterface.c.o: ../src/userInterface/userInterface.c
+CMakeFiles/qser.dir/src/userInterface/userInterface.c.o: ../src/userInterface/userInterface.h
 

@@ -87,6 +87,12 @@
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h">
 			<Option target="qser"/>
 		</Unit>
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c">
+			<Option target="qser"/>
+		</Unit>
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h">
+			<Option target="qser"/>
+		</Unit>
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

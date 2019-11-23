@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/main.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles/qser.dir/src/main.c.o"
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles/qser.dir/src/mainThread/mainThread.c.o"
+  "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles/qser.dir/src/userInterface/userInterface.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

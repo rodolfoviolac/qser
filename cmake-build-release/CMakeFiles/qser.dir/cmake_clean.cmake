@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/qser.dir/src/main.c.o"
   "CMakeFiles/qser.dir/src/mainThread/mainThread.c.o"
+  "CMakeFiles/qser.dir/src/userInterface/userInterface.c.o"
   "qser"
   "qser.pdb"
 )
