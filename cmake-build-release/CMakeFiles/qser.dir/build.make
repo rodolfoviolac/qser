@@ -96,11 +96,39 @@ CMakeFiles/qser.dir/src/userInterface/userInterface.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/qser.dir/src/userInterface/userInterface.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c -o CMakeFiles/qser.dir/src/userInterface/userInterface.c.s
 
+CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: CMakeFiles/qser.dir/flags.make
+CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: ../src/quanserInterface/quanserInterface.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c
+
+CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c > CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.i
+
+CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c -o CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.s
+
+CMakeFiles/qser.dir/src/helpers/helpers.c.o: CMakeFiles/qser.dir/flags.make
+CMakeFiles/qser.dir/src/helpers/helpers.c.o: ../src/helpers/helpers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/qser.dir/src/helpers/helpers.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/helpers/helpers.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.c
+
+CMakeFiles/qser.dir/src/helpers/helpers.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/qser.dir/src/helpers/helpers.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.c > CMakeFiles/qser.dir/src/helpers/helpers.c.i
+
+CMakeFiles/qser.dir/src/helpers/helpers.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/qser.dir/src/helpers/helpers.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.c -o CMakeFiles/qser.dir/src/helpers/helpers.c.s
+
 # Object files for target qser
 qser_OBJECTS = \
 "CMakeFiles/qser.dir/src/main.c.o" \
 "CMakeFiles/qser.dir/src/mainThread/mainThread.c.o" \
-"CMakeFiles/qser.dir/src/userInterface/userInterface.c.o"
+"CMakeFiles/qser.dir/src/userInterface/userInterface.c.o" \
+"CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o" \
+"CMakeFiles/qser.dir/src/helpers/helpers.c.o"
 
 # External object files for target qser
 qser_EXTERNAL_OBJECTS =
@@ -108,9 +136,11 @@ qser_EXTERNAL_OBJECTS =
 qser: CMakeFiles/qser.dir/src/main.c.o
 qser: CMakeFiles/qser.dir/src/mainThread/mainThread.c.o
 qser: CMakeFiles/qser.dir/src/userInterface/userInterface.c.o
+qser: CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o
+qser: CMakeFiles/qser.dir/src/helpers/helpers.c.o
 qser: CMakeFiles/qser.dir/build.make
 qser: CMakeFiles/qser.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable qser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable qser"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qser.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

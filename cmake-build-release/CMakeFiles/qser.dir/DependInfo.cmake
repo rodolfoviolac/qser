@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/helpers/helpers.c.o"
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/main.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/main.c.o"
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/mainThread/mainThread.c.o"
+  "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o"
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/userInterface/userInterface.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

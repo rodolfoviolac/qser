@@ -1,12 +1,4 @@
-//
-// Created by Rodolfo Carvalho on 11/23/19.
-//
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "mainThread.h"
-#include "../userInterface/userInterface.h"
-
 
 void handlerMainThread() {
     printUserGroupsName();
@@ -20,8 +12,12 @@ void handlerMainThread() {
                 if(commandAmount > 100 || commandAmount < 0) {
                     printf("[ERROR] - Speed Amount Must Be [0-100]\n");
                 } else {
-                    float dc = (commandAmount/100)*atof(PWM_PERIOD);
-                    printf("%f", dc);
+                    float dcAmount = (commandAmount/100)*atof(PWM_PERIOD);
+                    if(handlePwm((int)dcAmount) == 1) {
+                        fprintf(stdout, "[INFO] - Motor Duty Cycle %d\n\n", (int)dcAmount);
+                    } else {
+                        printf("[ERROR] - Error Turning On Motor\n\n");
+                    }
                 }
                 break;
             }
@@ -34,11 +30,11 @@ void handlerMainThread() {
                 exit(0);
             }
             case OPTION_INVALID: {
-                printf("Command Invalid Type Help For The Command List\n");
+                printf("[ERROR] - Command Invalid Type Help For The Command List\n");
                 break;
             }
             default: {
-                printf("Command Invalid Type Help For The Command List\n");
+                printf("[ERROR] - Command Invalid Type Help For The Command List\n");
             }
         }
     }

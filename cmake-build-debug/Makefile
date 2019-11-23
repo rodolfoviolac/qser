@@ -123,6 +123,33 @@ qser/fast:
 	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/build
 .PHONY : qser/fast
 
+src/helpers/helpers.o: src/helpers/helpers.c.o
+
+.PHONY : src/helpers/helpers.o
+
+# target to build an object file
+src/helpers/helpers.c.o:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/helpers/helpers.c.o
+.PHONY : src/helpers/helpers.c.o
+
+src/helpers/helpers.i: src/helpers/helpers.c.i
+
+.PHONY : src/helpers/helpers.i
+
+# target to preprocess a source file
+src/helpers/helpers.c.i:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/helpers/helpers.c.i
+.PHONY : src/helpers/helpers.c.i
+
+src/helpers/helpers.s: src/helpers/helpers.c.s
+
+.PHONY : src/helpers/helpers.s
+
+# target to generate assembly for a file
+src/helpers/helpers.c.s:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/helpers/helpers.c.s
+.PHONY : src/helpers/helpers.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -177,6 +204,33 @@ src/mainThread/mainThread.c.s:
 	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/mainThread/mainThread.c.s
 .PHONY : src/mainThread/mainThread.c.s
 
+src/quanserInterface/quanserInterface.o: src/quanserInterface/quanserInterface.c.o
+
+.PHONY : src/quanserInterface/quanserInterface.o
+
+# target to build an object file
+src/quanserInterface/quanserInterface.c.o:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o
+.PHONY : src/quanserInterface/quanserInterface.c.o
+
+src/quanserInterface/quanserInterface.i: src/quanserInterface/quanserInterface.c.i
+
+.PHONY : src/quanserInterface/quanserInterface.i
+
+# target to preprocess a source file
+src/quanserInterface/quanserInterface.c.i:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.i
+.PHONY : src/quanserInterface/quanserInterface.c.i
+
+src/quanserInterface/quanserInterface.s: src/quanserInterface/quanserInterface.c.s
+
+.PHONY : src/quanserInterface/quanserInterface.s
+
+# target to generate assembly for a file
+src/quanserInterface/quanserInterface.c.s:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.s
+.PHONY : src/quanserInterface/quanserInterface.c.s
+
 src/userInterface/userInterface.o: src/userInterface/userInterface.c.o
 
 .PHONY : src/userInterface/userInterface.o
@@ -213,12 +267,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... qser"
+	@echo "... src/helpers/helpers.o"
+	@echo "... src/helpers/helpers.i"
+	@echo "... src/helpers/helpers.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/mainThread/mainThread.o"
 	@echo "... src/mainThread/mainThread.i"
 	@echo "... src/mainThread/mainThread.s"
+	@echo "... src/quanserInterface/quanserInterface.o"
+	@echo "... src/quanserInterface/quanserInterface.i"
+	@echo "... src/quanserInterface/quanserInterface.s"
 	@echo "... src/userInterface/userInterface.o"
 	@echo "... src/userInterface/userInterface.i"
 	@echo "... src/userInterface/userInterface.s"

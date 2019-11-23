@@ -1,8 +1,3 @@
-//
-// Created by Rodolfo Carvalho on 11/23/19.
-//
-#include <stdio.h>
-#include <string.h>
 #include "userInterface.h"
 
 void printUserOptions(){
