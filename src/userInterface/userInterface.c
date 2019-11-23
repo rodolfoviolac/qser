@@ -7,9 +7,9 @@
 
 void printUserOptions(){
     printf("########### QSER OPTIONS ##############\n\n");
-    printf("-> speed \n");
-    printf("-> help \n");
-    printf("-> quit \n\n");
+    printf("--> speed \n");
+    printf("--> help \n");
+    printf("--> exit \n\n");
     printf("######################################\n\n");
 }
 
@@ -22,8 +22,8 @@ void printUserGroupsName(){
 }
 
 int resolveOption(char* cmd) {
-    if (strcmp(cmd, "speed\n") == 0) { return OPTION_SPEED; }
+    if (strncmp(cmd, "speed", 5) == 0) { return OPTION_SPEED; }
     else if (strcmp(cmd, "help\n") == 0) { return OPTION_HELP; }
-    else if (strcmp(cmd, "quit\n") == 0) { return OPTION_QUIT; }
+    else if (strcmp(cmd, "exit\n") == 0) { return OPTION_EXIT; }
     else return OPTION_INVALID;
 }

@@ -4,6 +4,7 @@
 
 #ifndef QSER_MAINTHREAD_H
 #define QSER_MAINTHREAD_H
+#define PWM_PERIOD "1000000"
 
 #endif //QSER_MAINTHREAD_H
 

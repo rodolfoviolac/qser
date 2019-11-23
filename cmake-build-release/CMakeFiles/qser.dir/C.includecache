@@ -20,5 +20,13 @@ mainThread.h
 
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h
 
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c
+stdio.h
+-
+string.h
+-
+userInterface.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
+
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
 
