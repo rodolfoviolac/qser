@@ -7,7 +7,7 @@ SRCEXT := c
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 
-CFLAGS := -g # -Wall -std=c++11
+CFLAGS := -g # -Wall -std=c99
 LIB := -pthread
 INC := -I include
 
