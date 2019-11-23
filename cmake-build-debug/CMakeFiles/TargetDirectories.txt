@@ -1,0 +1,3 @@
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles/qser.dir
