@@ -22,7 +22,9 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "Qser", "index.html", [
+  [ "Qser_RoGaFe_19/2", "index.html", [
+    [ "qser", "index.html", null ],
+    [ "LICENSE", "md_LICENSE.html", null ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ]
     ] ]

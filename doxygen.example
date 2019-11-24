@@ -1,5 +1,5 @@
-// Quanser Shield v.2
-// Copyright (C) 2019 Francisco Knebel, Luciano Zancan Mazzutti, Rodrigo Dal Ri
+// QSER
+// Copyright (C) 2019 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -16,8 +16,8 @@
 
 /**
  * @file main.c
- * @author Francisco Knebel, Luciano Zancan Mazzutti, Rodrigo Dal Ri
- * @date 26 Jun 2019
+ * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
+ * @date 24 Nov 2019
  * @brief File containing example of doxygen usage for quick reference.
  */
 
