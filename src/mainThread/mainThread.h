@@ -6,6 +6,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-void handlerMainThread();
+void* handlerMainThread();
 
 #endif //QSER_MAINTHREAD_H

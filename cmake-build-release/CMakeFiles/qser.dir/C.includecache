@@ -57,6 +57,10 @@ stdio.h
 -
 poll.h
 -
+fcntl.h
+-
+unistd.h
+-
 ../helpers/helpers.h
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
 

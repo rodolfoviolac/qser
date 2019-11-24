@@ -4,7 +4,7 @@
 
 #ifndef QSER_HELPERS_H
 #define QSER_HELPERS_H
-#define IS_RUNNING_LOCAL 1
+#define IS_RUNNING_LOCAL 0
 #define DEBUG 0
 #define TRUE 1
 #define FALSE 0
@@ -15,5 +15,6 @@
 #include <string.h>
 
 int writeHandler(const char filePath[], const char data[]);
+char *readHandler(char *data, int size, const char filePath[]);
 
 #endif //QSER_HELPERS_H
