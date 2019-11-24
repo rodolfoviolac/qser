@@ -6,6 +6,7 @@ FLAGS=-O2 -Wall -I./include
 all: qser
 
 qser: quanserInterface.o userInterface.o helpers.o mainThread.o main.o
+	@echo "Building Qser..."
 	$(CC) $(FLAGS) $(OBJPATH)* -o qser -lpthread
 
 main.o: $(SRCPATH)main.c
@@ -22,6 +23,10 @@ quanserInterface.o: $(SRCPATH)quanserInterface/quanserInterface.c
 
 userInterface.o: $(SRCPATH)userInterface/userInterface.c
 	$(CC) $(FLAGS) -c $(SRCPATH)userInterface/userInterface.c -o $(OBJPATH)userInterface.o
+
+docs: Doxyfile DoxygenLayout.xml README.md LICENSE.md
+	@echo "Building Doxygen..."
+	doxygen
 
 clean:
 	rm -f $(OBJPATH)* qser
