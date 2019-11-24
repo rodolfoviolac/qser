@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.c
-helpers.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
-
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
 fcntl.h
 -
@@ -21,16 +17,6 @@ stdlib.h
 -
 string.h
 -
-
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/main.c
-stdio.h
--
-pthread.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pthread.h
-math.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/math.h
-mainThread/mainThread.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h
 
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.c
 mainThread.h
@@ -47,10 +33,6 @@ string.h
 -
 stdlib.h
 -
-
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c
-quanserInterface.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
 
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
 stdio.h

@@ -3,10 +3,10 @@ SRCPATH=./src/
 OBJPATH=./obj/
 FLAGS=-O2 -Wall -I./include
 
-all: mcuquanser
+all: qser
 
-mcuquanser: quanserInterface.o userInterface.o helpers.o mainThread.o main.o
-	$(CC) $(FLAGS) $(OBJPATH)* -o build/qser -lpthread
+qser: quanserInterface.o userInterface.o helpers.o mainThread.o main.o
+	$(CC) $(FLAGS) $(OBJPATH)* -o qser -lpthread
 
 main.o: $(SRCPATH)main.c
 	$(CC) $(FLAGS) -c $(SRCPATH)main.c -o $(OBJPATH)main.o
@@ -24,4 +24,4 @@ userInterface.o: $(SRCPATH)userInterface/userInterface.c
 	$(CC) $(FLAGS) -c $(SRCPATH)userInterface/userInterface.c -o $(OBJPATH)userInterface.o
 
 clean:
-	rm -f $(OBJPATH)* mcuquanser
+	rm -f $(OBJPATH)* qser

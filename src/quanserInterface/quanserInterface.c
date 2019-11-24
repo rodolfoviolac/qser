@@ -2,7 +2,7 @@
 
 int handlePwm(int dcAmount) {
     if(DEBUG) printf("[DEBUG] - Starting handlePwm");
-    if(IS_RUNNING_LOCAL) return 0;
+    if(IS_RUNNING_LOCAL) return TRUE;
     char data[20];
     snprintf(data, sizeof(data), "%d\n", dcAmount);
     if(writeHandler("/sys/class/gpio/gpio1/value", "1") < 0) return FALSE;
@@ -20,7 +20,7 @@ int qserInitializer(int dcAmount) {
 
 int qserBreak() {
     if(DEBUG) printf("[DEBUG] - Starting qserBreak");
-    if(IS_RUNNING_LOCAL) return 0;
+    if(IS_RUNNING_LOCAL) return TRUE;
     if(writeHandler("/sys/class/gpio/gpio1/value", "0") < 0) {
         printf("[INFO] - Error Writing qserBreak File Value to Zero");
         return FALSE;
@@ -73,6 +73,7 @@ void* jointPositionLimitOneHandler() {
 //            pid_joined = 0; //TODO NEEDS IMPLEMENTATION
         }
     }
+    return NULL;
 }
 void* jointPositionLimitTwoHandler() {
     if(IS_RUNNING_LOCAL) return 0;
@@ -111,4 +112,5 @@ void* jointPositionLimitTwoHandler() {
 //            pid_joined = 0; //TODO NEEDS IMPLEMENTATION
         }
     }
+    return NULL;
 }

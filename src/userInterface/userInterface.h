@@ -6,6 +6,7 @@
 #define OPTION_EXIT 1
 #define OPTION_HELP 2
 #define OPTION_SPEED 3
+#define OPTION_JPL 4
 
 
 void printUserOptions();

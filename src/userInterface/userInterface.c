@@ -18,6 +18,7 @@ void printUserGroupsName(){
 
 int resolveOption(char* cmd) {
     if (strncmp(cmd, "speed", 5) == 0) { return OPTION_SPEED; }
+    else if (strcmp(cmd, "jpl\n") == 0) { return OPTION_JPL; }
     else if (strcmp(cmd, "help\n") == 0) { return OPTION_HELP; }
     else if (strcmp(cmd, "exit\n") == 0) { return OPTION_EXIT; }
     else return OPTION_INVALID;

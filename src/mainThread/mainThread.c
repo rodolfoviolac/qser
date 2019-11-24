@@ -18,11 +18,24 @@ void* handlerMainThread() {
                     if(DEBUG) printf("[DEBUG] - Got Valid Speed Number MainThread");
                     float dcAmount = (commandAmount/100)*atof(PWM_PERIOD);
                     if(handlePwm((int)dcAmount) == 1) {
-                        fprintf(stdout, "[INFO] MT - Motor Duty Cycle %d\n\n", (int)dcAmount);
+                        fprintf(stdout, "[INFO] MT - Motor Duty Cycle %d%%\n\n", (int)dcAmount/10000);
                     } else {
                         printf("[ERROR] MT - Error Turning On Motor\n\n");
                     }
                 }
+                break;
+            }
+            case OPTION_JPL: {
+                char dataJplOne[80];
+                char dataJplTwo[80];
+                readHandler(dataJplOne,sizeof dataJplOne,"/sys/class/gpio/gpio6/value");
+                readHandler(dataJplTwo,sizeof dataJplTwo,"/sys/class/gpio/gpio0/value");
+                if(atoi(dataJplOne) == JPL_REACHED){
+                    printf("[INFO] MT - JPL ONE Reached The End. State: %s\n", dataJplOne);
+                } else printf("[INFO] MT - READ JPL ONE. State: %s\n", dataJplOne);
+                if(atoi(dataJplTwo) == JPL_REACHED){
+                    printf("[INFO] MT - JPL TWO Reached The End. State: %s\n\n", dataJplTwo);
+                } else printf("[INFO] MT - READ JPL ONE. State: %s\n\n", dataJplTwo);
                 break;
             }
             case OPTION_HELP: {
