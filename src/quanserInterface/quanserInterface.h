@@ -8,6 +8,8 @@
 #define PWM_PERIOD "1000000"
 #define QSER_VOLTAGE 27.0
 #define JPL_REACHED '0'
+extern int JPL_REACHED_STATUS_ONE;
+extern int JPL_REACHED_STATUS_TWO;
 #define JPL_UNREACHED "1"
 
 int handlePwm(int dcAmount);

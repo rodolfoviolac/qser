@@ -1,4 +1,6 @@
 #include "mainThread.h"
+int JPL_REACHED_STATUS_ONE = 0;
+int JPL_REACHED_STATUS_TWO = 0;
 
 void* handlerMainThread() {
     if(DEBUG) printf("[DEBUG] - Starting handlerMainThread");
@@ -26,16 +28,37 @@ void* handlerMainThread() {
                 break;
             }
             case OPTION_JPL: {
-                char dataJplOne[80];
-                char dataJplTwo[80];
-                readHandler(dataJplOne,sizeof dataJplOne,"/sys/class/gpio/gpio6/value");
-                readHandler(dataJplTwo,sizeof dataJplTwo,"/sys/class/gpio/gpio0/value");
-                if(atoi(dataJplOne) == JPL_REACHED){
-                    printf("[INFO] MT - JPL ONE Reached The End. State: %s\n", dataJplOne);
-                } else printf("[INFO] MT - READ JPL ONE. State: %s\n", dataJplOne);
-                if(atoi(dataJplTwo) == JPL_REACHED){
-                    printf("[INFO] MT - JPL TWO Reached The End. State: %s\n\n", dataJplTwo);
-                } else printf("[INFO] MT - READ JPL ONE. State: %s\n\n", dataJplTwo);
+                if(DEBUG) printf("[DEBUG] - Got JPL Option MainThread");
+                if(JPL_REACHED_STATUS_ONE == JPL_REACHED){
+                    printf("[INFO] MT - JPL ONE Reached The End. State: Active [ %d ]\n", JPL_REACHED_STATUS_ONE);
+                } else printf("[INFO] MT - READ JPL ONE. State: Inactive [ %d ]\n", JPL_REACHED_STATUS_ONE);
+                if(JPL_REACHED_STATUS_TWO == JPL_REACHED){
+                    printf("[INFO] MT - JPL TWO Reached The End. State: Active [ %d ]\n\n", JPL_REACHED_STATUS_TWO);
+                } else printf("[INFO] MT - READ JPL TWO. State: Inactive [ %d ]\n\n", JPL_REACHED_STATUS_TWO);
+                break;
+            }
+            case OPTION_GO_FOR_V: {
+                if(DEBUG) printf("[DEBUG] - Got GO FOR V Option MainThread");
+                float commandAmount = atof(&command[7]);
+                if(commandAmount < -QSER_VOLTAGE || commandAmount > QSER_VOLTAGE) {
+                    fprintf(stderr, "[ERROR] - Voltage Must Be On The Interval [%+d,%+d]\n", (int) -QSER_VOLTAGE, (int) QSER_VOLTAGE);
+                } else {
+                    if(DEBUG) printf("[DEBUG] MT - Got Accepted Voltage ");
+                    if(qserVoltage(commandAmount) == 1)	{
+                        fprintf(stdout, "[INFO] - Motor Triggered With Voltage  %+.1fV\n\n", commandAmount);
+                    } else {
+                        fprintf(stdout, "[ERROR] - Something Went Wrong Trying To Turn On Motor\n\n");
+                    }
+                }
+                break;
+            }
+            case OPTION_QSER_BREAK: {
+                if(DEBUG) printf("[DEBUG] - Got QSER BREAK Option MainThread");
+                if(qserBreak() == TRUE){
+                    printf("[INFO] - Breaking Motor\n");
+                } else {
+                    fprintf(stdout, "[ERROR] - Something Went Wrong Trying To Break Motor\n\n");
+                }
                 break;
             }
             case OPTION_HELP: {
@@ -45,7 +68,8 @@ void* handlerMainThread() {
             }
             case OPTION_EXIT: {
                 if(DEBUG) printf("[DEBUG] - Got EXIT Option MainThread");
-                printf("Finishing Application...\n");
+                qserBreak();
+                printf("[INFO] - Finishing Application...\n");
                 exit(0);
             }
             case OPTION_INVALID: {

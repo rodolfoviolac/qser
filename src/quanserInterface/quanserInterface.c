@@ -72,6 +72,8 @@ void* jointPositionLimitOneHandler() {
             qserBreak();
 //            pid_joined = 0; //TODO NEEDS IMPLEMENTATION
         }
+        JPL_REACHED_STATUS_ONE = dataOne;
+
     }
     return NULL;
 }
@@ -110,7 +112,9 @@ void* jointPositionLimitTwoHandler() {
             printf("[INFO] - JPL TWO Reached End \n\n");
             qserBreak();
 //            pid_joined = 0; //TODO NEEDS IMPLEMENTATION
+
         }
+        JPL_REACHED_STATUS_TWO = dataTwo;
     }
     return NULL;
 }

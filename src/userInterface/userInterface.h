@@ -7,6 +7,8 @@
 #define OPTION_HELP 2
 #define OPTION_SPEED 3
 #define OPTION_JPL 4
+#define OPTION_GO_FOR_V 5
+#define OPTION_QSER_BREAK 6
 
 
 void printUserOptions();
