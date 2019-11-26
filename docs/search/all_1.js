@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qser_1',['qser',['../index.html',1,'']]]
+  ['qser_1',['QSER',['../index.html',1,'']]]
 ];

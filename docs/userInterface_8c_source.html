@@ -105,34 +105,39 @@ $(document).ready(function(){initNavTree('userInterface_8c_source.html','');});
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keywordtype">void</span> printUserOptions(){</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    printf(<span class="stringliteral">&quot;########### QSER OPTIONS ##############\n\n&quot;</span>);</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; speed \n&quot;</span>);</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; help \n&quot;</span>);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; exit \n\n&quot;</span>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    printf(<span class="stringliteral">&quot;######################################\n\n&quot;</span>);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> printUserGroupsName(){</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    printf(<span class="stringliteral">&quot;########### QSER 2019/2 ##############\n&quot;</span>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    printf(<span class="stringliteral">&quot;&gt; Rodolfo Viola Carvalho\n&quot;</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    printf(<span class="stringliteral">&quot;&gt; Gabriel Alexandre Zillmer\n&quot;</span>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    printf(<span class="stringliteral">&quot;&gt; Felipe Fuhr Dos Reis\n&quot;</span>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    printf(<span class="stringliteral">&quot;######################################\n\n&quot;</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">int</span> resolveOption(<span class="keywordtype">char</span>* cmd) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;speed&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SPEED; }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;jpl\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_JPL; }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;help\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_HELP; }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;exit\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_EXIT; }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">return</span> OPTION_INVALID;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; speed [0 - 100] \n&quot;</span>);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; goforv [-V - +V] \n&quot;</span>);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; jpl \n&quot;</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; break \n&quot;</span>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; help \n&quot;</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; exit \n\n&quot;</span>);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    printf(<span class="stringliteral">&quot;######################################\n\n&quot;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> printUserGroupsName(){</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    printf(<span class="stringliteral">&quot;########### QSER 2019/2 ##############\n&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    printf(<span class="stringliteral">&quot;&gt; Rodolfo Viola Carvalho\n&quot;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    printf(<span class="stringliteral">&quot;&gt; Gabriel Alexandre Zillmer\n&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    printf(<span class="stringliteral">&quot;&gt; Felipe Fuhr Dos Reis\n&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    printf(<span class="stringliteral">&quot;######################################\n\n&quot;</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">int</span> resolveOption(<span class="keywordtype">char</span>* cmd) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;speed&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SPEED; }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;jpl\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_JPL; }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;goforv&quot;</span>, 6) == 0) { <span class="keywordflow">return</span> OPTION_GO_FOR_V; }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;break\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_QSER_BREAK; }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;help\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_HELP; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;exit\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_EXIT; }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">return</span> OPTION_INVALID;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_8f83ca4ebc6646d7cbbd2f1830916c8f.html">userInterface</a></li><li class="navelem"><b>userInterface.c</b></li>
-    <li class="footer">Generated on Sun Nov 24 2019 02:39:40 for Qser_RoGaFe_19/2 by
+    <li class="footer">Generated on Mon Nov 25 2019 23:36:19 for Qser_RoGaFe_19/2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>
