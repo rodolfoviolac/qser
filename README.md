@@ -31,7 +31,7 @@ To enable this feature you need to enable the debugger options under `/src/helpe
 
 #### Run Local:
 This project contain a local template simulation to help developers simulate the code that will run on the Galileo shield, this feature enable developers to build and run the code without the physical shield device. 
-To enable this feature tou need to enable the Run Local option under `/src/helpers/helpers.h`.
+To enable this feature you need to enable the Run Local option under `/src/helpers/helpers.h`.
 
 ## Roadmap
 
@@ -55,7 +55,7 @@ Please make sure to update tests as appropriate.
 
 | <a href="https://github.com/rodolfoviolac" target="_blank">**Rodolfo Viola**</a> | <a href="https://github.com/gazillmer" target="_blank">**Gabriel Zillmer**</a> | <a href="https://github.com/felipefuhr" target="_blank">**Felipe Fuhr**</a> |
 | :---: |:---:| :---:|
-| [![rodolfoviolac](https://avatars.githubusercontent.com/rodolfoviolac?s=200)](https://github.com/rodolfoviolac)    | [![gazillmer](https://avatars.githubusercontent.com/gazillmer?s=200)](https://github.com/gazillmer) | [![felipefuhr](https://avatars.githubusercontent.com/felipefuhr?s=200)](https://github.com/felipefuhr)  |
+| [![rodolfoviolac](https://avatars.githubusercontent.com/rodolfoviolac?s=200)](https://github.com/rodolfoviolac)    | [![gazillmer](https://avatars.githubusercontent.com/gazillmer?s=200)](https://github.com/gazillmer) | [![felipefuhr]()](https://github.com/felipefuhr)  |
 | <a href="https://github.com/rodolfoviolac" target="_blank">`github.com/rodolfoviolac`</a> | <a href="https://github.com/gazillmer" target="_blank">`github.com/gazillmer`</a> | <a href="https://github.com/felipefuhr" target="_blank">`github.com/felipefuhr`</a> |
 
 
