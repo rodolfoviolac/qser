@@ -19,7 +19,7 @@ Felipe Fuhr dos Reis, Gabriel Alexandre Zillmer and Rodolfo Viola Carvalho
 Text Notes 7400 7500 0    50   ~ 0
 Schematic for Intel® Galileo Gen2 Shield
 $Comp
-L Quanser_2DSFJE_Library:Intel_Galileo_Gen2 U2
+L Shield_Galileo-rescue:Intel_Galileo_Gen2-Quanser_2DSFJE_Library U2
 U 1 1 5DB071F2
 P 2800 4050
 F 0 "U2" H 2525 4765 50  0000 C CNN
@@ -30,7 +30,7 @@ F 3 "" H 2600 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Quanser_2DSFJE_Library:LS7366R U1
+L Shield_Galileo-rescue:LS7366R-Quanser_2DSFJE_Library U1
 U 1 1 5DB0F7D8
 P 4400 1450
 F 0 "U1" H 4650 1615 50  0000 C CNN
@@ -185,7 +185,7 @@ NoConn ~ 1650 5650
 NoConn ~ 1650 5800
 NoConn ~ 1650 5950
 $Comp
-L Quanser_2DSFJE_Library:End_Sensor J2
+L Shield_Galileo-rescue:End_Sensor-Quanser_2DSFJE_Library J2
 U 1 1 5DBA5CC4
 P 4800 4900
 F 0 "J2" H 5078 4496 50  0000 L CNN
@@ -334,21 +334,6 @@ F 3 "~" H 8550 2300 50  0001 C CNN
 	1    8550 2300
 	1    0    0    -1  
 $EndComp
-$Comp
-L Driver_Motor:L298HN U3
-U 1 1 5DD1FF24
-P 7800 3700
-F 0 "U3" H 7800 4581 50  0000 C CNN
-F 1 "L298HN" H 7800 4490 50  0000 C CNN
-F 2 "L298N:TO127P2020X500X2100-15" H 7850 3050 50  0001 L CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000240.pdf" H 7950 3950 50  0001 C CNN
-	1    7800 3700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7900 3000 8050 3000
-Wire Wire Line
-	8050 3000 8050 2400
 Wire Wire Line
 	8350 2400 8050 2400
 Wire Wire Line
@@ -432,10 +417,8 @@ Wire Wire Line
 	9450 4500 9450 4150
 Wire Wire Line
 	7800 3000 7800 2950
-Connection ~ 7800 3000
 Wire Wire Line
 	9450 2950 9450 3850
-Connection ~ 8050 3000
 Wire Wire Line
 	9450 4500 9900 4500
 Wire Wire Line
@@ -643,7 +626,7 @@ A_J1
 Text Label 5800 2050 0    50   ~ 0
 B_J1
 $Comp
-L Quanser_2DSFJE_Library:Connector_Encoder J1
+L Shield_Galileo-rescue:Connector_Encoder-Quanser_2DSFJE_Library J1
 U 1 1 5DDA378C
 P 7000 1900
 F 0 "J1" H 7000 1533 50  0000 C CNN
@@ -676,8 +659,6 @@ F 3 "~" H 9000 3550 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	8050 3000 9900 3000
-Wire Wire Line
 	7800 2950 9000 2950
 Wire Wire Line
 	7800 4500 9000 4500
@@ -696,34 +677,34 @@ Wire Wire Line
 $Comp
 L 74xx:74HC04 U4
 U 7 1 5DEE1C35
-P 6400 5650
-F 0 "U4" H 6630 5696 50  0000 L CNN
-F 1 "74HC04" H 6630 5605 50  0000 L CNN
-F 2 "Quanser_2DSFJE_Library:DIP-14_W7.62mm" H 6400 5650 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 6400 5650 50  0001 C CNN
-	7    6400 5650
+P 6550 5500
+F 0 "U4" H 6780 5546 50  0000 L CNN
+F 1 "74HC04" H 6780 5455 50  0000 L CNN
+F 2 "Quanser_2DSFJE_Library:DIP-14_W7.62mm" H 6550 5500 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 6550 5500 50  0001 C CNN
+	7    6550 5500
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:Earth #PWR013
 U 1 1 5DEE42B1
-P 6400 6150
-F 0 "#PWR013" H 6400 5900 50  0001 C CNN
-F 1 "Earth" H 6400 6000 50  0001 C CNN
-F 2 "" H 6400 6150 50  0001 C CNN
-F 3 "~" H 6400 6150 50  0001 C CNN
-	1    6400 6150
+P 6550 6000
+F 0 "#PWR013" H 6550 5750 50  0001 C CNN
+F 1 "Earth" H 6550 5850 50  0001 C CNN
+F 2 "" H 6550 6000 50  0001 C CNN
+F 3 "~" H 6550 6000 50  0001 C CNN
+	1    6550 6000
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR012
 U 1 1 5DEE4D6D
-P 6400 5150
-F 0 "#PWR012" H 6400 5000 50  0001 C CNN
-F 1 "+5V" H 6415 5323 50  0000 C CNN
-F 2 "" H 6400 5150 50  0001 C CNN
-F 3 "" H 6400 5150 50  0001 C CNN
-	1    6400 5150
+P 6550 5000
+F 0 "#PWR012" H 6550 4850 50  0001 C CNN
+F 1 "+5V" H 6565 5173 50  0000 C CNN
+F 2 "" H 6550 5000 50  0001 C CNN
+F 3 "" H 6550 5000 50  0001 C CNN
+	1    6550 5000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -737,4 +718,20 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 5950 450
 	3    5950 4500
 	1    0    0    -1  
 $EndComp
+Connection ~ 7800 3000
+$Comp
+L Driver_Motor:L298HN U3
+U 1 1 5DD1FF24
+P 7800 3700
+F 0 "U3" H 7800 4581 50  0000 C CNN
+F 1 "L298HN" H 7800 4490 50  0000 C CNN
+F 2 "L298N:TO127P2020X500X2100-15" H 7850 3050 50  0001 L CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000240.pdf" H 7950 3950 50  0001 C CNN
+	1    7800 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 2400 8050 3050
+Wire Wire Line
+	7900 3000 9900 3000
 $EndSCHEMATC

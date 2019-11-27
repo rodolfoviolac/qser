@@ -186,11 +186,11 @@ X Vss 9 0 700 100 D 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
-# Quanser_2DSFJE_Library_Connector_Encoder
+# Shield_Galileo-rescue_Connector_Encoder-Quanser_2DSFJE_Library
 #
-DEF Quanser_2DSFJE_Library_Connector_Encoder J 0 40 Y Y 1 F N
+DEF Shield_Galileo-rescue_Connector_Encoder-Quanser_2DSFJE_Library J 0 40 Y Y 1 F N
 F0 "J" 125 225 50 H V C CNN
-F1 "Quanser_2DSFJE_Library_Connector_Encoder" 0 -250 50 H V C CNN
+F1 "Shield_Galileo-rescue_Connector_Encoder-Quanser_2DSFJE_Library" 0 -250 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -219,11 +219,11 @@ X ~ 5 300 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Quanser_2DSFJE_Library_End_Sensor
+# Shield_Galileo-rescue_End_Sensor-Quanser_2DSFJE_Library
 #
-DEF Quanser_2DSFJE_Library_End_Sensor J 0 40 Y Y 1 F N
+DEF Shield_Galileo-rescue_End_Sensor-Quanser_2DSFJE_Library J 0 40 Y Y 1 F N
 F0 "J" 0 0 50 H V C CNN
-F1 "Quanser_2DSFJE_Library_End_Sensor" 0 -100 50 H V C CNN
+F1 "Shield_Galileo-rescue_End_Sensor-Quanser_2DSFJE_Library" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -234,11 +234,11 @@ X GND 3 -150 -600 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# Quanser_2DSFJE_Library_Intel_Galileo_Gen2
+# Shield_Galileo-rescue_Intel_Galileo_Gen2-Quanser_2DSFJE_Library
 #
-DEF Quanser_2DSFJE_Library_Intel_Galileo_Gen2 U 0 40 Y Y 1 F N
+DEF Shield_Galileo-rescue_Intel_Galileo_Gen2-Quanser_2DSFJE_Library U 0 40 Y Y 1 F N
 F0 "U" -200 750 50 H V C CNN
-F1 "Quanser_2DSFJE_Library_Intel_Galileo_Gen2" -200 650 50 H V C CNN
+F1 "Shield_Galileo-rescue_Intel_Galileo_Gen2-Quanser_2DSFJE_Library" -200 650 50 H V C CNN
 F2 "" -200 750 50 H I C CNN
 F3 "" -200 750 50 H I C CNN
 DRAW
@@ -306,11 +306,11 @@ X D8 9 600 -600 256 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# Quanser_2DSFJE_Library_LS7366R
+# Shield_Galileo-rescue_LS7366R-Quanser_2DSFJE_Library
 #
-DEF Quanser_2DSFJE_Library_LS7366R U 0 40 Y Y 1 F N
+DEF Shield_Galileo-rescue_LS7366R-Quanser_2DSFJE_Library U 0 40 Y Y 1 F N
 F0 "U" 250 150 50 H V C CNN
-F1 "Quanser_2DSFJE_Library_LS7366R" 250 50 50 H V C CNN
+F1 "Shield_Galileo-rescue_LS7366R-Quanser_2DSFJE_Library" 250 50 50 H V C CNN
 F2 "" 250 150 50 H I C CNN
 F3 "" 250 150 50 H I C CNN
 DRAW

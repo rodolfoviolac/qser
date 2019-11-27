@@ -564,17 +564,6 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 4950 450
 	1    4950 4500
 	1    0    0    -1  
 $EndComp
-$Comp
-L 74xx:74HC04 U4
-U 2 1 5DDA83FE
-P 5950 4500
-F 0 "U4" H 5950 4817 50  0000 C CNN
-F 1 "74HC04" H 5950 4726 50  0000 C CNN
-F 2 "Quanser_2DSFJE_Library:DIP-14_W7.62mm" H 5950 4500 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 5950 4500 50  0001 C CNN
-	2    5950 4500
-	1    0    0    -1  
-$EndComp
 Connection ~ 7150 3300
 Wire Wire Line
 	5250 4500 5450 4500
@@ -705,21 +694,21 @@ Connection ~ 9000 4500
 Wire Wire Line
 	9000 4500 9450 4500
 $Comp
-L 74xx:74HC04 U?
+L 74xx:74HC04 U4
 U 7 1 5DEE1C35
 P 6400 5650
-F 0 "U?" H 6630 5696 50  0000 L CNN
+F 0 "U4" H 6630 5696 50  0000 L CNN
 F 1 "74HC04" H 6630 5605 50  0000 L CNN
-F 2 "" H 6400 5650 50  0001 C CNN
+F 2 "Quanser_2DSFJE_Library:DIP-14_W7.62mm" H 6400 5650 50  0001 C CNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 6400 5650 50  0001 C CNN
 	7    6400 5650
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:Earth #PWR?
+L power:Earth #PWR013
 U 1 1 5DEE42B1
 P 6400 6150
-F 0 "#PWR?" H 6400 5900 50  0001 C CNN
+F 0 "#PWR013" H 6400 5900 50  0001 C CNN
 F 1 "Earth" H 6400 6000 50  0001 C CNN
 F 2 "" H 6400 6150 50  0001 C CNN
 F 3 "~" H 6400 6150 50  0001 C CNN
@@ -727,14 +716,25 @@ F 3 "~" H 6400 6150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+5V #PWR?
+L power:+5V #PWR012
 U 1 1 5DEE4D6D
 P 6400 5150
-F 0 "#PWR?" H 6400 5000 50  0001 C CNN
+F 0 "#PWR012" H 6400 5000 50  0001 C CNN
 F 1 "+5V" H 6415 5323 50  0000 C CNN
 F 2 "" H 6400 5150 50  0001 C CNN
 F 3 "" H 6400 5150 50  0001 C CNN
 	1    6400 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC04 U4
+U 3 1 5DF01179
+P 5950 4500
+F 0 "U4" H 5950 4817 50  0000 C CNN
+F 1 "74HC04" H 5950 4726 50  0000 C CNN
+F 2 "Quanser_2DSFJE_Library:DIP-14_W7.62mm" H 5950 4500 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 5950 4500 50  0001 C CNN
+	3    5950 4500
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
