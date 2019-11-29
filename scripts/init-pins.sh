@@ -31,16 +31,16 @@ case "$1" in
 		chmod a+rw /sys/class/pwm/pwmchip0/device/pwm_period
 
 		## PONTE H
-		#IO 6 - Enable
-		if [ ! -d /sys/class/gpio/gpio1 ]; then echo -n "1" > /sys/class/gpio/export; fi
-		echo -n "out" > /sys/class/gpio/gpio1/direction
-		if [ ! -d /sys/class/gpio/gpio20 ]; then echo -n "20" > /sys/class/gpio/export; fi
-		echo -n "out" > /sys/class/gpio/gpio20/direction; echo -n "0" > /sys/class/gpio/gpio20/value
-		if [ ! -d /sys/class/gpio/gpio21 ]; then echo -n "21" > /sys/class/gpio/export; fi
-		echo -n "in" > /sys/class/gpio/gpio21/direction
-		if [ ! -d /sys/class/gpio/gpio68 ]; then echo -n "68" > /sys/class/gpio/export; fi
-		echo -n "0" > /sys/class/gpio/gpio68/value
-		chmod a+rw /sys/class/gpio/gpio1/value
+		#IO 7 - Enable
+		if [ ! -d /sys/class/gpio/gpio38 ]; then echo -n "38" > /sys/class/gpio/export; fi
+		echo -n "out" > /sys/class/gpio/gpio38/direction
+#		if [ ! -d /sys/class/gpio/gpio20 ]; then echo -n "20" > /sys/class/gpio/export; fi
+#		echo -n "out" > /sys/class/gpio/gpio20/direction; echo -n "0" > /sys/class/gpio/gpio20/value
+		if [ ! -d /sys/class/gpio/gpio39 ]; then echo -n "39" > /sys/class/gpio/export; fi
+		echo -n "in" > /sys/class/gpio/gpio39/direction
+#		if [ ! -d /sys/class/gpio/gpio68 ]; then echo -n "68" > /sys/class/gpio/export; fi
+#		echo -n "0" > /sys/class/gpio/gpio68/value
+		chmod a+rw /sys/class/gpio/gpio38/value
 
 		##SPI
     chmod a+rw /dev/spidev1.0

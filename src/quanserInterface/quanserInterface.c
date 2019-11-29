@@ -5,7 +5,7 @@ int handlePwm(int dcAmount) {
     if(IS_RUNNING_LOCAL) return TRUE;
     char data[20];
     snprintf(data, sizeof(data), "%d\n", dcAmount);
-    if(writeHandler("/sys/class/gpio/gpio1/value", "1") < 0) return FALSE;
+    if(writeHandler("/sys/class/gpio/gpio38/value", "1") < 0) return FALSE;
     if(writeHandler("/sys/class/pwm/pwmchip0/pwm1/enable", "1") < 0) return FALSE;
     if(writeHandler("/sys/class/pwm/pwmchip0/device/pwm_period", PWM_PERIOD) < 0) return FALSE;
     if(writeHandler("/sys/class/pwm/pwmchip0/pwm1/duty_cycle", data) < 0) return FALSE;
@@ -21,7 +21,7 @@ int qserInitializer(int dcAmount) {
 int qserBreak() {
     if(DEBUG) printf("[DEBUG] - Starting qserBreak");
     if(IS_RUNNING_LOCAL) return TRUE;
-    if(writeHandler("/sys/class/gpio/gpio1/value", "0") < 0) {
+    if(writeHandler("/sys/class/gpio/gpio38/value", "0") < 0) {
         printf("[INFO] - Error Writing qserBreak File Value to Zero");
         return FALSE;
     }
