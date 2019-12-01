@@ -11,7 +11,7 @@ int targetLocation = 0;
 /** @brief Armazena o último erro calculado pelo controle PID. Necessário para calcular a derivada do erro */
 double errorDeviation = 0.00;
 /** @brief Somatório de todos os erros já calculados */
-double allErrorsIntegral = 0.0;
+double allErrorsSummation = 0.0;
 double conversionCoefficientUnit = 294.0;
 int pidStatus = 0;
 
@@ -19,7 +19,7 @@ int setTarget(int newTarget) {
     if(DEBUG) printf("[DEBUG] - Starting setTarget pidController");
     targetLocation = newTarget;
     errorDeviation = 0.0;
-    allErrorsIntegral = 0.0;
+    allErrorsSummation = 0.0;
     printf("[INFO] - new Target Location set to %d", targetLocation);
     if(DEBUG) printf("[DEBUG] - Set targetLocation to %d", targetLocation);
     return TRUE;
@@ -64,4 +64,30 @@ void setConversionCoefficientUnit(double newConversionCoefficientUnit){
     if(DEBUG) printf("[DEBUG] - Starting setConversionCoefficientUnit pidController \n");
     conversionCoefficientUnit = newConversionCoefficientUnit;
     printf("[INFO] - conversionCoefficientUnit Value: %f \n", conversionCoefficientUnit);
+}
+
+double pidHandler(int currentPosition){
+    if(DEBUG) printf("[DEBUG] - Starting pidHandler pidController \n");
+    double pidUnitVoltage;
+    double pPart;
+    double iPart;
+    double dPart;
+    double deviation;
+    double tempErrorDeviation = targetLocation - currentPosition;
+
+    allErrorsSummation += tempErrorDeviation;
+    deviation = tempErrorDeviation - errorDeviation;
+    errorDeviation = tempErrorDeviation;
+    pPart = controlKp * tempErrorDeviation;
+    iPart = controlKi * allErrorsSummation;
+    dPart = controlKd * deviation;
+
+    pidUnitVoltage = pPart + iPart + dPart;
+
+    if(pidUnitVoltage > QSER_VOLTAGE) pidUnitVoltage = QSER_VOLTAGE;
+    if(pidUnitVoltage < -QSER_VOLTAGE) pidUnitVoltage = -QSER_VOLTAGE;
+
+    printf("[INFO] - PID Voltage Result %f \n", pidUnitVoltage);
+    return pidUnitVoltage;
+
 }
