@@ -1,7 +1,7 @@
 # QSER
 
 QSER is a application and hardware shield interface to manage and fully control a engine motor (Quanser Robots) on Galileo v2 shield.
-On this repository you will find the shield design under `/shield` and the resources under `/src`.
+On this repository you will find the shield hardware design under `/shield` and the software resources under `/src`.
 
 ![Terminal](./img/terminal.png)
 
@@ -39,7 +39,6 @@ See the [open issues](https://github.com/rodolfoviolac/qser/issues) for a list o
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
