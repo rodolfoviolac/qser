@@ -16,12 +16,12 @@ double conversionCoefficientUnit = 294.0;
 int pidStatus = 0;
 
 int setTarget(int newTarget) {
-    if(DEBUG) printf("[DEBUG] - Starting setTarget pidControler");
+    if(DEBUG) printf("[DEBUG] - Starting setTarget pidControler \n");
     targetLocation = newTarget;
     errorDeviation = 0.0;
     allErrorsSummation = 0.0;
     printf("[INFO] - new Target Location set to %d", targetLocation);
-    if(DEBUG) printf("[DEBUG] - Set targetLocation to %d", targetLocation);
+    if(DEBUG) printf("[DEBUG] - Set targetLocation to %d \n", targetLocation);
     return TRUE;
 }
 
@@ -89,5 +89,4 @@ double pidHandler(int currentPosition){
 
     printf("[INFO] - PID Voltage Result %f \n", pidUnitVoltage);
     return pidUnitVoltage;
-
 }

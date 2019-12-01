@@ -78,7 +78,7 @@ void* jointPositionLimitOneHandler() {
         if(dataOne == JPL_REACHED) {
             printf("[INFO] - JPL ONE Reached End \n\n");
             qserBreak();
-//            pid_joined = 0; //TODO NEEDS IMPLEMENTATION
+            turnOffPid();
         }
         JPL_REACHED_STATUS_ONE = dataOne;
 
@@ -119,8 +119,7 @@ void* jointPositionLimitTwoHandler() {
         if(dataTwo == JPL_REACHED) {
             printf("[INFO] - JPL TWO Reached End \n\n");
             qserBreak();
-//            pid_joined = 0; //TODO NEEDS IMPLEMENTATION
-
+            turnOffPid();
         }
         JPL_REACHED_STATUS_TWO = dataTwo;
     }

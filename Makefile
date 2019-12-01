@@ -27,6 +27,9 @@ userInterface.o: $(SRCPATH)userInterface/userInterface.c
 pidController.o: $(SRCPATH)pidController/pidController.c
     $(CC) $(FLAGS) -c $(SRCPATH)pidController/pidController.c -o $(OBJPATH)pidController.o
 
+decoderInterface.o: $(SRCPATH)decoderInterface/decoderInterface.c
+    $(CC) $(FLAGS) -c $(SRCPATH)decoderInterface/decoderInterface.c -o $(OBJPATH)decoderInterface.o
+
 docs: Doxyfile DoxygenLayout.xml README.md LICENSE.md
 	@echo "Building Doxygen..."
 	doxygen

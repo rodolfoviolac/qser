@@ -82,6 +82,10 @@ unistd.h
 ../decoderInterface/decoderInterface.h
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.h
 
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c
+userInterface.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
+
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
 stdio.h
 -
