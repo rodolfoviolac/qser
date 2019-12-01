@@ -9,6 +9,11 @@
 #define OPTION_JPL 4
 #define OPTION_GO_FOR_V 5
 #define OPTION_QSER_BREAK 6
+#define OPTION_SHIFT_RAD 7
+#define OPTION_SET_KP 8
+#define OPTION_SET_KD 9
+#define OPTION_SET_KI 10
+#define OPTION_SET_CCU 11
 
 
 void printUserOptions();

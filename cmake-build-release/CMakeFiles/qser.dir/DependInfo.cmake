@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/helpers/helpers.c.o"
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/main.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/main.c.o"
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/mainThread/mainThread.c.o"
+  "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/pidController/pidController.c.o"
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o"
   "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c" "/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/src/userInterface/userInterface.c.o"
   )

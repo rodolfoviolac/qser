@@ -55,10 +55,46 @@ void* handlerMainThread() {
             case OPTION_QSER_BREAK: {
                 if(DEBUG) printf("[DEBUG] - Got QSER BREAK Option MainThread");
                 if(qserBreak() == TRUE){
+                    turnOffPid();
                     printf("[INFO] - Breaking Motor\n");
                 } else {
                     fprintf(stdout, "[ERROR] - Something Went Wrong Trying To Break Motor\n\n");
                 }
+                break;
+            }
+            case OPTION_SHIFT_RAD: {
+                if(DEBUG) printf("[DEBUG] - Got OPTION_SHIFT_RAD Option MainThread");
+                double commandAmount = (double)strtof(&command[9], NULL);
+                if(commandAmount < 0 || commandAmount > 2*PI){
+                    printf("[Error] - Radian Must Be On The Interval [0, %f] \n", 2*PI);
+                    break;
+                }
+                setTarget((int)(commandAmount*RAD2G*conversionCoefficientUnit));
+                turnOnPid();
+                break;
+            }
+            case OPTION_SET_KD: {
+                if(DEBUG) printf("[DEBUG] - Got OPTION_SET_KD Option MainThread \n");
+                double commandAmount = (double)strtof(&command[6], NULL);
+                setControlKd(commandAmount);
+                break;
+            }
+            case OPTION_SET_KP: {
+                if(DEBUG) printf("[DEBUG] - Got OPTION_SET_KP Option MainThread \n");
+                double commandAmount = (double)strtof(&command[6], NULL);
+                setControlKp(commandAmount);
+                break;
+            }
+            case OPTION_SET_KI: {
+                if(DEBUG) printf("[DEBUG] - Got OPTION_SET_KI Option MainThread \n");
+                double commandAmount = (double)strtof(&command[6], NULL);
+                setControlKi(commandAmount);
+                break;
+            }
+            case OPTION_SET_CCU: {
+                if(DEBUG) printf("[DEBUG] - Got OPTION_SET_CCU Option MainThread");
+                double commandAmount = (double)strtof(&command[7], NULL);
+                setConversionCoefficientUnit(commandAmount);
                 break;
             }
             case OPTION_HELP: {
@@ -69,6 +105,7 @@ void* handlerMainThread() {
             case OPTION_EXIT: {
                 if(DEBUG) printf("[DEBUG] - Got EXIT Option MainThread");
                 qserBreak();
+                turnOffPid();
                 printf("[INFO] - Finishing Application...\n");
                 exit(0);
             }

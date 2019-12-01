@@ -93,6 +93,12 @@
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h">
 			<Option target="qser"/>
 		</Unit>
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c">
+			<Option target="qser"/>
+		</Unit>
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h">
+			<Option target="qser"/>
+		</Unit>
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c">
 			<Option target="qser"/>
 		</Unit>

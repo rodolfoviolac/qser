@@ -46,7 +46,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release
+CMAKE_BINARY_DIR = /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/qser.dir/depend.make
@@ -59,7 +59,7 @@ include CMakeFiles/qser.dir/flags.make
 
 CMakeFiles/qser.dir/src/main.c.o: CMakeFiles/qser.dir/flags.make
 CMakeFiles/qser.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/qser.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/qser.dir/src/main.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/main.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/main.c
 
 CMakeFiles/qser.dir/src/main.c.i: cmake_force
@@ -72,7 +72,7 @@ CMakeFiles/qser.dir/src/main.c.s: cmake_force
 
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: CMakeFiles/qser.dir/flags.make
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/mainThread/mainThread.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/qser.dir/src/mainThread/mainThread.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/qser.dir/src/mainThread/mainThread.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/mainThread/mainThread.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.c
 
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.i: cmake_force
@@ -85,7 +85,7 @@ CMakeFiles/qser.dir/src/mainThread/mainThread.c.s: cmake_force
 
 CMakeFiles/qser.dir/src/userInterface/userInterface.c.o: CMakeFiles/qser.dir/flags.make
 CMakeFiles/qser.dir/src/userInterface/userInterface.c.o: ../src/userInterface/userInterface.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/qser.dir/src/userInterface/userInterface.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/qser.dir/src/userInterface/userInterface.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/userInterface/userInterface.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c
 
 CMakeFiles/qser.dir/src/userInterface/userInterface.c.i: cmake_force
@@ -98,7 +98,7 @@ CMakeFiles/qser.dir/src/userInterface/userInterface.c.s: cmake_force
 
 CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: CMakeFiles/qser.dir/flags.make
 CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: ../src/quanserInterface/quanserInterface.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c
 
 CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.i: cmake_force
@@ -111,7 +111,7 @@ CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.s: cmake_force
 
 CMakeFiles/qser.dir/src/helpers/helpers.c.o: CMakeFiles/qser.dir/flags.make
 CMakeFiles/qser.dir/src/helpers/helpers.c.o: ../src/helpers/helpers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/qser.dir/src/helpers/helpers.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/qser.dir/src/helpers/helpers.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/helpers/helpers.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.c
 
 CMakeFiles/qser.dir/src/helpers/helpers.c.i: cmake_force
@@ -124,7 +124,7 @@ CMakeFiles/qser.dir/src/helpers/helpers.c.s: cmake_force
 
 CMakeFiles/qser.dir/src/pidController/pidController.c.o: CMakeFiles/qser.dir/flags.make
 CMakeFiles/qser.dir/src/pidController/pidController.c.o: ../src/pidController/pidController.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/qser.dir/src/pidController/pidController.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/qser.dir/src/pidController/pidController.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/pidController/pidController.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c
 
 CMakeFiles/qser.dir/src/pidController/pidController.c.i: cmake_force
@@ -155,7 +155,7 @@ qser: CMakeFiles/qser.dir/src/helpers/helpers.c.o
 qser: CMakeFiles/qser.dir/src/pidController/pidController.c.o
 qser: CMakeFiles/qser.dir/build.make
 qser: CMakeFiles/qser.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable qser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable qser"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qser.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -168,6 +168,6 @@ CMakeFiles/qser.dir/clean:
 .PHONY : CMakeFiles/qser.dir/clean
 
 CMakeFiles/qser.dir/depend:
-	cd /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-release/CMakeFiles/qser.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles/qser.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/qser.dir/depend
 
