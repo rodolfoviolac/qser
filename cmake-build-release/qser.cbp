@@ -78,6 +78,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.c">
+			<Option target="qser"/>
+		</Unit>
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.h">
+			<Option target="qser"/>
+		</Unit>
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.c">
 			<Option target="qser"/>
 		</Unit>
@@ -93,10 +99,10 @@
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h">
 			<Option target="qser"/>
 		</Unit>
-		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c">
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.c">
 			<Option target="qser"/>
 		</Unit>
-		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h">
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h">
 			<Option target="qser"/>
 		</Unit>
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c">

@@ -13,9 +13,17 @@ int handlePwm(int dcAmount) {
     return TRUE;
 }
 
-int qserInitializer(int dcAmount) {
-    printf("[INFO] - Initializing Quanser");
-
+int qserInitializer() {
+    if(DEBUG) printf("[INFO] - Initializing Qser \n");
+    int initialPwaValue = 0;
+    if(handlePwm(initialPwaValue) ==  FALSE){
+        fprintf(stderr, "[ERROR] - Error While Trying To Set PWM Initialization\n");
+        exit(0);
+    }
+    qserBreak();
+    decoderInitializer(SPI_DEFAULT_SPEED);
+    clearDecoder();
+    return TRUE;
 }
 
 int qserBreak() {
@@ -116,5 +124,23 @@ void* jointPositionLimitTwoHandler() {
         }
         JPL_REACHED_STATUS_TWO = dataTwo;
     }
+    return NULL;
+}
+
+void* goToTargetPositionHandler(){
+    if(DEBUG) printf("[DEBUG] - Starting goTo Target Position Handler Thread \n");
+    int currentPosition = readDecoderCounter();
+    while(TRUE) {
+        if(pidStatus == TRUE) {
+            float voltage = (float)pidHandler(currentPosition);
+            if(qserVoltage(voltage) == 0) {
+                fprintf(stderr, "[ERROR] - Error While Trying To Move Motor Position\n");
+                return FALSE;
+            }
+            currentPosition = readDecoderCounter();
+        }
+        usleep(100);
+    }
+    printf("[INFO] - Reached The End goToTargetPositionHandler Thread\n");
     return NULL;
 }

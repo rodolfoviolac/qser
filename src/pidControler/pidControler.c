@@ -1,4 +1,4 @@
-#include "pidController.h"
+#include "pidControler.h"
 
 /** @brief Ganho integral */
 double controlKi = 0.0;
@@ -16,7 +16,7 @@ double conversionCoefficientUnit = 294.0;
 int pidStatus = 0;
 
 int setTarget(int newTarget) {
-    if(DEBUG) printf("[DEBUG] - Starting setTarget pidController");
+    if(DEBUG) printf("[DEBUG] - Starting setTarget pidControler");
     targetLocation = newTarget;
     errorDeviation = 0.0;
     allErrorsSummation = 0.0;
@@ -26,7 +26,7 @@ int setTarget(int newTarget) {
 }
 
 void turnOnPid(){
-    if(DEBUG) printf("[DEBUG] - Starting turnOnPidStatus pidController \n");
+    if(DEBUG) printf("[DEBUG] - Starting turnOnPidStatus pidControler \n");
     if(pidStatus == FALSE){
         if(DEBUG) printf("[DEBUG] - Setting pidStatus TRUE \n");
         pidStatus = TRUE;
@@ -34,7 +34,7 @@ void turnOnPid(){
 }
 
 void turnOffPid(){
-    if(DEBUG) printf("[DEBUG] - Starting turnOffPidStatus pidController \n");
+    if(DEBUG) printf("[DEBUG] - Starting turnOffPidStatus pidControler \n");
     if(pidStatus == TRUE){
         if(DEBUG) printf("[DEBUG] - Setting pidStatus FALSE \n");
         pidStatus = FALSE;
@@ -43,31 +43,31 @@ void turnOffPid(){
 
 
 void setControlKp(double newKp){
-    if(DEBUG) printf("[DEBUG] - Starting setControlKp pidController \n");
+    if(DEBUG) printf("[DEBUG] - Starting setControlKp pidControler \n");
     controlKp = newKp;
     printf("[INFO] - controlKp Value: %f \n", controlKp);
 }
 
 void setControlKd(double newKd){
-    if(DEBUG) printf("[DEBUG] - Starting setControlKd pidController \n");
+    if(DEBUG) printf("[DEBUG] - Starting setControlKd pidControler \n");
     controlKd = newKd;
     printf("[INFO] - controlKd Value: %f \n", controlKd);
 }
 
 void setControlKi(double newKi){
-    if(DEBUG) printf("[DEBUG] - Starting setControlKi pidController \n");
+    if(DEBUG) printf("[DEBUG] - Starting setControlKi pidControler \n");
     controlKi = newKi;
     printf("[INFO] - controlKi Value: %f \n", controlKi);
 }
 
 void setConversionCoefficientUnit(double newConversionCoefficientUnit){
-    if(DEBUG) printf("[DEBUG] - Starting setConversionCoefficientUnit pidController \n");
+    if(DEBUG) printf("[DEBUG] - Starting setConversionCoefficientUnit pidControler \n");
     conversionCoefficientUnit = newConversionCoefficientUnit;
     printf("[INFO] - conversionCoefficientUnit Value: %f \n", conversionCoefficientUnit);
 }
 
 double pidHandler(int currentPosition){
-    if(DEBUG) printf("[DEBUG] - Starting pidHandler pidController \n");
+    if(DEBUG) printf("[DEBUG] - Starting pidHandler pidControler \n");
     double pidUnitVoltage;
     double pPart;
     double iPart;

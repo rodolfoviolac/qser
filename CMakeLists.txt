@@ -3,4 +3,4 @@ project(qser C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(qser src/main.c src/mainThread/mainThread.c src/mainThread/mainThread.h src/userInterface/userInterface.c src/userInterface/userInterface.h src/quanserInterface/quanserInterface.c src/quanserInterface/quanserInterface.h src/helpers/helpers.c src/helpers/helpers.h src/pidController/pidController.c src/pidController/pidController.h)
+add_executable(qser src/main.c src/mainThread/mainThread.c src/mainThread/mainThread.h src/userInterface/userInterface.c src/userInterface/userInterface.h src/quanserInterface/quanserInterface.c src/quanserInterface/quanserInterface.h src/helpers/helpers.c src/helpers/helpers.h src/pidControler/pidControler.c src/pidControler/pidControler.h src/decoderInterface/decoderInterface.c src/decoderInterface/decoderInterface.h)

@@ -122,18 +122,31 @@ CMakeFiles/qser.dir/src/helpers/helpers.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/qser.dir/src/helpers/helpers.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.c -o CMakeFiles/qser.dir/src/helpers/helpers.c.s
 
-CMakeFiles/qser.dir/src/pidController/pidController.c.o: CMakeFiles/qser.dir/flags.make
-CMakeFiles/qser.dir/src/pidController/pidController.c.o: ../src/pidController/pidController.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/qser.dir/src/pidController/pidController.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/pidController/pidController.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c
+CMakeFiles/qser.dir/src/pidControler/pidControler.c.o: CMakeFiles/qser.dir/flags.make
+CMakeFiles/qser.dir/src/pidControler/pidControler.c.o: ../src/pidControler/pidControler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/qser.dir/src/pidControler/pidControler.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/pidControler/pidControler.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.c
 
-CMakeFiles/qser.dir/src/pidController/pidController.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/qser.dir/src/pidController/pidController.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c > CMakeFiles/qser.dir/src/pidController/pidController.c.i
+CMakeFiles/qser.dir/src/pidControler/pidControler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/qser.dir/src/pidControler/pidControler.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.c > CMakeFiles/qser.dir/src/pidControler/pidControler.c.i
 
-CMakeFiles/qser.dir/src/pidController/pidController.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/qser.dir/src/pidController/pidController.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c -o CMakeFiles/qser.dir/src/pidController/pidController.c.s
+CMakeFiles/qser.dir/src/pidControler/pidControler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/qser.dir/src/pidControler/pidControler.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.c -o CMakeFiles/qser.dir/src/pidControler/pidControler.c.s
+
+CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o: CMakeFiles/qser.dir/flags.make
+CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o: ../src/decoderInterface/decoderInterface.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o   -c /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.c
+
+CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.c > CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.i
+
+CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.c -o CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.s
 
 # Object files for target qser
 qser_OBJECTS = \
@@ -142,7 +155,8 @@ qser_OBJECTS = \
 "CMakeFiles/qser.dir/src/userInterface/userInterface.c.o" \
 "CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o" \
 "CMakeFiles/qser.dir/src/helpers/helpers.c.o" \
-"CMakeFiles/qser.dir/src/pidController/pidController.c.o"
+"CMakeFiles/qser.dir/src/pidControler/pidControler.c.o" \
+"CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o"
 
 # External object files for target qser
 qser_EXTERNAL_OBJECTS =
@@ -152,10 +166,11 @@ qser: CMakeFiles/qser.dir/src/mainThread/mainThread.c.o
 qser: CMakeFiles/qser.dir/src/userInterface/userInterface.c.o
 qser: CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o
 qser: CMakeFiles/qser.dir/src/helpers/helpers.c.o
-qser: CMakeFiles/qser.dir/src/pidController/pidController.c.o
+qser: CMakeFiles/qser.dir/src/pidControler/pidControler.c.o
+qser: CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o
 qser: CMakeFiles/qser.dir/build.make
 qser: CMakeFiles/qser.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable qser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable qser"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qser.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

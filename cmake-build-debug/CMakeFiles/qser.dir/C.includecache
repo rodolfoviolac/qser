@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.c
+decoderInterface.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.h
+
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.h
+
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
 fcntl.h
 -
@@ -37,8 +43,8 @@ mainThread.h
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
 ../quanserInterface/quanserInterface.h
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
-../pidController/pidController.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h
+../pidControler/pidControler.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h
 stdio.h
 -
 string.h
@@ -46,13 +52,19 @@ string.h
 stdlib.h
 -
 
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c
-pidController.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.c
+pidControler.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h
 
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h
 ../helpers/helpers.h
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
+../quanserInterface/quanserInterface.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
+
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c
+quanserInterface.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
 
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
 stdio.h
@@ -65,10 +77,10 @@ unistd.h
 -
 ../helpers/helpers.h
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
-
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c
-userInterface.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
+../pidControler/pidControler.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h
+../decoderInterface/decoderInterface.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.h
 
 /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
 stdio.h

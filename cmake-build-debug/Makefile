@@ -123,6 +123,33 @@ qser/fast:
 	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/build
 .PHONY : qser/fast
 
+src/decoderInterface/decoderInterface.o: src/decoderInterface/decoderInterface.c.o
+
+.PHONY : src/decoderInterface/decoderInterface.o
+
+# target to build an object file
+src/decoderInterface/decoderInterface.c.o:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o
+.PHONY : src/decoderInterface/decoderInterface.c.o
+
+src/decoderInterface/decoderInterface.i: src/decoderInterface/decoderInterface.c.i
+
+.PHONY : src/decoderInterface/decoderInterface.i
+
+# target to preprocess a source file
+src/decoderInterface/decoderInterface.c.i:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.i
+.PHONY : src/decoderInterface/decoderInterface.c.i
+
+src/decoderInterface/decoderInterface.s: src/decoderInterface/decoderInterface.c.s
+
+.PHONY : src/decoderInterface/decoderInterface.s
+
+# target to generate assembly for a file
+src/decoderInterface/decoderInterface.c.s:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.s
+.PHONY : src/decoderInterface/decoderInterface.c.s
+
 src/helpers/helpers.o: src/helpers/helpers.c.o
 
 .PHONY : src/helpers/helpers.o
@@ -204,32 +231,32 @@ src/mainThread/mainThread.c.s:
 	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/mainThread/mainThread.c.s
 .PHONY : src/mainThread/mainThread.c.s
 
-src/pidController/pidController.o: src/pidController/pidController.c.o
+src/pidControler/pidControler.o: src/pidControler/pidControler.c.o
 
-.PHONY : src/pidController/pidController.o
+.PHONY : src/pidControler/pidControler.o
 
 # target to build an object file
-src/pidController/pidController.c.o:
-	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidController/pidController.c.o
-.PHONY : src/pidController/pidController.c.o
+src/pidControler/pidControler.c.o:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidControler/pidControler.c.o
+.PHONY : src/pidControler/pidControler.c.o
 
-src/pidController/pidController.i: src/pidController/pidController.c.i
+src/pidControler/pidControler.i: src/pidControler/pidControler.c.i
 
-.PHONY : src/pidController/pidController.i
+.PHONY : src/pidControler/pidControler.i
 
 # target to preprocess a source file
-src/pidController/pidController.c.i:
-	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidController/pidController.c.i
-.PHONY : src/pidController/pidController.c.i
+src/pidControler/pidControler.c.i:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidControler/pidControler.c.i
+.PHONY : src/pidControler/pidControler.c.i
 
-src/pidController/pidController.s: src/pidController/pidController.c.s
+src/pidControler/pidControler.s: src/pidControler/pidControler.c.s
 
-.PHONY : src/pidController/pidController.s
+.PHONY : src/pidControler/pidControler.s
 
 # target to generate assembly for a file
-src/pidController/pidController.c.s:
-	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidController/pidController.c.s
-.PHONY : src/pidController/pidController.c.s
+src/pidControler/pidControler.c.s:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidControler/pidControler.c.s
+.PHONY : src/pidControler/pidControler.c.s
 
 src/quanserInterface/quanserInterface.o: src/quanserInterface/quanserInterface.c.o
 
@@ -294,6 +321,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... qser"
+	@echo "... src/decoderInterface/decoderInterface.o"
+	@echo "... src/decoderInterface/decoderInterface.i"
+	@echo "... src/decoderInterface/decoderInterface.s"
 	@echo "... src/helpers/helpers.o"
 	@echo "... src/helpers/helpers.i"
 	@echo "... src/helpers/helpers.s"
@@ -303,9 +333,9 @@ help:
 	@echo "... src/mainThread/mainThread.o"
 	@echo "... src/mainThread/mainThread.i"
 	@echo "... src/mainThread/mainThread.s"
-	@echo "... src/pidController/pidController.o"
-	@echo "... src/pidController/pidController.i"
-	@echo "... src/pidController/pidController.s"
+	@echo "... src/pidControler/pidControler.o"
+	@echo "... src/pidControler/pidControler.i"
+	@echo "... src/pidControler/pidControler.s"
 	@echo "... src/quanserInterface/quanserInterface.o"
 	@echo "... src/quanserInterface/quanserInterface.i"
 	@echo "... src/quanserInterface/quanserInterface.s"
