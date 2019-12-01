@@ -5,7 +5,7 @@ FLAGS=-O2 -Wall -I./include
 
 all: qser
 
-qser: quanserInterface.o userInterface.o helpers.o mainThread.o main.o
+qser: pidController.o decoderInterface.o quanserInterface.o userInterface.o helpers.o mainThread.o main.o
 	@echo "Building Qser..."
 	$(CC) $(FLAGS) $(OBJPATH)* -o qser -lpthread
 
@@ -24,11 +24,11 @@ quanserInterface.o: $(SRCPATH)quanserInterface/quanserInterface.c
 userInterface.o: $(SRCPATH)userInterface/userInterface.c
 	$(CC) $(FLAGS) -c $(SRCPATH)userInterface/userInterface.c -o $(OBJPATH)userInterface.o
 
-pidController.o: $(SRCPATH)pidController/pidController.c
-    $(CC) $(FLAGS) -c $(SRCPATH)pidController/pidController.c -o $(OBJPATH)pidController.o
+pidController.o: $(SRCPATH)pidControler/pidControler.c
+	$(CC) $(FLAGS) -c $(SRCPATH)pidControler/pidControler.c -o $(OBJPATH)pidController.o
 
 decoderInterface.o: $(SRCPATH)decoderInterface/decoderInterface.c
-    $(CC) $(FLAGS) -c $(SRCPATH)decoderInterface/decoderInterface.c -o $(OBJPATH)decoderInterface.o
+	$(CC) $(FLAGS) -c $(SRCPATH)decoderInterface/decoderInterface.c -o $(OBJPATH)decoderInterface.o
 
 docs: Doxyfile DoxygenLayout.xml README.md LICENSE.md
 	@echo "Building Doxygen..."
