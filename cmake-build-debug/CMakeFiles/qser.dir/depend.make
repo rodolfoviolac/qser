@@ -3,6 +3,7 @@
 
 CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o: ../src/decoderInterface/decoderInterface.c
 CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o: ../src/decoderInterface/decoderInterface.h
+CMakeFiles/qser.dir/src/decoderInterface/decoderInterface.c.o: ../src/helpers/helpers.h
 
 CMakeFiles/qser.dir/src/helpers/helpers.c.o: ../src/helpers/helpers.c
 CMakeFiles/qser.dir/src/helpers/helpers.c.o: ../src/helpers/helpers.h

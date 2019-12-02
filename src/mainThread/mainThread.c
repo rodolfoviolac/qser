@@ -106,6 +106,7 @@ void* handlerMainThread() {
                 if(DEBUG) printf("[DEBUG] - Got EXIT Option MainThread");
                 qserBreak();
                 turnOffPid();
+                wrapUpDecoder();
                 printf("[INFO] - Finishing Application...\n");
                 exit(0);
             }

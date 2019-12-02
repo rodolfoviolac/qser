@@ -90,6 +90,9 @@
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h">
 			<Option target="qser"/>
 		</Unit>
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/spidev.h">
+			<Option target="qser"/>
+		</Unit>
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/main.c">
 			<Option target="qser"/>
 		</Unit>
