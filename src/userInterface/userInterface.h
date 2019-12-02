@@ -14,6 +14,9 @@
 #define OPTION_SET_KD 9
 #define OPTION_SET_KI 10
 #define OPTION_SET_CCU 11
+#define OPTION_CLEAR_DEC 12
+#define OPTION_READ_DEC 13
+#define OPTION_READ_DEC_RAD 14
 
 
 void printUserOptions();

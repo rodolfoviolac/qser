@@ -3,5 +3,5 @@ IP=192.168.0.114
 SOURCE=./../../qser/src
 DESTINATION=/home/root/qser
 
-#chmod +x ./send
-sudo scp -r $SOURCE root@$IP:$DESTINATION
+chmod +x send
+scp -r $SOURCE root@$IP:$DESTINATION

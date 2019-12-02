@@ -1,7 +1,7 @@
 #include "quanserInterface.h"
 
 int handlePwm(int dcAmount) {
-    if(DEBUG) printf("[DEBUG] - Starting handlePwm");
+    if(DEBUG) printf("[DEBUG] - Starting handlePwm\n");
     if(IS_RUNNING_LOCAL) return TRUE;
     char data[20];
     snprintf(data, sizeof(data), "%d\n", dcAmount);
@@ -27,20 +27,20 @@ int qserInitializer() {
 }
 
 int qserBreak() {
-    if(DEBUG) printf("[DEBUG] - Starting qserBreak");
+    if(DEBUG) printf("[DEBUG] - Starting qserBreak\n");
     if(IS_RUNNING_LOCAL) return TRUE;
     if(writeHandler("/sys/class/gpio/gpio38/value", "0") < 0) {
         printf("[INFO] - Error Writing qserBreak File Value to Zero");
         return FALSE;
     }
-    if(DEBUG) printf("[DEBUG] - Finishing qserBreak");
+    if(DEBUG) printf("[DEBUG] - Finishing qserBreak\n");
     return TRUE;
 }
 
 int qserVoltage(float voltage) {
-    if(DEBUG) printf("[DEBUG] - Starting qserVoltage");
+    if(DEBUG) printf("[DEBUG] - Starting qserVoltage\n");
     float dcAmount = (( voltage + QSER_VOLTAGE ) / ( 2 * QSER_VOLTAGE )) * atof(PWM_PERIOD);
-    if(DEBUG) printf("[DEBUG] - Finishing qserVoltage");
+    if(DEBUG) printf("[DEBUG] - Finishing qserVoltage\n");
     return handlePwm((int)dcAmount);
 }
 

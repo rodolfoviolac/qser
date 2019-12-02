@@ -5,6 +5,9 @@ void printUserOptions(){
     printf("--> speed [0 - 100] \n");
     printf("--> goforv [-V - +V] \n");
     printf("--> shiftrad [π - 2π] (double value) \n");
+    printf("--> cleardec \n");
+    printf("--> spitdec \n");
+    printf("--> spitdecrad \n");
     printf("--> jpl \n");
     printf("--> break \n");
     printf("--> help \n");
@@ -32,5 +35,8 @@ int resolveOption(char* cmd) {
     else if (strncmp(cmd, "setkd", 5) == 0) { return OPTION_SET_KD; }
     else if (strncmp(cmd, "setki", 5) == 0) { return OPTION_SET_KI; }
     else if (strncmp(cmd, "setccu", 6) == 0) { return OPTION_SET_CCU; }
+    else if (strcmp(cmd, "cleardec\n") == 0) { return OPTION_CLEAR_DEC; }
+    else if (strcmp(cmd, "spitdec\n") == 0) { return OPTION_READ_DEC; }
+    else if (strcmp(cmd, "spitdecrad\n") == 0) { return OPTION_READ_DEC_RAD; }
     else return OPTION_INVALID;
 }
