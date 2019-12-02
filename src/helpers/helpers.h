@@ -5,7 +5,7 @@
 #ifndef QSER_HELPERS_H
 #define QSER_HELPERS_H
 #define IS_RUNNING_LOCAL 0
-#define DEBUG 1
+#define DEBUG 0
 #define TRUE 1
 #define FALSE 0
 #define PI 3.141592653589793238462643383279
