@@ -1,25 +1,39 @@
 #include "quanserInterface.h"
 
+int lastSpeed = 500000;
+int waitingTimeBetweenChangeSpeed = 250000;
+
 int handlePwm(int dcAmount) {
     if(DEBUG) printf("[DEBUG] - Starting handlePwm\n");
     if(IS_RUNNING_LOCAL) return TRUE;
-    char data[20];
-    snprintf(data, sizeof(data), "%d\n", dcAmount);
+    char dataHalf[20];
+    char dataFull[20];
+    char dataOneThird[20];
+    int halfValue = (dcAmount + lastSpeed) / 2;
+    int oneThirdValue = (dcAmount + halfValue) / 2;
+    snprintf(dataHalf, sizeof(dataHalf), "%d\n", halfValue);
+    snprintf(dataFull, sizeof(dataFull), "%d\n", dcAmount);
+    snprintf(dataOneThird, sizeof(dataOneThird), "%d\n", oneThirdValue);
     if(writeHandler("/sys/class/gpio/gpio38/value", "1") < 0) return FALSE;
     if(writeHandler("/sys/class/pwm/pwmchip0/pwm1/enable", "1") < 0) return FALSE;
     if(writeHandler("/sys/class/pwm/pwmchip0/device/pwm_period", PWM_PERIOD) < 0) return FALSE;
-    if(writeHandler("/sys/class/pwm/pwmchip0/pwm1/duty_cycle", data) < 0) return FALSE;
+    if(writeHandler("/sys/class/pwm/pwmchip0/pwm1/duty_cycle", dataHalf) < 0) return FALSE;
+    usleep(waitingTimeBetweenChangeSpeed);
+    if(writeHandler("/sys/class/pwm/pwmchip0/pwm1/duty_cycle", dataOneThird) < 0) return FALSE;
+    usleep(waitingTimeBetweenChangeSpeed);
+    if(writeHandler("/sys/class/pwm/pwmchip0/pwm1/duty_cycle", dataFull) < 0) return FALSE;
+    lastSpeed = dcAmount;
     if(DEBUG) printf("[DEBUG] - Finishing handlePwm");
     return TRUE;
 }
 
 int qserInitializer() {
     if(DEBUG) printf("[INFO] - Initializing Qser \n");
-    int initialPwaValue = 0;
-    if(handlePwm(initialPwaValue) ==  FALSE){
-        fprintf(stderr, "[ERROR] - Error While Trying To Set PWM Initialization\n");
-        exit(0);
-    }
+//    int initialPwaValue = 0;
+//    if(handlePwm(initialPwaValue) ==  FALSE){
+//        fprintf(stderr, "[ERROR] - Error While Trying To Set PWM Initialization\n");
+//        exit(0);
+//    }
     qserBreak();
     decoderInitializer(SPI_DEFAULT_SPEED);
     clearDecoder();

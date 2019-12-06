@@ -20,7 +20,7 @@ int setTarget(int newTarget) {
     targetLocation = newTarget;
     errorDeviation = 0.0;
     allErrorsSummation = 0.0;
-    printf("[INFO] - new Target Location set to %d", targetLocation);
+    printf("[INFO] - new Target Location set to %d \n", targetLocation);
     if(DEBUG) printf("[DEBUG] - Set targetLocation to %d \n", targetLocation);
     return TRUE;
 }
