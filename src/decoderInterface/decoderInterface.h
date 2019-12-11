@@ -1,4 +1,4 @@
-// Quanser Qser Aplication
+// Qser Aplication
 // Copyright (C) 2019 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
 //
 // This program is free software: you can redistribute it and/or modify

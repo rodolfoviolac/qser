@@ -1,4 +1,4 @@
-// Quanser Qser Aplication
+// Qser Aplication
 // Copyright (C) 2019 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
 //
 // This program is free software: you can redistribute it and/or modify
@@ -26,6 +26,8 @@
 /**
  * @brief Write Handler For Helping Writing To Files
  * Funcao para facilitar a escrita em arquivos.
+ * @param Caminho do Arquivo e a Informacao de Escrita
+ * @return Retorna o Status da Escrita
  */
 int writeHandler(const char filePath[], const char data[]){
     if(DEBUG) printf("[DEBUG] - Starting Writing File");
@@ -47,6 +49,8 @@ int writeHandler(const char filePath[], const char data[]){
 /**
  * @brief Read Handler For Helping Reading From Files
  * Funcao Para Facilitar a Leitra de Arquivos.
+ * @param Caminho do Arquivo e a Informacao de Leitura e Tamannho
+ * @return Retorna a Informacao Lida
  */
 char *readHandler(char *data, int size, const char filePath[]){
     if(DEBUG) printf("[DEBUG] - Starting Reading File");

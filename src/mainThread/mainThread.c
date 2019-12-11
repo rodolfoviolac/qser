@@ -1,3 +1,26 @@
+// Qser Aplication
+// Copyright (C) 2019 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+/**
+ * @file mainThread.c
+ * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
+ * @date 11 Dec 2019
+ * @brief  Principal Function For Handling User Flow. Listening For Commands.
+ */
+
 #include "mainThread.h"
 int JPL_REACHED_STATUS_ONE = 0;
 int JPL_REACHED_STATUS_TWO = 0;

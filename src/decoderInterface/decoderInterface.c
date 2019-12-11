@@ -1,4 +1,4 @@
-// Quanser Qser Aplication
+// Qser Aplication
 // Copyright (C) 2019 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
 //
 // This program is free software: you can redistribute it and/or modify
@@ -29,6 +29,7 @@ uint32_t frequencyRate = 0;
 /**
  * @brief Read Decoder With SPI IOC TRANSFER
  * Funcao para Fazer a Leitura do Decoder e Retornar Valor do Contador Lido.
+ * @return Retorna o Status da Inicializacao Sendo, 1 feita com Sucesso.
  */
 int readDecoderCounter(){
     if(DEBUG) printf("[DEBUG] - Starting readDecoderCounter Function \n");
