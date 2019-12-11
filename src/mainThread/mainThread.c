@@ -25,6 +25,11 @@
 int JPL_REACHED_STATUS_ONE = 0;
 int JPL_REACHED_STATUS_TWO = 0;
 
+
+/**
+ * @brief Main Thread For Hanling User Interface and Commands.
+ * Thread responsavel por esperar comando do usuario e fazer a chamad necessaria da API para executar a acao.
+ */
 void* handlerMainThread() {
     if(DEBUG) printf("[DEBUG] - Starting handlerMainThread \n");
     printUserGroupsName();

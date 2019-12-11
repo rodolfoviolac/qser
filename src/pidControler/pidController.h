@@ -15,23 +15,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * @file mainThread.h
+ * @file pidController.h
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Header File for The Main Thread.
+ * @brief  Header File for The PID Controller.
  */
-
-
-#ifndef QSER_MAINTHREAD_H
-#define QSER_MAINTHREAD_H
-#include "../userInterface/userInterface.h"
+#ifndef QSER_PIDCONTROLLER_H
+#define QSER_PIDCONTROLLER_H
+#include "../helpers/helpers.h"
 #include "../quanserInterface/quanserInterface.h"
-#include "../pidControler/pidController.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-extern double conversionCoefficientUnit;
-extern int pidStatus;
-void* handlerMainThread();
 
-#endif //QSER_MAINTHREAD_H
+int setTarget(int newTarget);
+void turnOnPid();
+void turnOffPid();
+void setControlKp(double newKp);
+void setControlKd(double newKd);
+void setControlKi(double newKi);
+void setConversionCoefficientUnit(double newConversionCoefficientUnit);
+double pidHandler(int currentPosition);
+
+#endif //QSER_PIDCONTROLLER_H
