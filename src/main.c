@@ -18,7 +18,7 @@
  * @file main.c
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Initial File
+ * @brief  Função principal, responsável pela chamada das demais rotinas.
  */
 
 #include <stdio.h>
@@ -27,8 +27,8 @@
 #include "mainThread/mainThread.h"
 
 /**
- * @brief Main File For Entrance Of The Qser
- * Funcao main responsavel pela criacao das thread do usuario.
+ * @brief Função principal.
+ * Rotinal main responsável pela inicialização do Qser e criação das thread do usuário.
  */
 int main() {
     if(DEBUG) printf("[DEBUG] - Starting Application \n");

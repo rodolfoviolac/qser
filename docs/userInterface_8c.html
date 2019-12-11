@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('userInterface_8c.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Header File for The User Interface.  
+<p>Funções para manipular e escrever no terminal.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="userInterface_8h_source.html">userInterface.h</a>&quot;</code><br />
 </div>
@@ -112,25 +112,90 @@ $(document).ready(function(){initNavTree('userInterface_8c.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4b9e2beb67256f2c06b39d24bc83e28d"><td class="memItemLeft" align="right" valign="top"><a id="a4b9e2beb67256f2c06b39d24bc83e28d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="userInterface_8c.html#a4b9e2beb67256f2c06b39d24bc83e28d">printUserOptions</a> ()</td></tr>
-<tr class="memdesc:a4b9e2beb67256f2c06b39d24bc83e28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function For Print Users Options Funcao para imprimir no Terminal os Comandos Possiveis para o usuario. <br /></td></tr>
+<tr class="memitem:a4b9e2beb67256f2c06b39d24bc83e28d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="userInterface_8c.html#a4b9e2beb67256f2c06b39d24bc83e28d">printUserOptions</a> ()</td></tr>
+<tr class="memdesc:a4b9e2beb67256f2c06b39d24bc83e28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para imprimir opções para usuário. Rotina para imprimir no terminal os comandos possíveis para o usuário.  <a href="userInterface_8c.html#a4b9e2beb67256f2c06b39d24bc83e28d">More...</a><br /></td></tr>
 <tr class="separator:a4b9e2beb67256f2c06b39d24bc83e28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad08d5cb2ed8e6805573049fd31dab2db"><td class="memItemLeft" align="right" valign="top"><a id="ad08d5cb2ed8e6805573049fd31dab2db"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="userInterface_8c.html#ad08d5cb2ed8e6805573049fd31dab2db">printUserGroupsName</a> ()</td></tr>
-<tr class="memdesc:ad08d5cb2ed8e6805573049fd31dab2db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function For Print Members Name Funcao para Imprimir no Terminal os Nomes dos Integrantes do Grupo. <br /></td></tr>
+<tr class="memitem:ad08d5cb2ed8e6805573049fd31dab2db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="userInterface_8c.html#ad08d5cb2ed8e6805573049fd31dab2db">printUserGroupsName</a> ()</td></tr>
+<tr class="memdesc:ad08d5cb2ed8e6805573049fd31dab2db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para imprimir nome de integrantes.  <a href="userInterface_8c.html#ad08d5cb2ed8e6805573049fd31dab2db">More...</a><br /></td></tr>
 <tr class="separator:ad08d5cb2ed8e6805573049fd31dab2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace06aeff812973e632f2da24f34dcd39"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="userInterface_8c.html#ace06aeff812973e632f2da24f34dcd39">resolveOption</a> (char *cmd)</td></tr>
-<tr class="memdesc:ace06aeff812973e632f2da24f34dcd39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function For Handling User Input Options Funcao para retornar a opcao escolhida pelo usuario no menu de opcoes.  <a href="userInterface_8c.html#ace06aeff812973e632f2da24f34dcd39">More...</a><br /></td></tr>
+<tr class="memdesc:ace06aeff812973e632f2da24f34dcd39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função de validação de comando. Rotina para mapear a opções digitada pelo usuário no menu de opções.  <a href="userInterface_8c.html#ace06aeff812973e632f2da24f34dcd39">More...</a><br /></td></tr>
 <tr class="separator:ace06aeff812973e632f2da24f34dcd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header File for The User Interface. </p>
+<div class="textblock"><p>Funções para manipular e escrever no terminal. </p>
 <dl class="section author"><dt>Author</dt><dd>Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>11 Dec 2019 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="userInterface_8c_source.html">userInterface.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="ad08d5cb2ed8e6805573049fd31dab2db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad08d5cb2ed8e6805573049fd31dab2db">&#9670;&nbsp;</a></span>printUserGroupsName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printUserGroupsName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para imprimir nome de integrantes. </p>
+<p>Rotina para imprimir no terminal os nome dos integrantes do grupo</p>
+<dl class="section return"><dt>Returns</dt><dd>Void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="userInterface_8c_source.html#l00056">56</a> of file <a class="el" href="userInterface_8c_source.html">userInterface.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                          {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    printf(<span class="stringliteral">&quot;########### QSER 2019/2 ##############\n&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    printf(<span class="stringliteral">&quot;&gt; Rodolfo Viola Carvalho\n&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    printf(<span class="stringliteral">&quot;&gt; Gabriel Alexandre Zillmer\n&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    printf(<span class="stringliteral">&quot;&gt; Felipe Fuhr Dos Reis\n&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    printf(<span class="stringliteral">&quot;######################################\n\n&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4b9e2beb67256f2c06b39d24bc83e28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9e2beb67256f2c06b39d24bc83e28d">&#9670;&nbsp;</a></span>printUserOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printUserOptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para imprimir opções para usuário. Rotina para imprimir no terminal os comandos possíveis para o usuário. </p>
+<p>São Commandos Possíveis: Speed, goforv, shiftrad, cleardec, getdec, getdecrad, jpl, break, help e exit</p>
+<dl class="section return"><dt>Returns</dt><dd>Void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="userInterface_8c_source.html#l00034">34</a> of file <a class="el" href="userInterface_8c_source.html">userInterface.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                       {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    printf(<span class="stringliteral">&quot;########### QSER OPTIONS ##############\n\n&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; speed [0 - 100] \n&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; goforv [-V - +V] \n&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; shiftrad [π - 2π] (double value) \n&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; cleardec \n&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; getdec \n&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; getdecrad \n&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; jpl \n&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; break \n&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; help \n&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    printf(<span class="stringliteral">&quot;--&gt; exit \n\n&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    printf(<span class="stringliteral">&quot;######################################\n\n&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ace06aeff812973e632f2da24f34dcd39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace06aeff812973e632f2da24f34dcd39">&#9670;&nbsp;</a></span>resolveOption()</h2>
 
@@ -147,43 +212,44 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user
       </table>
 </div><div class="memdoc">
 
-<p>Function For Handling User Input Options Funcao para retornar a opcao escolhida pelo usuario no menu de opcoes. </p>
+<p>Função de validação de comando. Rotina para mapear a opções digitada pelo usuário no menu de opções. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Valor</td><td>digitado pelo usuario </td></tr>
+    <tr><td class="paramname">cmd</td><td>Comando digitado pelo usuário </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna o ID do do Comando Digitado Pelo Usuario </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>retorna o ID do comando digitado pelo usuário </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="userInterface_8c_source.html#l00063">63</a> of file <a class="el" href="userInterface_8c_source.html">userInterface.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                             {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;speed&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SPEED; }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;jpl\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_JPL; }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;goforv&quot;</span>, 6) == 0) { <span class="keywordflow">return</span> OPTION_GO_FOR_V; }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;break\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_QSER_BREAK; }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;help\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_HELP; }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;exit\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_EXIT; }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;shiftrad&quot;</span>, 8) == 0) { <span class="keywordflow">return</span> OPTION_SHIFT_RAD; }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;setkp&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SET_KP; }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;setkd&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SET_KD; }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;setki&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SET_KI; }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;setccu&quot;</span>, 6) == 0) { <span class="keywordflow">return</span> OPTION_SET_CCU; }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;cleardec\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_CLEAR_DEC; }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;getdec\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_READ_DEC; }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;getdecrad\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_READ_DEC_RAD; }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">return</span> OPTION_INVALID;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="userInterface_8c_source.html#l00070">70</a> of file <a class="el" href="userInterface_8c_source.html">userInterface.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                             {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;speed&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SPEED; }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;jpl\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_JPL; }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;goforv&quot;</span>, 6) == 0) { <span class="keywordflow">return</span> OPTION_GO_FOR_V; }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;break\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_QSER_BREAK; }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;help\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_HELP; }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;exit\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_EXIT; }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;shiftrad&quot;</span>, 8) == 0) { <span class="keywordflow">return</span> OPTION_SHIFT_RAD; }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;setkp&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SET_KP; }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;setkd&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SET_KD; }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;setki&quot;</span>, 5) == 0) { <span class="keywordflow">return</span> OPTION_SET_KI; }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(cmd, <span class="stringliteral">&quot;setccu&quot;</span>, 6) == 0) { <span class="keywordflow">return</span> OPTION_SET_CCU; }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;cleardec\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_CLEAR_DEC; }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;getdec\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_READ_DEC; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(cmd, <span class="stringliteral">&quot;getdecrad\n&quot;</span>) == 0) { <span class="keywordflow">return</span> OPTION_READ_DEC_RAD; }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="userInterface_8h.html#a58a559802dc87f303b0505b79f28a4fc">OPTION_INVALID</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="auserInterface_8h_html_a58a559802dc87f303b0505b79f28a4fc"><div class="ttname"><a href="userInterface_8h.html#a58a559802dc87f303b0505b79f28a4fc">OPTION_INVALID</a></div><div class="ttdeci">#define OPTION_INVALID</div><div class="ttdoc">Define os Ids para as opções para o menu.</div><div class="ttdef"><b>Definition:</b> <a href="userInterface_8h_source.html#l00029">userInterface.h:29</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_8f83ca4ebc6646d7cbbd2f1830916c8f.html">userInterface</a></li><li class="navelem"><a class="el" href="userInterface_8c.html">userInterface.c</a></li>
-    <li class="footer">Generated on Wed Dec 11 2019 02:48:27 for Qser_RoGaFe_19/2 by
+    <li class="footer">Generated on Wed Dec 11 2019 04:55:29 for Qser_RoGaFe_19/2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

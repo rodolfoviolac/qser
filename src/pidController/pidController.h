@@ -18,7 +18,7 @@
  * @file pidController.h
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Header File for The PID Controller.
+ * @brief  Cabeçalho das funções da interface do PID
  */
 #ifndef QSER_PIDCONTROLLER_H
 #define QSER_PIDCONTROLLER_H

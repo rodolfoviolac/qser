@@ -2,29 +2,28 @@
 \label{mainThread_8c}\index{src/mainThread/mainThread.c@{src/mainThread/mainThread.c}}
 
 
-Principal Function For Handling User Flow. Listening For Commands.  
+Thread Principal para controlar fluxo do usuário e comandos.  
 
 
 {\ttfamily \#include \char`\"{}main\+Thread.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{mainThread_8c_a59426b0c771489c349fbd9ddc7cf9f7a}\label{mainThread_8c_a59426b0c771489c349fbd9ddc7cf9f7a}} 
 void $\ast$ \mbox{\hyperlink{mainThread_8c_a59426b0c771489c349fbd9ddc7cf9f7a}{handler\+Main\+Thread}} ()
-\begin{DoxyCompactList}\small\item\em Main Thread For Hanling User Interface and Commands. Thread responsavel por esperar comando do usuario e fazer a chamad necessaria da A\+PI para executar a acao. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main Thread para interface com usuário e controle de fluxo. Thread responsável por esperar comando do usuário e fazer a chamad necessária da A\+PI para executar a ação. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{mainThread_8c_a1516fc9ce70a57d79877afa8ef7921f7}\label{mainThread_8c_a1516fc9ce70a57d79877afa8ef7921f7}} 
-int {\bfseries J\+P\+L\+\_\+\+R\+E\+A\+C\+H\+E\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+NE} = 0
-\item 
+int \mbox{\hyperlink{mainThread_8c_a1516fc9ce70a57d79877afa8ef7921f7}{J\+P\+L\+\_\+\+R\+E\+A\+C\+H\+E\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+NE}} = 0
+\begin{DoxyCompactList}\small\item\em Status do final de curso um. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{mainThread_8c_aa084c4495d7058b83b56b41864c10846}\label{mainThread_8c_aa084c4495d7058b83b56b41864c10846}} 
-int {\bfseries J\+P\+L\+\_\+\+R\+E\+A\+C\+H\+E\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+WO} = 0
-\end{DoxyCompactItemize}
+int \mbox{\hyperlink{mainThread_8c_aa084c4495d7058b83b56b41864c10846}{J\+P\+L\+\_\+\+R\+E\+A\+C\+H\+E\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+T\+WO}} = 0
+\begin{DoxyCompactList}\small\item\em Status do final de curso dois. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Principal Function For Handling User Flow. Listening For Commands. 
+Thread Principal para controlar fluxo do usuário e comandos. 
 
 \begin{DoxyAuthor}{Author}
 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis 
@@ -32,3 +31,169 @@ Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
 \begin{DoxyDate}{Date}
 11 Dec 2019 
 \end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mainThread_8c_a59426b0c771489c349fbd9ddc7cf9f7a}\label{mainThread_8c_a59426b0c771489c349fbd9ddc7cf9f7a}} 
+\index{mainThread.c@{mainThread.c}!handlerMainThread@{handlerMainThread}}
+\index{handlerMainThread@{handlerMainThread}!mainThread.c@{mainThread.c}}
+\doxysubsubsection{\texorpdfstring{handlerMainThread()}{handlerMainThread()}}
+{\footnotesize\ttfamily void$\ast$ handler\+Main\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main Thread para interface com usuário e controle de fluxo. Thread responsável por esperar comando do usuário e fazer a chamad necessária da A\+PI para executar a ação. 
+
+É nessa thread que é feita excutada as funções da biblioteca, repetidamente espera em um loop infito um comando de um usuário para sair e encerrar o programa é necessario um comando Exit.
+
+\begin{DoxyReturn}{Returns}
+Retorna um Ponteiro para Null 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file main\+Thread.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                           \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting handlerMainThread \(\backslash\)n"});}
+\DoxyCodeLine{42     \mbox{\hyperlink{userInterface_8c_ad08d5cb2ed8e6805573049fd31dab2db}{printUserGroupsName}}();}
+\DoxyCodeLine{43     \mbox{\hyperlink{userInterface_8c_a4b9e2beb67256f2c06b39d24bc83e28d}{printUserOptions}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{char} command[100];}
+\DoxyCodeLine{46     \textcolor{keywordflow}{while} (fgets(command, \textcolor{keyword}{sizeof}(command), stdin)) \{}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Inside Command While MainThread \(\backslash\)n"});}
+\DoxyCodeLine{48         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{userInterface_8c_ace06aeff812973e632f2da24f34dcd39}{resolveOption}}(command)) \{}
+\DoxyCodeLine{49             \textcolor{keywordflow}{case} OPTION\_SPEED: \{}
+\DoxyCodeLine{50                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got SPEED Option MainThread \(\backslash\)n"});}
+\DoxyCodeLine{51                 \textcolor{keywordtype}{float} commandAmount = atof(\&command[6]);}
+\DoxyCodeLine{52                 \textcolor{keywordflow}{if}(commandAmount > 100 || commandAmount < 0) \{}
+\DoxyCodeLine{53                     printf(\textcolor{stringliteral}{"[ERROR] -\/ Speed Amount Must Be [0-\/100]\(\backslash\)n"});}
+\DoxyCodeLine{54                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{55                     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got Valid Speed Number MainThread \(\backslash\)n"});}
+\DoxyCodeLine{56                     \textcolor{keywordtype}{float} dcAmount = (commandAmount/100)*atof(\mbox{\hyperlink{quanserInterface_8h_aacaca0988244bd3a888ca5befa89f44b}{PWM\_PERIOD}});}
+\DoxyCodeLine{57                     \textcolor{keywordflow}{if}(\mbox{\hyperlink{quanserInterface_8c_a72cb6672e7a2002cb3eed86f8d58781f}{handlePwm}}((\textcolor{keywordtype}{int})dcAmount) == 1) \{}
+\DoxyCodeLine{58                         fprintf(stdout, \textcolor{stringliteral}{"[INFO] MT -\/ Motor Duty Cycle \%d\%\%\(\backslash\)n\(\backslash\)n"}, (\textcolor{keywordtype}{int})dcAmount/10000);}
+\DoxyCodeLine{59                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{60                         printf(\textcolor{stringliteral}{"[ERROR] MT -\/ Error Turning On Motor\(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{61                     \}}
+\DoxyCodeLine{62                 \}}
+\DoxyCodeLine{63                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{64             \}}
+\DoxyCodeLine{65             \textcolor{keywordflow}{case} OPTION\_JPL: \{}
+\DoxyCodeLine{66                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got JPL Option MainThread \(\backslash\)n"});}
+\DoxyCodeLine{67                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{mainThread_8c_a1516fc9ce70a57d79877afa8ef7921f7}{JPL\_REACHED\_STATUS\_ONE}} == JPL\_REACHED)\{}
+\DoxyCodeLine{68                     printf(\textcolor{stringliteral}{"[INFO] MT -\/ JPL ONE Reached The End. State: Active [ \%d ]\(\backslash\)n"}, \mbox{\hyperlink{mainThread_8c_a1516fc9ce70a57d79877afa8ef7921f7}{JPL\_REACHED\_STATUS\_ONE}});}
+\DoxyCodeLine{69                 \} \textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"[INFO] MT -\/ READ JPL ONE. State: Inactive [ \%d ]\(\backslash\)n"}, \mbox{\hyperlink{mainThread_8c_a1516fc9ce70a57d79877afa8ef7921f7}{JPL\_REACHED\_STATUS\_ONE}});}
+\DoxyCodeLine{70                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{mainThread_8c_aa084c4495d7058b83b56b41864c10846}{JPL\_REACHED\_STATUS\_TWO}} == JPL\_REACHED)\{}
+\DoxyCodeLine{71                     printf(\textcolor{stringliteral}{"[INFO] MT -\/ JPL TWO Reached The End. State: Active [ \%d ]\(\backslash\)n\(\backslash\)n"}, \mbox{\hyperlink{mainThread_8c_aa084c4495d7058b83b56b41864c10846}{JPL\_REACHED\_STATUS\_TWO}});}
+\DoxyCodeLine{72                 \} \textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"[INFO] MT -\/ READ JPL TWO. State: Inactive [ \%d ]\(\backslash\)n\(\backslash\)n"}, \mbox{\hyperlink{mainThread_8c_aa084c4495d7058b83b56b41864c10846}{JPL\_REACHED\_STATUS\_TWO}});}
+\DoxyCodeLine{73                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{74             \}}
+\DoxyCodeLine{75             \textcolor{keywordflow}{case} OPTION\_GO\_FOR\_V: \{}
+\DoxyCodeLine{76                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got GO FOR V Option MainThread \(\backslash\)n"});}
+\DoxyCodeLine{77                 \textcolor{keywordtype}{float} commandAmount = atof(\&command[7]);}
+\DoxyCodeLine{78                 \textcolor{keywordflow}{if}(commandAmount < -\/QSER\_VOLTAGE || commandAmount > \mbox{\hyperlink{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}{QSER\_VOLTAGE}}) \{}
+\DoxyCodeLine{79                     fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Voltage Must Be On The Interval [\%+d,\%+d]\(\backslash\)n"}, (\textcolor{keywordtype}{int}) -\/\mbox{\hyperlink{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}{QSER\_VOLTAGE}}, (\textcolor{keywordtype}{int}) \mbox{\hyperlink{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}{QSER\_VOLTAGE}});}
+\DoxyCodeLine{80                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{81                     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] MT -\/ Got Accepted Voltage \(\backslash\)n"});}
+\DoxyCodeLine{82                     \textcolor{keywordflow}{if}(\mbox{\hyperlink{quanserInterface_8c_a0c496c62c73c815a5b92cd2935452dbb}{qserVoltage}}(commandAmount) == 1)  \{}
+\DoxyCodeLine{83                         fprintf(stdout, \textcolor{stringliteral}{"[INFO] -\/ Motor Triggered With Voltage  \%+.1fV\(\backslash\)n\(\backslash\)n"}, commandAmount);}
+\DoxyCodeLine{84                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{85                         fprintf(stdout, \textcolor{stringliteral}{"[ERROR] -\/ Something Went Wrong Trying To Turn On Motor\(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{86                     \}}
+\DoxyCodeLine{87                 \}}
+\DoxyCodeLine{88                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{89             \}}
+\DoxyCodeLine{90             \textcolor{keywordflow}{case} OPTION\_QSER\_BREAK: \{}
+\DoxyCodeLine{91                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got QSER BREAK Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{92                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}{qserBreak}}() == TRUE)\{}
+\DoxyCodeLine{93                     \mbox{\hyperlink{pidController_8c_aa2a62b6c21f82bd7e19c63e02d2cf01c}{turnOffPid}}();}
+\DoxyCodeLine{94                     printf(\textcolor{stringliteral}{"[INFO] -\/ Breaking Motor\(\backslash\)n"});}
+\DoxyCodeLine{95                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{96                     fprintf(stdout, \textcolor{stringliteral}{"[ERROR] -\/ Something Went Wrong Trying To Break Motor\(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{97                 \}}
+\DoxyCodeLine{98                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{99             \}}
+\DoxyCodeLine{100             \textcolor{keywordflow}{case} OPTION\_SHIFT\_RAD: \{}
+\DoxyCodeLine{101                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SHIFT\_RAD Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{102                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[9], NULL);}
+\DoxyCodeLine{103                 \textcolor{keywordflow}{if}(commandAmount < 0 || commandAmount > 2*\mbox{\hyperlink{helpers_8h_a598a3330b3c21701223ee0ca14316eca}{PI}})\{}
+\DoxyCodeLine{104                     printf(\textcolor{stringliteral}{"[Error] -\/ Radian Must Be On The Interval [0, \%f] \(\backslash\)n"}, 2*\mbox{\hyperlink{helpers_8h_a598a3330b3c21701223ee0ca14316eca}{PI}});}
+\DoxyCodeLine{105                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{106                 \}}
+\DoxyCodeLine{107                 \mbox{\hyperlink{pidController_8c_abe99aea2237bf45370f11475aab83cdd}{setTarget}}((\textcolor{keywordtype}{int})(commandAmount*RAD2G*\mbox{\hyperlink{mainThread_8h_a965fbbe1d8f665ae26133d817d846cf3}{conversionCoefficientUnit}}));}
+\DoxyCodeLine{108                 \mbox{\hyperlink{pidController_8c_ad44a79f712b96530f491cf5a841c9817}{turnOnPid}}();}
+\DoxyCodeLine{109                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{110             \}}
+\DoxyCodeLine{111             \textcolor{keywordflow}{case} OPTION\_SET\_KD: \{}
+\DoxyCodeLine{112                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_KD Option MainThread \(\backslash\)n"});}
+\DoxyCodeLine{113                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[6], NULL);}
+\DoxyCodeLine{114                 \mbox{\hyperlink{pidController_8c_a0a8eecf482506155e3b690c45f4c4e4b}{setControlKd}}(commandAmount);}
+\DoxyCodeLine{115                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{116             \}}
+\DoxyCodeLine{117             \textcolor{keywordflow}{case} OPTION\_SET\_KP: \{}
+\DoxyCodeLine{118                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_KP Option MainThread \(\backslash\)n"});}
+\DoxyCodeLine{119                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[6], NULL);}
+\DoxyCodeLine{120                 \mbox{\hyperlink{pidController_8c_a8d8cec964229574d5f0af312a00e5935}{setControlKp}}(commandAmount);}
+\DoxyCodeLine{121                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{122             \}}
+\DoxyCodeLine{123             \textcolor{keywordflow}{case} OPTION\_SET\_KI: \{}
+\DoxyCodeLine{124                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_KI Option MainThread \(\backslash\)n"});}
+\DoxyCodeLine{125                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[6], NULL);}
+\DoxyCodeLine{126                 \mbox{\hyperlink{pidController_8c_a315d3a9847f641c407ef6b32a65fd640}{setControlKi}}(commandAmount);}
+\DoxyCodeLine{127                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{128             \}}
+\DoxyCodeLine{129             \textcolor{keywordflow}{case} OPTION\_SET\_CCU: \{}
+\DoxyCodeLine{130                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_CCU Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{131                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[7], NULL);}
+\DoxyCodeLine{132                 \mbox{\hyperlink{pidController_8c_a84419a84b7812ac95cdd67086b4d2585}{setConversionCoefficientUnit}}(commandAmount);}
+\DoxyCodeLine{133                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{134             \}}
+\DoxyCodeLine{135             \textcolor{keywordflow}{case} OPTION\_CLEAR\_DEC: \{}
+\DoxyCodeLine{136                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_CLEAR\_DEC Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{137                 \mbox{\hyperlink{decoderInterface_8c_a82fe1a26c4a03de6dc52798635d4ca27}{clearDecoder}}();}
+\DoxyCodeLine{138                 printf(\textcolor{stringliteral}{"[INFO] -\/ Cleaning Decoder\(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{139                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{140             \}}
+\DoxyCodeLine{141             \textcolor{keywordflow}{case} OPTION\_READ\_DEC: \{}
+\DoxyCodeLine{142                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_READ\_DEC Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{143                 \textcolor{keywordtype}{int} counterDecoder = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
+\DoxyCodeLine{144                 printf(\textcolor{stringliteral}{"[INFO] -\/ Decoder Reading: \%d \(\backslash\)n\(\backslash\)n"}, counterDecoder);}
+\DoxyCodeLine{145                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{146             \}}
+\DoxyCodeLine{147             \textcolor{keywordflow}{case} OPTION\_READ\_DEC\_RAD: \{}
+\DoxyCodeLine{148                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_READ\_DEC\_RAD Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{149                 \textcolor{keywordtype}{int} counterDecoder = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
+\DoxyCodeLine{150                 \textcolor{keywordtype}{double} radDec = (counterDecoder / \mbox{\hyperlink{mainThread_8h_a965fbbe1d8f665ae26133d817d846cf3}{conversionCoefficientUnit}}) * CONST\_UNIT\_RAD\_MATH;}
+\DoxyCodeLine{151                 printf(\textcolor{stringliteral}{"[INFO] -\/ Decoder Reading: \%f \(\backslash\)n\(\backslash\)n"}, radDec);}
+\DoxyCodeLine{152                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{153             \}}
+\DoxyCodeLine{154             \textcolor{keywordflow}{case} OPTION\_HELP: \{}
+\DoxyCodeLine{155                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got HELP Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{156                 \mbox{\hyperlink{userInterface_8c_a4b9e2beb67256f2c06b39d24bc83e28d}{printUserOptions}}();}
+\DoxyCodeLine{157                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{158             \}}
+\DoxyCodeLine{159             \textcolor{keywordflow}{case} OPTION\_EXIT: \{}
+\DoxyCodeLine{160                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got EXIT Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{161                 \mbox{\hyperlink{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}{qserBreak}}();}
+\DoxyCodeLine{162                 \mbox{\hyperlink{pidController_8c_aa2a62b6c21f82bd7e19c63e02d2cf01c}{turnOffPid}}();}
+\DoxyCodeLine{163                 \mbox{\hyperlink{decoderInterface_8c_a75971fdf1e347a1d330cae5e15250edf}{wrapUpDecoder}}();}
+\DoxyCodeLine{164                 printf(\textcolor{stringliteral}{"[INFO] -\/ Finishing Application...\(\backslash\)n"});}
+\DoxyCodeLine{165                 exit(0);}
+\DoxyCodeLine{166             \}}
+\DoxyCodeLine{167             \textcolor{keywordflow}{case} \mbox{\hyperlink{userInterface_8h_a58a559802dc87f303b0505b79f28a4fc}{OPTION\_INVALID}}: \{}
+\DoxyCodeLine{168                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got INVALID Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{169                 printf(\textcolor{stringliteral}{"[ERROR] -\/ Command Invalid Type Help For The Command List\(\backslash\)n"});}
+\DoxyCodeLine{170                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{171             \}}
+\DoxyCodeLine{172             \textcolor{keywordflow}{default}: \{}
+\DoxyCodeLine{173                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got DEFAULT Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{174                 printf(\textcolor{stringliteral}{"[ERROR] -\/ Command Invalid Type Help For The Command List\(\backslash\)n"});}
+\DoxyCodeLine{175             \}}
+\DoxyCodeLine{176         \}}
+\DoxyCodeLine{177     \}}
+\DoxyCodeLine{178     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{179 \}}
+
+\end{DoxyCode}

@@ -40,8 +40,8 @@ double conversionCoefficientUnit = 294.0;
 int pidStatus = 0;
 
 /**
- * @brief Function For Setting New Target Position
- * Funcao Repsonsavel por Setar uma nova possicao desejada.
+ * @brief Função para setar nova posição.
+ * Rotina responsável por setar uma nova posição desejada.
  * É nesta função que são zerados os valores de parte de erros e outras variáveis já calculadas.
  * A nova posição é convertida e armazenada em targetLocation.
  * @param newTarget Nova Posicao
@@ -58,8 +58,8 @@ int setTarget(int newTarget) {
 }
 
 /**
- * @brief Function For Turn On PID
- * Funcao Responsavel Por Ligar O PID
+ * @brief Função para ligar o Pid.
+ * Rotina responsável Por Ligar O PID
  * @return Void
  */
 void turnOnPid(){
@@ -71,8 +71,8 @@ void turnOnPid(){
 }
 
 /**
- * @brief Function For Turn Off PID
- * Funcao Responsavel Por Desligar O PID
+ * @brief Função para desligar o Pid
+ * Rotina responsável por desligar O PID
  *  * @return Void
  */
 void turnOffPid(){
@@ -84,8 +84,8 @@ void turnOffPid(){
 }
 
 /**
- * @brief Function For Setting Kp Integral Value
- * Funcao Repsonsavel por Setar Kp, valor parte da integral.
+ * @brief Função para setar Kp.
+ * Rotina Repsonsavel por Setar Kp, valor parte da integral.
  * @param Novo KP
  */
 void setControlKp(double newKp){
@@ -95,8 +95,8 @@ void setControlKp(double newKp){
 }
 
 /**
- * @brief Function For Setting Kd Integral Value
- * Funcao Repsonsavel por Setar Kd, valor parte da integral.
+ * @brief Função para setar Kd.
+ * Rotina responsável por Setar Kd, valor parte da integral.
  * @param Novo KD
  */
 void setControlKd(double newKd){
@@ -106,8 +106,8 @@ void setControlKd(double newKd){
 }
 
 /**
- * @brief Function For Setting Ki Integral Value
- * Funcao Repsonsavel por Setar Ki, valor parte da integral.
+ * @brief Função para setar Ki.
+ * Rotina responsável por setar Ki, valor parte da integral.
  * @param Novo KI
  */
 void setControlKi(double newKi){
@@ -117,8 +117,8 @@ void setControlKi(double newKi){
 }
 
 /**
- * @brief Function For Setting New Conversion Coefficinet
- * Funcao Responsavel por setar um novo coeficiente de conversao de controle do PID
+ * @brief Função para setar novo valor de Coeficiênte.
+ * Rotina responsável por setar um novo coeficiente de conversao de controle do PID
  * @param Novo Coeficiente de Conversao
  */
 void setConversionCoefficientUnit(double newConversionCoefficientUnit){
@@ -128,8 +128,8 @@ void setConversionCoefficientUnit(double newConversionCoefficientUnit){
 }
 
 /**
- * @brief Function For Handling PID
- * Funcao Para Fazer os Calculos do PID e suas variaveis tal como Desvio e Erros, retornando o valor de tensao que deve ser aplicado no motor.
+ * @brief Função Principal do PID Para Cálculo de Tensão.
+ * Rotina Para fazer os cálculos do PID e suas variáveis tal como desvios e erros, retornando o valor de tensao que deve ser aplicado no motor.
  *
  * O cálculo nesta função basea-se na leitura atual da posição do motor dessa maneira gera um valor de tensão para que atinja o alvo.
  *

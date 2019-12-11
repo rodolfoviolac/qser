@@ -18,7 +18,7 @@
  * @file decoderInterface.h
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Header Files for the decoder Interface
+ * @brief Cabeçalho para a Interface do Decoder
  */
 
 

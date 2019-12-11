@@ -1,8 +1,8 @@
-\hypertarget{pidController_8h}{}\doxysection{src/pid\+Controler/pid\+Controller.h File Reference}
-\label{pidController_8h}\index{src/pidControler/pidController.h@{src/pidControler/pidController.h}}
+\hypertarget{pidController_8h}{}\doxysection{src/pid\+Controller/pid\+Controller.h File Reference}
+\label{pidController_8h}\index{src/pidController/pidController.h@{src/pidController/pidController.h}}
 
 
-Header File for The P\+ID Controller.  
+Cabeçalho das funções da interface do P\+ID.  
 
 
 {\ttfamily \#include \char`\"{}../helpers/helpers.\+h\char`\"{}}\newline
@@ -11,27 +11,25 @@ Header File for The P\+ID Controller.
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{pidController_8h_abe99aea2237bf45370f11475aab83cdd}{set\+Target}} (int new\+Target)
-\begin{DoxyCompactList}\small\item\em Function For Setting New Target Position Funcao Repsonsavel por Setar uma nova possicao desejada. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{pidController_8h_ad44a79f712b96530f491cf5a841c9817}\label{pidController_8h_ad44a79f712b96530f491cf5a841c9817}} 
+\begin{DoxyCompactList}\small\item\em Função para setar nova posição. Rotina responsável por setar uma nova posição desejada. É nesta função que são zerados os valores de parte de erros e outras variáveis já calculadas. A nova posição é convertida e armazenada em target\+Location. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pidController_8h_ad44a79f712b96530f491cf5a841c9817}{turn\+On\+Pid}} ()
-\begin{DoxyCompactList}\small\item\em Function For Turn On P\+ID Funcao Responsavel Por Ligar O P\+ID. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{pidController_8h_aa2a62b6c21f82bd7e19c63e02d2cf01c}\label{pidController_8h_aa2a62b6c21f82bd7e19c63e02d2cf01c}} 
+\begin{DoxyCompactList}\small\item\em Função para ligar o Pid. Rotina responsável Por Ligar O P\+ID. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pidController_8h_aa2a62b6c21f82bd7e19c63e02d2cf01c}{turn\+Off\+Pid}} ()
-\begin{DoxyCompactList}\small\item\em Function For Turn Off P\+ID Funcao Responsavel Por Desligar O P\+ID. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Função para desligar o Pid Rotina responsável por desligar O P\+ID. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pidController_8h_a8d8cec964229574d5f0af312a00e5935}{set\+Control\+Kp}} (double new\+Kp)
-\begin{DoxyCompactList}\small\item\em Function For Setting Kp Integral Value Funcao Repsonsavel por Setar Kp, valor parte da integral. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Função para setar Kp. Rotina Repsonsavel por Setar Kp, valor parte da integral. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pidController_8h_a0a8eecf482506155e3b690c45f4c4e4b}{set\+Control\+Kd}} (double new\+Kd)
-\begin{DoxyCompactList}\small\item\em Function For Setting Kd Integral Value Funcao Repsonsavel por Setar Kd, valor parte da integral. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Função para setar Kd. Rotina responsável por Setar Kd, valor parte da integral. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pidController_8h_a315d3a9847f641c407ef6b32a65fd640}{set\+Control\+Ki}} (double new\+Ki)
-\begin{DoxyCompactList}\small\item\em Function For Setting Ki Integral Value Funcao Repsonsavel por Setar Ki, valor parte da integral. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Função para setar Ki. Rotina responsável por setar Ki, valor parte da integral. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pidController_8h_a84419a84b7812ac95cdd67086b4d2585}{set\+Conversion\+Coefficient\+Unit}} (double new\+Conversion\+Coefficient\+Unit)
-\begin{DoxyCompactList}\small\item\em Function For Setting New Conversion Coefficinet Funcao Responsavel por setar um novo coeficiente de conversao de controle do P\+ID. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Função para setar novo valor de Coeficiênte. Rotina responsável por setar um novo coeficiente de conversao de controle do P\+ID. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{pidController_8h_ad2327b73379de6859aafb872d874273d}{pid\+Handler}} (int current\+Position)
-\begin{DoxyCompactList}\small\item\em Function For Handling P\+ID Funcao Para Fazer os Calculos do P\+ID e suas variaveis tal como Desvio e Erros, retornando o valor de tensao que deve ser aplicado no motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Função Principal do P\+ID Para Cálculo de Tensão. Rotina Para fazer os cálculos do P\+ID e suas variáveis tal como desvios e erros, retornando o valor de tensao que deve ser aplicado no motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Header File for The P\+ID Controller. 
+Cabeçalho das funções da interface do P\+ID. 
 
 \begin{DoxyAuthor}{Author}
 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis 
@@ -50,11 +48,13 @@ Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
 
 
 
-Function For Handling P\+ID Funcao Para Fazer os Calculos do P\+ID e suas variaveis tal como Desvio e Erros, retornando o valor de tensao que deve ser aplicado no motor. 
+Função Principal do P\+ID Para Cálculo de Tensão. Rotina Para fazer os cálculos do P\+ID e suas variáveis tal como desvios e erros, retornando o valor de tensao que deve ser aplicado no motor. 
+
+O cálculo nesta função basea-\/se na leitura atual da posição do motor dessa maneira gera um valor de tensão para que atinja o alvo.
 
 
 \begin{DoxyParams}{Parameters}
-{\em Posicao} & Corrente \\
+{\em current\+Position} & Posicao Corrente \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -62,34 +62,34 @@ Valor de Tensão que deve ser aplicado no Motor
 \end{DoxyReturn}
 
 
-Definition at line 124 of file pid\+Controller.\+c.
+Definition at line 139 of file pid\+Controller.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{124                                       \{}
-\DoxyCodeLine{125     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting pidHandler pidControler \(\backslash\)n"});}
-\DoxyCodeLine{126     \textcolor{keywordtype}{double} pidUnitVoltage;}
-\DoxyCodeLine{127     \textcolor{keywordtype}{double} pPart;}
-\DoxyCodeLine{128     \textcolor{keywordtype}{double} iPart;}
-\DoxyCodeLine{129     \textcolor{keywordtype}{double} dPart;}
-\DoxyCodeLine{130     \textcolor{keywordtype}{double} deviation;}
-\DoxyCodeLine{131     \textcolor{keywordtype}{double} tempErrorDeviation = targetLocation -\/ currentPosition;}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133     allErrorsSummation += tempErrorDeviation;}
-\DoxyCodeLine{134     deviation = tempErrorDeviation -\/ errorDeviation;}
-\DoxyCodeLine{135     errorDeviation = tempErrorDeviation;}
-\DoxyCodeLine{136     pPart = controlKp * tempErrorDeviation;}
-\DoxyCodeLine{137     iPart = controlKi * allErrorsSummation;}
-\DoxyCodeLine{138     dPart = controlKd * deviation;}
-\DoxyCodeLine{139 }
-\DoxyCodeLine{140     pidUnitVoltage = pPart + iPart + dPart;}
-\DoxyCodeLine{141 }
-\DoxyCodeLine{142     \textcolor{keywordflow}{if}(pidUnitVoltage > QSER\_VOLTAGE) pidUnitVoltage = QSER\_VOLTAGE;}
-\DoxyCodeLine{143     \textcolor{keywordflow}{if}(pidUnitVoltage < -\/QSER\_VOLTAGE) pidUnitVoltage = -\/QSER\_VOLTAGE;}
-\DoxyCodeLine{144 }
-\DoxyCodeLine{145     printf(\textcolor{stringliteral}{"[INFO] -\/ PID Voltage Result \%f \(\backslash\)n"}, pidUnitVoltage);}
-\DoxyCodeLine{146     \textcolor{keywordflow}{return} pidUnitVoltage;}
-\DoxyCodeLine{147 \}}
+\DoxyCodeLine{139                                       \{}
+\DoxyCodeLine{140     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting pidHandler pidController \(\backslash\)n"});}
+\DoxyCodeLine{141     \textcolor{keywordtype}{double} pidUnitVoltage;}
+\DoxyCodeLine{142     \textcolor{keywordtype}{double} pPart;}
+\DoxyCodeLine{143     \textcolor{keywordtype}{double} iPart;}
+\DoxyCodeLine{144     \textcolor{keywordtype}{double} dPart;}
+\DoxyCodeLine{145     \textcolor{keywordtype}{double} deviation;}
+\DoxyCodeLine{146     \textcolor{keywordtype}{double} tempErrorDeviation = \mbox{\hyperlink{pidController_8c_af1f929809645dc5607b842219108dadf}{targetLocation}} -\/ currentPosition;}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \mbox{\hyperlink{pidController_8c_a380c7113c9f7b43e21e5d9ff303413a9}{allErrorsSummation}} += tempErrorDeviation;}
+\DoxyCodeLine{149     deviation = tempErrorDeviation -\/ \mbox{\hyperlink{pidController_8c_a900bffdedb5b76779215d899eaac9235}{errorDeviation}};}
+\DoxyCodeLine{150     \mbox{\hyperlink{pidController_8c_a900bffdedb5b76779215d899eaac9235}{errorDeviation}} = tempErrorDeviation;}
+\DoxyCodeLine{151     pPart = \mbox{\hyperlink{pidController_8c_add21ccb04e1708df9847b3537c3c160d}{controlKp}} * tempErrorDeviation;}
+\DoxyCodeLine{152     iPart = \mbox{\hyperlink{pidController_8c_a8467e669549465248016d01cc5f9f0ad}{controlKi}} * \mbox{\hyperlink{pidController_8c_a380c7113c9f7b43e21e5d9ff303413a9}{allErrorsSummation}};}
+\DoxyCodeLine{153     dPart = \mbox{\hyperlink{pidController_8c_ab032dbb879b584cedb078654339a3a97}{controlKd}} * deviation;}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     pidUnitVoltage = pPart + iPart + dPart;}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{keywordflow}{if}(pidUnitVoltage > \mbox{\hyperlink{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}{QSER\_VOLTAGE}}) pidUnitVoltage = \mbox{\hyperlink{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}{QSER\_VOLTAGE}};}
+\DoxyCodeLine{158     \textcolor{keywordflow}{if}(pidUnitVoltage < -\/\mbox{\hyperlink{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}{QSER\_VOLTAGE}}) pidUnitVoltage = -\/\mbox{\hyperlink{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}{QSER\_VOLTAGE}};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     printf(\textcolor{stringliteral}{"[INFO] -\/ PID Voltage Result \%f \(\backslash\)n"}, pidUnitVoltage);}
+\DoxyCodeLine{161     \textcolor{keywordflow}{return} pidUnitVoltage;}
+\DoxyCodeLine{162 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{pidController_8h_a0a8eecf482506155e3b690c45f4c4e4b}\label{pidController_8h_a0a8eecf482506155e3b690c45f4c4e4b}} 
@@ -100,7 +100,7 @@ Definition at line 124 of file pid\+Controller.\+c.
 
 
 
-Function For Setting Kd Integral Value Funcao Repsonsavel por Setar Kd, valor parte da integral. 
+Função para setar Kd. Rotina responsável por Setar Kd, valor parte da integral. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -109,15 +109,15 @@ Function For Setting Kd Integral Value Funcao Repsonsavel por Setar Kd, valor pa
 \end{DoxyParams}
 
 
-Definition at line 90 of file pid\+Controller.\+c.
+Definition at line 102 of file pid\+Controller.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{90                                \{}
-\DoxyCodeLine{91     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setControlKd pidControler \(\backslash\)n"});}
-\DoxyCodeLine{92     controlKd = newKd;}
-\DoxyCodeLine{93     printf(\textcolor{stringliteral}{"[INFO] -\/ controlKd Value: \%f \(\backslash\)n"}, controlKd);}
-\DoxyCodeLine{94 \}}
+\DoxyCodeLine{102                                \{}
+\DoxyCodeLine{103     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setControlKd pidController \(\backslash\)n"});}
+\DoxyCodeLine{104     \mbox{\hyperlink{pidController_8c_ab032dbb879b584cedb078654339a3a97}{controlKd}} = newKd;}
+\DoxyCodeLine{105     printf(\textcolor{stringliteral}{"[INFO] -\/ controlKd Value: \%f \(\backslash\)n"}, \mbox{\hyperlink{pidController_8c_ab032dbb879b584cedb078654339a3a97}{controlKd}});}
+\DoxyCodeLine{106 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{pidController_8h_a315d3a9847f641c407ef6b32a65fd640}\label{pidController_8h_a315d3a9847f641c407ef6b32a65fd640}} 
@@ -128,7 +128,7 @@ Definition at line 90 of file pid\+Controller.\+c.
 
 
 
-Function For Setting Ki Integral Value Funcao Repsonsavel por Setar Ki, valor parte da integral. 
+Função para setar Ki. Rotina responsável por setar Ki, valor parte da integral. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -137,15 +137,15 @@ Function For Setting Ki Integral Value Funcao Repsonsavel por Setar Ki, valor pa
 \end{DoxyParams}
 
 
-Definition at line 101 of file pid\+Controller.\+c.
+Definition at line 113 of file pid\+Controller.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{101                                \{}
-\DoxyCodeLine{102     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setControlKi pidControler \(\backslash\)n"});}
-\DoxyCodeLine{103     controlKi = newKi;}
-\DoxyCodeLine{104     printf(\textcolor{stringliteral}{"[INFO] -\/ controlKi Value: \%f \(\backslash\)n"}, controlKi);}
-\DoxyCodeLine{105 \}}
+\DoxyCodeLine{113                                \{}
+\DoxyCodeLine{114     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setControlKi pidController \(\backslash\)n"});}
+\DoxyCodeLine{115     \mbox{\hyperlink{pidController_8c_a8467e669549465248016d01cc5f9f0ad}{controlKi}} = newKi;}
+\DoxyCodeLine{116     printf(\textcolor{stringliteral}{"[INFO] -\/ controlKi Value: \%f \(\backslash\)n"}, \mbox{\hyperlink{pidController_8c_a8467e669549465248016d01cc5f9f0ad}{controlKi}});}
+\DoxyCodeLine{117 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{pidController_8h_a8d8cec964229574d5f0af312a00e5935}\label{pidController_8h_a8d8cec964229574d5f0af312a00e5935}} 
@@ -156,7 +156,7 @@ Definition at line 101 of file pid\+Controller.\+c.
 
 
 
-Function For Setting Kp Integral Value Funcao Repsonsavel por Setar Kp, valor parte da integral. 
+Função para setar Kp. Rotina Repsonsavel por Setar Kp, valor parte da integral. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -165,15 +165,15 @@ Function For Setting Kp Integral Value Funcao Repsonsavel por Setar Kp, valor pa
 \end{DoxyParams}
 
 
-Definition at line 79 of file pid\+Controller.\+c.
+Definition at line 91 of file pid\+Controller.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{79                                \{}
-\DoxyCodeLine{80     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setControlKp pidControler \(\backslash\)n"});}
-\DoxyCodeLine{81     controlKp = newKp;}
-\DoxyCodeLine{82     printf(\textcolor{stringliteral}{"[INFO] -\/ controlKp Value: \%f \(\backslash\)n"}, controlKp);}
-\DoxyCodeLine{83 \}}
+\DoxyCodeLine{91                                \{}
+\DoxyCodeLine{92     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setControlKp pidController \(\backslash\)n"});}
+\DoxyCodeLine{93     \mbox{\hyperlink{pidController_8c_add21ccb04e1708df9847b3537c3c160d}{controlKp}} = newKp;}
+\DoxyCodeLine{94     printf(\textcolor{stringliteral}{"[INFO] -\/ controlKp Value: \%f \(\backslash\)n"}, \mbox{\hyperlink{pidController_8c_add21ccb04e1708df9847b3537c3c160d}{controlKp}});}
+\DoxyCodeLine{95 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{pidController_8h_a84419a84b7812ac95cdd67086b4d2585}\label{pidController_8h_a84419a84b7812ac95cdd67086b4d2585}} 
@@ -184,7 +184,7 @@ Definition at line 79 of file pid\+Controller.\+c.
 
 
 
-Function For Setting New Conversion Coefficinet Funcao Responsavel por setar um novo coeficiente de conversao de controle do P\+ID. 
+Função para setar novo valor de Coeficiênte. Rotina responsável por setar um novo coeficiente de conversao de controle do P\+ID. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -193,15 +193,15 @@ Function For Setting New Conversion Coefficinet Funcao Responsavel por setar um 
 \end{DoxyParams}
 
 
-Definition at line 112 of file pid\+Controller.\+c.
+Definition at line 124 of file pid\+Controller.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{112                                                                       \{}
-\DoxyCodeLine{113     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setConversionCoefficientUnit pidControler \(\backslash\)n"});}
-\DoxyCodeLine{114     conversionCoefficientUnit = newConversionCoefficientUnit;}
-\DoxyCodeLine{115     printf(\textcolor{stringliteral}{"[INFO] -\/ conversionCoefficientUnit Value: \%f \(\backslash\)n"}, conversionCoefficientUnit);}
-\DoxyCodeLine{116 \}}
+\DoxyCodeLine{124                                                                       \{}
+\DoxyCodeLine{125     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setConversionCoefficientUnit pidController \(\backslash\)n"});}
+\DoxyCodeLine{126     \mbox{\hyperlink{pidController_8c_a965fbbe1d8f665ae26133d817d846cf3}{conversionCoefficientUnit}} = newConversionCoefficientUnit;}
+\DoxyCodeLine{127     printf(\textcolor{stringliteral}{"[INFO] -\/ conversionCoefficientUnit Value: \%f \(\backslash\)n"}, \mbox{\hyperlink{pidController_8c_a965fbbe1d8f665ae26133d817d846cf3}{conversionCoefficientUnit}});}
+\DoxyCodeLine{128 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{pidController_8h_abe99aea2237bf45370f11475aab83cdd}\label{pidController_8h_abe99aea2237bf45370f11475aab83cdd}} 
@@ -212,11 +212,11 @@ Definition at line 112 of file pid\+Controller.\+c.
 
 
 
-Function For Setting New Target Position Funcao Repsonsavel por Setar uma nova possicao desejada. 
+Função para setar nova posição. Rotina responsável por setar uma nova posição desejada. É nesta função que são zerados os valores de parte de erros e outras variáveis já calculadas. A nova posição é convertida e armazenada em target\+Location. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em Nova} & Posicao \\
+{\em new\+Target} & Nova Posicao \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -224,18 +224,77 @@ Retorna Positivo Caso Consiga Setar Nova Posicao.
 \end{DoxyReturn}
 
 
-Definition at line 40 of file pid\+Controller.\+c.
+Definition at line 50 of file pid\+Controller.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{40                              \{}
-\DoxyCodeLine{41     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setTarget pidControler \(\backslash\)n"});}
-\DoxyCodeLine{42     targetLocation = newTarget;}
-\DoxyCodeLine{43     errorDeviation = 0.0;}
-\DoxyCodeLine{44     allErrorsSummation = 0.0;}
-\DoxyCodeLine{45     printf(\textcolor{stringliteral}{"[INFO] -\/ new Target Location set to \%d \(\backslash\)n"}, targetLocation);}
-\DoxyCodeLine{46     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Set targetLocation to \%d \(\backslash\)n"}, targetLocation);}
-\DoxyCodeLine{47     \textcolor{keywordflow}{return} TRUE;}
-\DoxyCodeLine{48 \}}
+\DoxyCodeLine{50                              \{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setTarget pidController \(\backslash\)n"});}
+\DoxyCodeLine{52     \mbox{\hyperlink{pidController_8c_af1f929809645dc5607b842219108dadf}{targetLocation}} = newTarget;}
+\DoxyCodeLine{53     \mbox{\hyperlink{pidController_8c_a900bffdedb5b76779215d899eaac9235}{errorDeviation}} = 0.0;}
+\DoxyCodeLine{54     \mbox{\hyperlink{pidController_8c_a380c7113c9f7b43e21e5d9ff303413a9}{allErrorsSummation}} = 0.0;}
+\DoxyCodeLine{55     printf(\textcolor{stringliteral}{"[INFO] -\/ new Target Location set to \%d \(\backslash\)n"}, \mbox{\hyperlink{pidController_8c_af1f929809645dc5607b842219108dadf}{targetLocation}});}
+\DoxyCodeLine{56     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Set targetLocation to \%d \(\backslash\)n"}, \mbox{\hyperlink{pidController_8c_af1f929809645dc5607b842219108dadf}{targetLocation}});}
+\DoxyCodeLine{57     \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pidController_8h_aa2a62b6c21f82bd7e19c63e02d2cf01c}\label{pidController_8h_aa2a62b6c21f82bd7e19c63e02d2cf01c}} 
+\index{pidController.h@{pidController.h}!turnOffPid@{turnOffPid}}
+\index{turnOffPid@{turnOffPid}!pidController.h@{pidController.h}}
+\doxysubsubsection{\texorpdfstring{turnOffPid()}{turnOffPid()}}
+{\footnotesize\ttfamily void turn\+Off\+Pid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função para desligar o Pid Rotina responsável por desligar O P\+ID. 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Definition at line 78 of file pid\+Controller.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78                  \{}
+\DoxyCodeLine{79     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting turnOffPidStatus pidController \(\backslash\)n"});}
+\DoxyCodeLine{80     \textcolor{keywordflow}{if}(\mbox{\hyperlink{pidController_8c_a11837efa2f154aaa978a9c69a16e88e2}{pidStatus}} == TRUE)\{}
+\DoxyCodeLine{81         \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Setting pidStatus FALSE \(\backslash\)n"});}
+\DoxyCodeLine{82         \mbox{\hyperlink{pidController_8c_a11837efa2f154aaa978a9c69a16e88e2}{pidStatus}} = FALSE;}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pidController_8h_ad44a79f712b96530f491cf5a841c9817}\label{pidController_8h_ad44a79f712b96530f491cf5a841c9817}} 
+\index{pidController.h@{pidController.h}!turnOnPid@{turnOnPid}}
+\index{turnOnPid@{turnOnPid}!pidController.h@{pidController.h}}
+\doxysubsubsection{\texorpdfstring{turnOnPid()}{turnOnPid()}}
+{\footnotesize\ttfamily void turn\+On\+Pid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função para ligar o Pid. Rotina responsável Por Ligar O P\+ID. 
+
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file pid\+Controller.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                 \{}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting turnOnPidStatus pidController \(\backslash\)n"});}
+\DoxyCodeLine{67     \textcolor{keywordflow}{if}(\mbox{\hyperlink{pidController_8c_a11837efa2f154aaa978a9c69a16e88e2}{pidStatus}} == FALSE)\{}
+\DoxyCodeLine{68         \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Setting pidStatus TRUE \(\backslash\)n"});}
+\DoxyCodeLine{69         \mbox{\hyperlink{pidController_8c_a11837efa2f154aaa978a9c69a16e88e2}{pidStatus}} = TRUE;}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71 \}}
 
 \end{DoxyCode}

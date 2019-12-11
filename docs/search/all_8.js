@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['license_17',['LICENSE',['../md_LICENSE.html',1,'']]]
+  ['is_5frunning_5flocal_26',['IS_RUNNING_LOCAL',['../helpers_8h.html#afb786d718c78c0731bb746dd2bdb9372',1,'helpers.h']]]
 ];

@@ -18,14 +18,14 @@
  * @file quanserInterface.c
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Header File for The Quanser Interface.
+ * @brief  Funções para funcionamento do Motor, PWM e Ponte H.
  */
 
 #include "quanserInterface.h"
 
 /**
- * @brief Function For Setting PWM with dc amount and enabling PWM
- * Função responsável por setar o valor do duty cycle em função do valor de tensão passado por parâmetro
+ * @brief Função para setar PWM e habilitar PWM e ponte H.
+ * Rotina responsável por setar o valor do duty cycle em função do valor de tensão passado por parâmetro
  *
  * Também é papel desta função de habilitar o pino de enable ponte h e setar o período do PWM,
  *
@@ -46,8 +46,8 @@ int handlePwm(int dcAmount) {
 }
 
 /**
- * @brief Function Responsable For The Decoder and Motor Initialization
- * Função responsável pela inicialização do motor e também do decoder.
+ * @brief Função para inicialização do decoder e motor.
+ * Rotina responsável pela inicialização do motor e também do decoder.
  *
  * A princípal função é garantir que os PWM, Ponte H, Decoder estão aptos a funcionarem.
  *
@@ -67,8 +67,8 @@ int qserInitializer() {
 }
 
 /**
- * @brief Function Responsable Disabling H Bridge
- * Função responsável por desabilitar a Ponte H
+ * @brief Função responsável por desabilitar a ponte h.
+ * Rotina responsável por desabilitar a Ponte H
  * @return Retorna Positivo Caso Consiga Desabilitar.
  */
 int qserBreak() {
@@ -83,8 +83,8 @@ int qserBreak() {
 }
 
 /**
- * @brief Function For Handling Volage To Duty Cycle
- * Função responsável por transformar os valores de tensão em Duty Cycle.
+ * @brief Função para converter voltagem em duty cycle.
+ * Rotina responsável por transformar os valores de tensão em Duty Cycle.
  *
  * Esse função tem como objetivo transformar um valor de tensão em um valor correspondente ao percentual de 0 a 100% do duty cycle
  *
@@ -99,7 +99,7 @@ int qserVoltage(float voltage) {
 }
 
 /**
- * @brief Thread For Handling Side One Position Limiter
+ * @brief Thread Um de interrupções de fim de curso.
  * Thread responsável por escutar interrupções de fim de curso assim como fazer a pausa do motor e o desligamento do PID.
  *
  * Interrupções sensíveis aos níveis de borda de subida e descida
@@ -148,7 +148,7 @@ void* jointPositionLimitOneHandler() {
     return NULL;
 }
 /**
- * @brief Thread For Handling Side Two Position Limiter
+ * @brief Thread Dois de interrupções de fim de curso.
  * Thread Reponseavel por escutar interrupcoes de fim de curso assim como fazer a pausa do motor e o desligamento do PID
  *
  * Interrupções sensíveis aos níveis de borda de subida e descida
@@ -197,7 +197,7 @@ void* jointPositionLimitTwoHandler() {
 }
 
 /**
- * @brief Thread For Handling Changing Position
+ * @brief Thread para assegurar troca de posições
  * Thread Responsável por executar a alteração do braço para uma nova posição.
  *
  *

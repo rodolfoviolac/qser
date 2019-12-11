@@ -131,77 +131,78 @@ $(document).ready(function(){initNavTree('decoderInterface_8h_source.html','');}
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;linux/spi/spidev.h&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define SPI_DEFAULT_SPEED 10000</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define BITS_PER_WORD 8</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a677a5a2cb49ba023b28f16a3c0d38b0e">   40</a></span>&#160;<span class="preprocessor">#define SPI_DEFAULT_SPEED 10000</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#ac8551bdc3d8c10962b07b67d9558c6c8">   44</a></span>&#160;<span class="preprocessor">#define NQUAD 0x00</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define QUADRX1 0x01</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define QUADRX2 0x02</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define QUADRX4 0x03</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a0a9f6fa936390e8bdc58e536b95d9c29">   50</a></span>&#160;<span class="preprocessor">#define FREE_RUN 0x00</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define SINGE_CYCLE 0x04</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define RANGE_LIMIT 0x08</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define MODULO_N 0x0C</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a9c85cd3313959f783e982dc29f5894b4">   56</a></span>&#160;<span class="preprocessor">#define DISABLE_INDX 0x00</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define INDX_LOADC 0x10</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define INDX_RESETC 0x20</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define INDX_LOADO 0x30</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define ASYNCH_INDX 0x00</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define SYNCH_INDX 0x80</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#ad868c8b55c4dfcc54eae872431d2113e">   64</a></span>&#160;<span class="preprocessor">#define FILTER_1 0x00</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define FILTER_2 0x80</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a9cfcd032e38e55938e02821e97fe3660">   68</a></span>&#160;<span class="preprocessor">#define NO_FLAGS 0x00</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define IDX_FLAG 0x10</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define CMP_FLAG 0x20</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define BW_FLAG 0x40</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define CY_FLAG 0x80</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a331a010a3845e67f2cb06ba4c51e46f2">   75</a></span>&#160;<span class="preprocessor">#define BYTE_4 0x00</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define BYTE_3 0x01</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define BYTE_2 0x02</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define BYTE_1 0x03</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a6d53c8a07c6a28b77606d9adac788e1e">   81</a></span>&#160;<span class="preprocessor">#define EN_CNTR 0x00</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#define DIS_CNTR 0x04</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#aa1401b1c9a0fa1cf60ae9736e3286479">   86</a></span>&#160;<span class="preprocessor">#define CLR_MDR0 0x08</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#define CLR_MDR1 0x10</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#define CLR_CNTR 0x20</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#define CLR_STR 0x30</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define READ_MDR0 0x48</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define READ_MDR1 0x50</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define READ_CNTR 0x60</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define READ_OTR 0x68</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define READ_STR 0x70</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define WRITE_MDR1 0x90</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#define WRITE_MDR0 0x88</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#define WRITE_DTR 0x98</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#define LOAD_CNTR 0xE0</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#define LOAD_OTR 0xE4</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> <a class="code" href="decoderInterface_8h.html#aa643b06f53912de8c90b619803eb27a6">decoderInitializer</a>(<span class="keywordtype">int</span> spiSpeed);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">int</span> <a class="code" href="decoderInterface_8h.html#af5872793a562a54c455d94fef27f3a2b">readDecoderCounter</a>();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="decoderInterface_8h.html#a82fe1a26c4a03de6dc52798635d4ca27">clearDecoder</a>();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span> <a class="code" href="decoderInterface_8h.html#a75971fdf1e347a1d330cae5e15250edf">wrapUpDecoder</a>();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif //QSER_DECODERINTERFACE_H</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#af859a98f57110e5243e8f0541319e43b">   42</a></span>&#160;<span class="preprocessor">#define BITS_PER_WORD 8</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#ac8551bdc3d8c10962b07b67d9558c6c8">   46</a></span>&#160;<span class="preprocessor">#define NQUAD 0x00</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define QUADRX1 0x01</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define QUADRX2 0x02</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define QUADRX4 0x03</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a0a9f6fa936390e8bdc58e536b95d9c29">   52</a></span>&#160;<span class="preprocessor">#define FREE_RUN 0x00</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define SINGE_CYCLE 0x04</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define RANGE_LIMIT 0x08</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define MODULO_N 0x0C</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a9c85cd3313959f783e982dc29f5894b4">   58</a></span>&#160;<span class="preprocessor">#define DISABLE_INDX 0x00</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define INDX_LOADC 0x10</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define INDX_RESETC 0x20</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define INDX_LOADO 0x30</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#define ASYNCH_INDX 0x00</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define SYNCH_INDX 0x80</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#ad868c8b55c4dfcc54eae872431d2113e">   66</a></span>&#160;<span class="preprocessor">#define FILTER_1 0x00</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define FILTER_2 0x80</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a9cfcd032e38e55938e02821e97fe3660">   70</a></span>&#160;<span class="preprocessor">#define NO_FLAGS 0x00</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define IDX_FLAG 0x10</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define CMP_FLAG 0x20</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#define BW_FLAG 0x40</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define CY_FLAG 0x80</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a331a010a3845e67f2cb06ba4c51e46f2">   77</a></span>&#160;<span class="preprocessor">#define BYTE_4 0x00</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define BYTE_3 0x01</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define BYTE_2 0x02</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define BYTE_1 0x03</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#a6d53c8a07c6a28b77606d9adac788e1e">   83</a></span>&#160;<span class="preprocessor">#define EN_CNTR 0x00</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#define DIS_CNTR 0x04</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="decoderInterface_8h.html#aa1401b1c9a0fa1cf60ae9736e3286479">   88</a></span>&#160;<span class="preprocessor">#define CLR_MDR0 0x08</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#define CLR_MDR1 0x10</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define CLR_CNTR 0x20</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define CLR_STR 0x30</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define READ_MDR0 0x48</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define READ_MDR1 0x50</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define READ_CNTR 0x60</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define READ_OTR 0x68</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#define READ_STR 0x70</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#define WRITE_MDR1 0x90</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#define WRITE_MDR0 0x88</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#define WRITE_DTR 0x98</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#define LOAD_CNTR 0xE0</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#define LOAD_OTR 0xE4</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="decoderInterface_8h.html#aa643b06f53912de8c90b619803eb27a6">decoderInitializer</a>(<span class="keywordtype">int</span> spiSpeed);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">int</span> <a class="code" href="decoderInterface_8h.html#af5872793a562a54c455d94fef27f3a2b">readDecoderCounter</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> <a class="code" href="decoderInterface_8h.html#a82fe1a26c4a03de6dc52798635d4ca27">clearDecoder</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keywordtype">void</span> <a class="code" href="decoderInterface_8h.html#a75971fdf1e347a1d330cae5e15250edf">wrapUpDecoder</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif //QSER_DECODERINTERFACE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="adecoderInterface_8h_html_aa643b06f53912de8c90b619803eb27a6"><div class="ttname"><a href="decoderInterface_8h.html#aa643b06f53912de8c90b619803eb27a6">decoderInitializer</a></div><div class="ttdeci">void decoderInitializer(int spiSpeed)</div><div class="ttdoc">Initializer The Decoder With Pre Definied Tokens for Handling Couting Funcao para Fazer a Inicializac...</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00076">decoderInterface.c:76</a></div></div>
-<div class="ttc" id="adecoderInterface_8h_html_a82fe1a26c4a03de6dc52798635d4ca27"><div class="ttname"><a href="decoderInterface_8h.html#a82fe1a26c4a03de6dc52798635d4ca27">clearDecoder</a></div><div class="ttdeci">void clearDecoder()</div><div class="ttdoc">Function For Cleaning Decoder Funcao para Zerar o Contador do Decoder.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00182">decoderInterface.c:182</a></div></div>
-<div class="ttc" id="adecoderInterface_8h_html_a75971fdf1e347a1d330cae5e15250edf"><div class="ttname"><a href="decoderInterface_8h.html#a75971fdf1e347a1d330cae5e15250edf">wrapUpDecoder</a></div><div class="ttdeci">void wrapUpDecoder()</div><div class="ttdoc">Function For Exiting and Restart Variables Of Decoder Funcao para fazer a limpeza das variaveis e set...</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00212">decoderInterface.c:212</a></div></div>
-<div class="ttc" id="adecoderInterface_8h_html_af5872793a562a54c455d94fef27f3a2b"><div class="ttname"><a href="decoderInterface_8h.html#af5872793a562a54c455d94fef27f3a2b">readDecoderCounter</a></div><div class="ttdeci">int readDecoderCounter()</div><div class="ttdoc">Read Decoder With SPI IOC TRANSFER Funcao para Fazer a Leitura do Decoder e Retornar Valor do Contado...</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00034">decoderInterface.c:34</a></div></div>
+<div class="ttc" id="adecoderInterface_8h_html_aa643b06f53912de8c90b619803eb27a6"><div class="ttname"><a href="decoderInterface_8h.html#aa643b06f53912de8c90b619803eb27a6">decoderInitializer</a></div><div class="ttdeci">void decoderInitializer(int spiSpeed)</div><div class="ttdoc">Inicialização do Decoder com Tokens pré definidor para fazer a contagem Funcao para Fazer a Inicializ...</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00084">decoderInterface.c:84</a></div></div>
+<div class="ttc" id="adecoderInterface_8h_html_a82fe1a26c4a03de6dc52798635d4ca27"><div class="ttname"><a href="decoderInterface_8h.html#a82fe1a26c4a03de6dc52798635d4ca27">clearDecoder</a></div><div class="ttdeci">void clearDecoder()</div><div class="ttdoc">Função Para Limpar o Contador do Decoder. Rotina para Zerar o Contador do Decoder,...</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00191">decoderInterface.c:191</a></div></div>
+<div class="ttc" id="adecoderInterface_8h_html_a75971fdf1e347a1d330cae5e15250edf"><div class="ttname"><a href="decoderInterface_8h.html#a75971fdf1e347a1d330cae5e15250edf">wrapUpDecoder</a></div><div class="ttdeci">void wrapUpDecoder()</div><div class="ttdoc">Função para desligamento e reset das variáveis do decoder. Funcao para fazer a limpeza das variaveis,...</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00222">decoderInterface.c:222</a></div></div>
+<div class="ttc" id="adecoderInterface_8h_html_af5872793a562a54c455d94fef27f3a2b"><div class="ttname"><a href="decoderInterface_8h.html#af5872793a562a54c455d94fef27f3a2b">readDecoderCounter</a></div><div class="ttdeci">int readDecoderCounter()</div><div class="ttdoc">Leitura do Registrador CNTR do Decoder com SPI IOC TRANSFER Funcao para Fazer a Leitura do Decoder CN...</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00037">decoderInterface.c:37</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1cee467d967db557397dfb96a54199c6.html">decoderInterface</a></li><li class="navelem"><a class="el" href="decoderInterface_8h.html">decoderInterface.h</a></li>
-    <li class="footer">Generated on Wed Dec 11 2019 02:48:27 for Qser_RoGaFe_19/2 by
+    <li class="footer">Generated on Wed Dec 11 2019 04:55:29 for Qser_RoGaFe_19/2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

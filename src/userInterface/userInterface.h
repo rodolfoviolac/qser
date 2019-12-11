@@ -18,7 +18,7 @@
  * @file userInterface.h
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Header File for The User Interface.
+ * @brief  Arquivo de cabeçalho para a interface do usuário.
  */
 
 #ifndef QSER_USERINTERFACE_H

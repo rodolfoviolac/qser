@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('helpers_8c.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Helpers Functions For Handling General Purpose.  
+<p>Funções de propósito geral.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="helpers_8h_source.html">helpers.h</a>&quot;</code><br />
 </div>
@@ -113,14 +113,14 @@ $(document).ready(function(){initNavTree('helpers_8c.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a11518359bc1427b7f3fc6f3ce336db15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="helpers_8c.html#a11518359bc1427b7f3fc6f3ce336db15">writeHandler</a> (const char filePath[], const char data[])</td></tr>
-<tr class="memdesc:a11518359bc1427b7f3fc6f3ce336db15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write Handler For Helping Writing To Files Funcao para facilitar a escrita em arquivos.  <a href="helpers_8c.html#a11518359bc1427b7f3fc6f3ce336db15">More...</a><br /></td></tr>
+<tr class="memdesc:a11518359bc1427b7f3fc6f3ce336db15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função Para Ajudar a Escrita Rotina para facilitar a escrita em arquivos.  <a href="helpers_8c.html#a11518359bc1427b7f3fc6f3ce336db15">More...</a><br /></td></tr>
 <tr class="separator:a11518359bc1427b7f3fc6f3ce336db15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f1fdf6fe9d7c767dec3b9ace03ce89c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="helpers_8c.html#a4f1fdf6fe9d7c767dec3b9ace03ce89c">readHandler</a> (char *data, int size, const char filePath[])</td></tr>
-<tr class="memdesc:a4f1fdf6fe9d7c767dec3b9ace03ce89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read Handler For Helping Reading From Files Funcao Para Facilitar a Leitra de Arquivos.  <a href="helpers_8c.html#a4f1fdf6fe9d7c767dec3b9ace03ce89c">More...</a><br /></td></tr>
+<tr class="memdesc:a4f1fdf6fe9d7c767dec3b9ace03ce89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para Ajudar a Leitura. Rotina para facilitar a leitura de arquivos.  <a href="helpers_8c.html#a4f1fdf6fe9d7c767dec3b9ace03ce89c">More...</a><br /></td></tr>
 <tr class="separator:a4f1fdf6fe9d7c767dec3b9ace03ce89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helpers Functions For Handling General Purpose. </p>
+<div class="textblock"><p>Funções de propósito geral. </p>
 <dl class="section author"><dt>Author</dt><dd>Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>11 Dec 2019 </dd></dl>
 
@@ -158,29 +158,31 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Read Handler For Helping Reading From Files Funcao Para Facilitar a Leitra de Arquivos. </p>
+<p>Função para Ajudar a Leitura. Rotina para facilitar a leitura de arquivos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Caminho</td><td>do Arquivo e a Informacao de Leitura e Tamannho </td></tr>
+    <tr><td class="paramname">filePath</td><td>Caminho Do Arquivo a ser lido </td></tr>
+    <tr><td class="paramname">data</td><td>Ponteiro para onde será lido </td></tr>
+    <tr><td class="paramname">size</td><td>Quantidade em Bits de informacoes a serem lida </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Retorna a Informacao Lida </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00055">55</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                              {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Starting Reading File&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> fileHandler;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(( fileHandler = open(filePath,O_RDONLY)) == -1) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible To Read File %s.\n&quot;</span>, filePath);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    read(fileHandler,data,size);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    close(fileHandler);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Reading File: %s&quot;</span>, data);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Successful Reading File&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> data;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00058">58</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                              {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Starting Reading File&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> fileHandler;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span>(( fileHandler = open(filePath,O_RDONLY)) == -1) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible To Read File %s.\n&quot;</span>, filePath);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    read(fileHandler,data,size);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    close(fileHandler);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Reading File: %s&quot;</span>, data);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Successful Reading File&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> data;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -210,42 +212,44 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write Handler For Helping Writing To Files Funcao para facilitar a escrita em arquivos. </p>
+<p>Função Para Ajudar a Escrita Rotina para facilitar a escrita em arquivos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Caminho</td><td>do Arquivo e a Informacao de Escrita </td></tr>
+    <tr><td class="paramname">filePath</td><td>Caminho do Arquivo a ser escrito </td></tr>
+    <tr><td class="paramname">data</td><td>Dados a serem escritos </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Retorna o Status da Escrita </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00032">32</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                          {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Starting Writing File&quot;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> fileHandler = open(filePath, O_WRONLY);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(fileHandler == -1) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible To Open File %s.\n&quot;</span>, filePath);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> returnHandler = write(fileHandler, data, strlen(data));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(returnHandler == -1) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible to Write [ %s ] on %s.\n&quot;</span>, data, filePath);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    close(fileHandler);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Successful Writing File&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> returnHandler;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00033">33</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                          {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Starting Writing File&quot;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> fileHandler = open(filePath, O_WRONLY);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(fileHandler == -1) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible To Open File %s.\n&quot;</span>, filePath);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> returnHandler = write(fileHandler, data, strlen(data));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(returnHandler == -1) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible to Write [ %s ] on %s.\n&quot;</span>, data, filePath);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    close(fileHandler);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Successful Writing File&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> returnHandler;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="ahelpers_8h_html_ad72dbcf6d0153db1b8d8a58001feed83"><div class="ttname"><a href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a></div><div class="ttdeci">#define DEBUG</div><div class="ttdoc">Modulo Para Depuracao.</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00029">helpers.h:29</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0c26bd22f254302c4dfbaa95bf527e9d.html">helpers</a></li><li class="navelem"><a class="el" href="helpers_8c.html">helpers.c</a></li>
-    <li class="footer">Generated on Wed Dec 11 2019 02:48:27 for Qser_RoGaFe_19/2 by
+    <li class="footer">Generated on Wed Dec 11 2019 04:55:29 for Qser_RoGaFe_19/2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

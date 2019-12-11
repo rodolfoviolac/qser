@@ -18,14 +18,14 @@
  * @file userInterface.c
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Header File for The User Interface.
+ * @brief  Funções para manipular e escrever no terminal.
  */
 
 #include "userInterface.h"
 
 /**
- * @brief Function For Print Users Options
- * Funcao para imprimir no terminal os comandos possíveis para o usuário.
+ * @brief Função para imprimir opções para usuário.
+ * Rotina para imprimir no terminal os comandos possíveis para o usuário.
  *
  * São Commandos Possíveis: Speed, goforv, shiftrad, cleardec, getdec, getdecrad, jpl, break, help e exit
  *
@@ -47,9 +47,9 @@ void printUserOptions(){
 }
 
 /**
- * @brief Function For Print Members Name
+ * @brief Função para imprimir nome de integrantes.
  *
- * Função para imprimir no terminal os nome dos integrantes do grupo
+ * Rotina para imprimir no terminal os nome dos integrantes do grupo
  *
  *  @return Void
  */
@@ -62,8 +62,8 @@ void printUserGroupsName(){
 }
 
 /**
- * @brief Function For Handling User Input Options
- * Função para mapear a opções digitada pelo usuário no menu de opções.
+ * @brief Função de validação de comando.
+ * Rotina para mapear a opções digitada pelo usuário no menu de opções.
  * @param  cmd Comando digitado pelo usuário
  * @return retorna o ID do comando digitado pelo usuário
  */

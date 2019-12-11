@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('decoderInterface_8c.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Interface Functions For Handling The Decoder.  
+<p>Funções para fazer a interface com o decoder.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="decoderInterface_8h_source.html">decoderInterface.h</a>&quot;</code><br />
 </div>
@@ -114,40 +114,216 @@ $(document).ready(function(){initNavTree('decoderInterface_8c.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af5872793a562a54c455d94fef27f3a2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#af5872793a562a54c455d94fef27f3a2b">readDecoderCounter</a> ()</td></tr>
-<tr class="memdesc:af5872793a562a54c455d94fef27f3a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read Decoder With SPI IOC TRANSFER Funcao para Fazer a Leitura do Decoder e Retornar Valor do Contador Lido.  <a href="decoderInterface_8c.html#af5872793a562a54c455d94fef27f3a2b">More...</a><br /></td></tr>
+<tr class="memdesc:af5872793a562a54c455d94fef27f3a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leitura do Registrador CNTR do Decoder com SPI IOC TRANSFER Funcao para Fazer a Leitura do Decoder CNTR e Retornar Valor do Contador Lido.  <a href="decoderInterface_8c.html#af5872793a562a54c455d94fef27f3a2b">More...</a><br /></td></tr>
 <tr class="separator:af5872793a562a54c455d94fef27f3a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa643b06f53912de8c90b619803eb27a6"><td class="memItemLeft" align="right" valign="top"><a id="aa643b06f53912de8c90b619803eb27a6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#aa643b06f53912de8c90b619803eb27a6">decoderInitializer</a> (int spiSpeed)</td></tr>
-<tr class="memdesc:aa643b06f53912de8c90b619803eb27a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializer The Decoder With Pre Definied Tokens for Handling Couting Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder. <br /></td></tr>
+<tr class="memitem:aa643b06f53912de8c90b619803eb27a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#aa643b06f53912de8c90b619803eb27a6">decoderInitializer</a> (int spiSpeed)</td></tr>
+<tr class="memdesc:aa643b06f53912de8c90b619803eb27a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicialização do Decoder com Tokens pré definidor para fazer a contagem Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder Juntamente Com o SPI Sao as Seguintes Configuracoes Para o MDR0: WRITE_MDR0, QUADRX1 | FREE_RUN | DISABLE_INDX | FILTER_2 Sao as Seguintes Configuracoes Para o MDR1: WRITE_MDR1, NO_FLAGS | BYTE_4 | EN_CNTR.  <a href="decoderInterface_8c.html#aa643b06f53912de8c90b619803eb27a6">More...</a><br /></td></tr>
 <tr class="separator:aa643b06f53912de8c90b619803eb27a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82fe1a26c4a03de6dc52798635d4ca27"><td class="memItemLeft" align="right" valign="top"><a id="a82fe1a26c4a03de6dc52798635d4ca27"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#a82fe1a26c4a03de6dc52798635d4ca27">clearDecoder</a> ()</td></tr>
-<tr class="memdesc:a82fe1a26c4a03de6dc52798635d4ca27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function For Cleaning Decoder Funcao para Zerar o Contador do Decoder. <br /></td></tr>
+<tr class="memitem:a82fe1a26c4a03de6dc52798635d4ca27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#a82fe1a26c4a03de6dc52798635d4ca27">clearDecoder</a> ()</td></tr>
+<tr class="memdesc:a82fe1a26c4a03de6dc52798635d4ca27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função Para Limpar o Contador do Decoder. Rotina para Zerar o Contador do Decoder, faz isso por meio da instrução CLR_CNTR.  <a href="decoderInterface_8c.html#a82fe1a26c4a03de6dc52798635d4ca27">More...</a><br /></td></tr>
 <tr class="separator:a82fe1a26c4a03de6dc52798635d4ca27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75971fdf1e347a1d330cae5e15250edf"><td class="memItemLeft" align="right" valign="top"><a id="a75971fdf1e347a1d330cae5e15250edf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#a75971fdf1e347a1d330cae5e15250edf">wrapUpDecoder</a> ()</td></tr>
-<tr class="memdesc:a75971fdf1e347a1d330cae5e15250edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function For Exiting and Restart Variables Of Decoder Funcao para fazer a limpeza das variaveis e setar decoder como nao inicializado. <br /></td></tr>
+<tr class="memitem:a75971fdf1e347a1d330cae5e15250edf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#a75971fdf1e347a1d330cae5e15250edf">wrapUpDecoder</a> ()</td></tr>
+<tr class="memdesc:a75971fdf1e347a1d330cae5e15250edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para desligamento e reset das variáveis do decoder. Funcao para fazer a limpeza das variaveis, setar decoder como nao inicializado e fechar a comunicacao SPI.  <a href="decoderInterface_8c.html#a75971fdf1e347a1d330cae5e15250edf">More...</a><br /></td></tr>
 <tr class="separator:a75971fdf1e347a1d330cae5e15250edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a025bd94ca9413d426082b6586d09aa9b"><td class="memItemLeft" align="right" valign="top"><a id="a025bd94ca9413d426082b6586d09aa9b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>decoderInitialized</b> = FALSE</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#a025bd94ca9413d426082b6586d09aa9b">decoderInitialized</a> = FALSE</td></tr>
+<tr class="memdesc:a025bd94ca9413d426082b6586d09aa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variavel Global De Inicializacao Do Decoder Com Finalidade De Fluxo De Codigo. <br /></td></tr>
 <tr class="separator:a025bd94ca9413d426082b6586d09aa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57acc7a88386e5b7723454c0641d68e5"><td class="memItemLeft" align="right" valign="top"><a id="a57acc7a88386e5b7723454c0641d68e5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>fileDescriptor</b> = -1</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a> = -1</td></tr>
+<tr class="memdesc:a57acc7a88386e5b7723454c0641d68e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descritor de Arquivo do SPI. <br /></td></tr>
 <tr class="separator:a57acc7a88386e5b7723454c0641d68e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acee492bc7671a012db2f39d5b1a17227"><td class="memItemLeft" align="right" valign="top"><a id="acee492bc7671a012db2f39d5b1a17227"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>frequencyRate</b> = 0</td></tr>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decoderInterface_8c.html#acee492bc7671a012db2f39d5b1a17227">frequencyRate</a> = 0</td></tr>
+<tr class="memdesc:acee492bc7671a012db2f39d5b1a17227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variavel Global Com Finalidade De Controlar Frequencia de Comunicacao do SPI. <br /></td></tr>
 <tr class="separator:acee492bc7671a012db2f39d5b1a17227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interface Functions For Handling The Decoder. </p>
+<div class="textblock"><p>Funções para fazer a interface com o decoder. </p>
 <dl class="section author"><dt>Author</dt><dd>Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>11 Dec 2019 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="decoderInterface_8c_source.html">decoderInterface.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a82fe1a26c4a03de6dc52798635d4ca27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82fe1a26c4a03de6dc52798635d4ca27">&#9670;&nbsp;</a></span>clearDecoder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clearDecoder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função Para Limpar o Contador do Decoder. Rotina para Zerar o Contador do Decoder, faz isso por meio da instrução CLR_CNTR. </p>
+<dl class="section return"><dt>Returns</dt><dd>Void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="decoderInterface_8c_source.html#l00191">191</a> of file <a class="el" href="decoderInterface_8c_source.html">decoderInterface.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                   {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Starting clearDecoder Function \n&quot;</span>);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#if IS_RUNNING_LOCAL == FALSE</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="decoderInterface_8c.html#a025bd94ca9413d426082b6586d09aa9b">decoderInitialized</a> == FALSE){</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - SPI Device Not Initialized. Cant Clear Decoder \n&quot;</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - clearDecoder Setting Message Clear Content \n&quot;</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keyword">struct </span>spi_ioc_transfer message;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    uint8_t txBuffer[1] = { CLR_CNTR };</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    uint8_t rxBuffer[1] = { 0xFF };</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    message.tx_buf = (<span class="keywordtype">unsigned</span> long) &amp;txBuffer;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    message.rx_buf = (<span class="keywordtype">unsigned</span> long) &amp;rxBuffer;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    message.bits_per_word = <a class="code" href="decoderInterface_8h.html#af859a98f57110e5243e8f0541319e43b">BITS_PER_WORD</a>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    message.speed_hz = <a class="code" href="decoderInterface_8c.html#acee492bc7671a012db2f39d5b1a17227">frequencyRate</a>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    message.len = <span class="keyword">sizeof</span>(txBuffer);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - clearDecoder Before SPI_IOC_MESSAGE \n&quot;</span>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_MESSAGE(1), &amp;message) &lt; 0){</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - While Trying To Clear Decoder \n&quot;</span>);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    };</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa643b06f53912de8c90b619803eb27a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa643b06f53912de8c90b619803eb27a6">&#9670;&nbsp;</a></span>decoderInitializer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void decoderInitializer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>spiSpeed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicialização do Decoder com Tokens pré definidor para fazer a contagem Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder Juntamente Com o SPI Sao as Seguintes Configuracoes Para o MDR0: WRITE_MDR0, QUADRX1 | FREE_RUN | DISABLE_INDX | FILTER_2 Sao as Seguintes Configuracoes Para o MDR1: WRITE_MDR1, NO_FLAGS | BYTE_4 | EN_CNTR. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spiSpeed</td><td>Frequencia (Hz) Para Comunicacao SPI </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="decoderInterface_8c_source.html#l00084">84</a> of file <a class="el" href="decoderInterface_8c_source.html">decoderInterface.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                     {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Starting decoderInitializer Function \n&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#if IS_RUNNING_LOCAL == FALSE</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="decoderInterface_8c.html#a025bd94ca9413d426082b6586d09aa9b">decoderInitialized</a> == TRUE) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="decoderInterface_8c.html#acee492bc7671a012db2f39d5b1a17227">frequencyRate</a> = spiSpeed;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    uint8_t bpw = <a class="code" href="decoderInterface_8h.html#af859a98f57110e5243e8f0541319e43b">BITS_PER_WORD</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    uint8_t mode = SPI_MODE_0;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    uint8_t lsb = 0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before Opening SPI Device \n&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span>((<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a> = open(<span class="stringliteral">&quot;/dev/spidev1.0&quot;</span>, O_RDWR)) == -1) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Trying To Open SPI Device /dev/spidev1.0 \n&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before Writing SPI_IOC_WR_MODE on SPI Device \n&quot;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_WR_MODE, &amp;mode)) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible To Write Clock On SPI device \n&quot;</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before Writing SPI_IOC_WR_LSB_FIRST on SPI Device \n&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_WR_LSB_FIRST, &amp;lsb)) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible To Write Justify Bits On SPI device \n&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before Writing SPI_IOC_WR_BITS_PER_WORD on SPI Device \n&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_WR_BITS_PER_WORD, &amp;bpw)) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible To Write Quantity Bits per Word On SPI device \n&quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before Writing SPI_IOC_WR_MAX_SPEED_HZ on SPI Device \n&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_WR_MAX_SPEED_HZ, &amp;<a class="code" href="decoderInterface_8c.html#acee492bc7671a012db2f39d5b1a17227">frequencyRate</a>)) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - Not Possible To Write Frequency Rate On SPI device \n&quot;</span>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - decoderInitializer Setting Up Message \n&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">struct </span>spi_ioc_transfer message;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    uint8_t rxBuffer1[2] = { 0xFF, 0xFF };</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    uint8_t txBuffer1[2] = { WRITE_MDR0, QUADRX1 | <a class="code" href="decoderInterface_8h.html#a0a9f6fa936390e8bdc58e536b95d9c29">FREE_RUN</a> | <a class="code" href="decoderInterface_8h.html#a9c85cd3313959f783e982dc29f5894b4">DISABLE_INDX</a> | FILTER_2 };</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - decoderInitializer Before Tx and Rx Buff \n&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    message.rx_buf = (<span class="keywordtype">unsigned</span> long) &amp;rxBuffer1;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    message.tx_buf = (<span class="keywordtype">unsigned</span> long) &amp;txBuffer1;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    message.bits_per_word = <a class="code" href="decoderInterface_8h.html#af859a98f57110e5243e8f0541319e43b">BITS_PER_WORD</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    message.speed_hz = spiSpeed;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    message.len = <span class="keyword">sizeof</span>(txBuffer1);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before Setting MDR0 Register \n&quot;</span>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_MESSAGE(1), &amp;message) &lt; 0){</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - While Trying to Set MDR0 Register \n&quot;</span>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    uint8_t rxBuffer2[2] = { 0xFF, 0xFF };</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    uint8_t txBuffer2[2] = { WRITE_MDR1, <a class="code" href="decoderInterface_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a> | <a class="code" href="decoderInterface_8h.html#a331a010a3845e67f2cb06ba4c51e46f2">BYTE_4</a> | <a class="code" href="decoderInterface_8h.html#a6d53c8a07c6a28b77606d9adac788e1e">EN_CNTR</a> };</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    message.tx_buf = (<span class="keywordtype">unsigned</span> long) &amp;txBuffer2;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    message.rx_buf = (<span class="keywordtype">unsigned</span> long) &amp;rxBuffer2;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    message.len = <span class="keyword">sizeof</span>(txBuffer2);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before Setting MDR1 Register \n&quot;</span>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_MESSAGE(1), &amp;message) &lt; 0) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - While Trying to Set MDR1 Register \n&quot;</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    uint8_t txBuffer3[1] = { CLR_CNTR };</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    uint8_t rxBuffer3[1] = { 0xFF };</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    message.tx_buf = (<span class="keywordtype">unsigned</span> long) &amp;txBuffer3;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    message.rx_buf = (<span class="keywordtype">unsigned</span> long) &amp;rxBuffer3;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    message.len = <span class="keyword">sizeof</span>(txBuffer3);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before First Cleaning Decoder \n&quot;</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_MESSAGE(1), &amp;message) &lt; 0){</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        printf(<span class="stringliteral">&quot;[ERROR] - While Cleaning Decoder\n&quot;</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    uint8_t rxBuffer4[5] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    uint8_t txBuffer4[5] = { WRITE_DTR, 0x00, 0x00, 0x00, 0x00 };</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    message.tx_buf = (<span class="keywordtype">unsigned</span> long) &amp;txBuffer4;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    message.rx_buf = (<span class="keywordtype">unsigned</span> long) &amp;rxBuffer4;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    message.len = <span class="keyword">sizeof</span>(txBuffer4);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before Setting DTR \n&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_MESSAGE(1), &amp;message) &lt; 0) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        printf(<span class="stringliteral">&quot;[ERROR] - While Setting DTR \n&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    uint8_t txBuffer5[1] = { LOAD_CNTR };</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    uint8_t rxBuffer5[1] = { 0xFF };</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    message.tx_buf = (<span class="keywordtype">unsigned</span> long) &amp;txBuffer5;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    message.rx_buf = (<span class="keywordtype">unsigned</span> long) &amp;rxBuffer5;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    message.len = <span class="keyword">sizeof</span>(txBuffer5);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Before Setting LOAD_CNTR \n&quot;</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_MESSAGE(1), &amp;message) &lt; 0){</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        printf(<span class="stringliteral">&quot;[ERROR] - While Setting CNTR\n&quot;</span>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="decoderInterface_8c.html#a025bd94ca9413d426082b6586d09aa9b">decoderInitialized</a> = TRUE;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="af5872793a562a54c455d94fef27f3a2b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5872793a562a54c455d94fef27f3a2b">&#9670;&nbsp;</a></span>readDecoderCounter()</h2>
 
@@ -163,57 +339,101 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>frequencyRate</b>
       </table>
 </div><div class="memdoc">
 
-<p>Read Decoder With SPI IOC TRANSFER Funcao para Fazer a Leitura do Decoder e Retornar Valor do Contador Lido. </p>
-<dl class="section return"><dt>Returns</dt><dd>Retorna o Status da Inicializacao Sendo, 1 feita com Sucesso. </dd></dl>
+<p>Leitura do Registrador CNTR do Decoder com SPI IOC TRANSFER Funcao para Fazer a Leitura do Decoder CNTR e Retornar Valor do Contador Lido. </p>
+<dl class="section return"><dt>Returns</dt><dd>Int Retorna o Status da Inicializacao Sendo, 1 feita com Sucesso. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="decoderInterface_8c_source.html#l00034">34</a> of file <a class="el" href="decoderInterface_8c_source.html">decoderInterface.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Starting readDecoderCounter Function \n&quot;</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#if IS_RUNNING_LOCAL == FALSE</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span>(decoderInitialized == FALSE) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - SPI Device Not Initialized. Cant Read Decoder \n&quot;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        exit(1);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">struct </span>spi_ioc_transfer message;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter Before Setting txBuf and rxBuff \n&quot;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    uint8_t rxbuf[5] = { 0xF0, 0xF1, 0xF2, 0xF3, 0xF4 };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    uint8_t txbuf[5] = { READ_CNTR, 0x00, 0x00, 0x00, 0x00 };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter Setting message \n&quot;</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    message.tx_buf = (<span class="keywordtype">unsigned</span> long) &amp;txbuf;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    message.rx_buf = (<span class="keywordtype">unsigned</span> long) &amp;rxbuf;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    message.bits_per_word = BITS_PER_WORD;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    message.speed_hz = frequencyRate;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    message.len = <span class="keyword">sizeof</span>(txbuf);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter Before SPI_IOC_MESSAGE \n&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span>(ioctl(fileDescriptor, SPI_IOC_MESSAGE(1), &amp;message) &lt; 0){</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - While Trying to Read SPI Decoder \n&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter assign rxBuffer \n&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    uint32_t byte1 = rxbuf[4];</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    uint32_t byte2 = rxbuf[3] &lt;&lt; 8;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint32_t byte3 = rxbuf[2] &lt;&lt; 16;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    uint32_t byte4 = rxbuf[1] &lt;&lt; 24;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    uint32_t readOut = byte1 | byte2 | byte3 | byte4;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter readOut: %d \n&quot;</span>, readOut);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> readOut;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="decoderInterface_8c_source.html#l00037">37</a> of file <a class="el" href="decoderInterface_8c_source.html">decoderInterface.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Starting readDecoderCounter Function \n&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#if IS_RUNNING_LOCAL == FALSE</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="decoderInterface_8c.html#a025bd94ca9413d426082b6586d09aa9b">decoderInitialized</a> == FALSE) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - SPI Device Not Initialized. Cant Read Decoder \n&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">struct </span>spi_ioc_transfer message;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter Before Setting txBuf and rxBuff \n&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    uint8_t rxbuf[5] = { 0xF0, 0xF1, 0xF2, 0xF3, 0xF4 };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint8_t txbuf[5] = { READ_CNTR, 0x00, 0x00, 0x00, 0x00 };</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter Setting message \n&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    message.tx_buf = (<span class="keywordtype">unsigned</span> long) &amp;txbuf;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    message.rx_buf = (<span class="keywordtype">unsigned</span> long) &amp;rxbuf;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    message.bits_per_word = <a class="code" href="decoderInterface_8h.html#af859a98f57110e5243e8f0541319e43b">BITS_PER_WORD</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    message.speed_hz = <a class="code" href="decoderInterface_8c.html#acee492bc7671a012db2f39d5b1a17227">frequencyRate</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    message.len = <span class="keyword">sizeof</span>(txbuf);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter Before SPI_IOC_MESSAGE \n&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(ioctl(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>, SPI_IOC_MESSAGE(1), &amp;message) &lt; 0){</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - While Trying to Read SPI Decoder \n&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter assign rxBuffer \n&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    uint32_t byte1 = rxbuf[4];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    uint32_t byte2 = rxbuf[3] &lt;&lt; 8;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    uint32_t byte3 = rxbuf[2] &lt;&lt; 16;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    uint32_t byte4 = rxbuf[1] &lt;&lt; 24;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    uint32_t readOut = byte1 | byte2 | byte3 | byte4;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - readDecoderCounter readOut: %d \n&quot;</span>, readOut);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> readOut;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a75971fdf1e347a1d330cae5e15250edf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75971fdf1e347a1d330cae5e15250edf">&#9670;&nbsp;</a></span>wrapUpDecoder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wrapUpDecoder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para desligamento e reset das variáveis do decoder. Funcao para fazer a limpeza das variaveis, setar decoder como nao inicializado e fechar a comunicacao SPI. </p>
+<dl class="section return"><dt>Returns</dt><dd>Void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="decoderInterface_8c_source.html#l00222">222</a> of file <a class="el" href="decoderInterface_8c_source.html">decoderInterface.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Starting wrapUpDecoder Function \n&quot;</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="decoderInterface_8c.html#a025bd94ca9413d426082b6586d09aa9b">decoderInitialized</a> == FALSE){</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;[ERROR] - SPI Device Not Initialized. Cant Wrap Up Decoder \n&quot;</span>);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="decoderInterface_8c.html#a025bd94ca9413d426082b6586d09aa9b">decoderInitialized</a> = FALSE;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="decoderInterface_8c.html#acee492bc7671a012db2f39d5b1a17227">frequencyRate</a> = 0;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    close(<a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a>);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a> = -1;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>) printf(<span class="stringliteral">&quot;[DEBUG] - Done wrapUpDecoder Function \n&quot;</span>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="adecoderInterface_8h_html_a9cfcd032e38e55938e02821e97fe3660"><div class="ttname"><a href="decoderInterface_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a></div><div class="ttdeci">#define NO_FLAGS</div><div class="ttdoc">Tokens para Flags.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8h_source.html#l00070">decoderInterface.h:70</a></div></div>
+<div class="ttc" id="adecoderInterface_8c_html_a025bd94ca9413d426082b6586d09aa9b"><div class="ttname"><a href="decoderInterface_8c.html#a025bd94ca9413d426082b6586d09aa9b">decoderInitialized</a></div><div class="ttdeci">int decoderInitialized</div><div class="ttdoc">Variavel Global De Inicializacao Do Decoder Com Finalidade De Fluxo De Codigo.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00026">decoderInterface.c:26</a></div></div>
+<div class="ttc" id="adecoderInterface_8h_html_af859a98f57110e5243e8f0541319e43b"><div class="ttname"><a href="decoderInterface_8h.html#af859a98f57110e5243e8f0541319e43b">BITS_PER_WORD</a></div><div class="ttdeci">#define BITS_PER_WORD</div><div class="ttdoc">Define Quantidade de Bits por Palavra do Decoder.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8h_source.html#l00042">decoderInterface.h:42</a></div></div>
+<div class="ttc" id="adecoderInterface_8c_html_acee492bc7671a012db2f39d5b1a17227"><div class="ttname"><a href="decoderInterface_8c.html#acee492bc7671a012db2f39d5b1a17227">frequencyRate</a></div><div class="ttdeci">uint32_t frequencyRate</div><div class="ttdoc">Variavel Global Com Finalidade De Controlar Frequencia de Comunicacao do SPI.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00030">decoderInterface.c:30</a></div></div>
+<div class="ttc" id="adecoderInterface_8h_html_a6d53c8a07c6a28b77606d9adac788e1e"><div class="ttname"><a href="decoderInterface_8h.html#a6d53c8a07c6a28b77606d9adac788e1e">EN_CNTR</a></div><div class="ttdeci">#define EN_CNTR</div><div class="ttdoc">Tokens Para Habilitar Contagem.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8h_source.html#l00083">decoderInterface.h:83</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_ad72dbcf6d0153db1b8d8a58001feed83"><div class="ttname"><a href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a></div><div class="ttdeci">#define DEBUG</div><div class="ttdoc">Modulo Para Depuracao.</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00029">helpers.h:29</a></div></div>
+<div class="ttc" id="adecoderInterface_8h_html_a0a9f6fa936390e8bdc58e536b95d9c29"><div class="ttname"><a href="decoderInterface_8h.html#a0a9f6fa936390e8bdc58e536b95d9c29">FREE_RUN</a></div><div class="ttdeci">#define FREE_RUN</div><div class="ttdoc">Tokens de Modo de Contagem.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8h_source.html#l00052">decoderInterface.h:52</a></div></div>
+<div class="ttc" id="adecoderInterface_8c_html_a57acc7a88386e5b7723454c0641d68e5"><div class="ttname"><a href="decoderInterface_8c.html#a57acc7a88386e5b7723454c0641d68e5">fileDescriptor</a></div><div class="ttdeci">int fileDescriptor</div><div class="ttdoc">Descritor de Arquivo do SPI.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8c_source.html#l00028">decoderInterface.c:28</a></div></div>
+<div class="ttc" id="adecoderInterface_8h_html_a331a010a3845e67f2cb06ba4c51e46f2"><div class="ttname"><a href="decoderInterface_8h.html#a331a010a3845e67f2cb06ba4c51e46f2">BYTE_4</a></div><div class="ttdeci">#define BYTE_4</div><div class="ttdoc">Tokens Para Largura Contador.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8h_source.html#l00077">decoderInterface.h:77</a></div></div>
+<div class="ttc" id="adecoderInterface_8h_html_a9c85cd3313959f783e982dc29f5894b4"><div class="ttname"><a href="decoderInterface_8h.html#a9c85cd3313959f783e982dc29f5894b4">DISABLE_INDX</a></div><div class="ttdeci">#define DISABLE_INDX</div><div class="ttdoc">Tokens de Pino de Indice.</div><div class="ttdef"><b>Definition:</b> <a href="decoderInterface_8h_source.html#l00058">decoderInterface.h:58</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1cee467d967db557397dfb96a54199c6.html">decoderInterface</a></li><li class="navelem"><a class="el" href="decoderInterface_8c.html">decoderInterface.c</a></li>
-    <li class="footer">Generated on Wed Dec 11 2019 02:48:27 for Qser_RoGaFe_19/2 by
+    <li class="footer">Generated on Wed Dec 11 2019 04:55:29 for Qser_RoGaFe_19/2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

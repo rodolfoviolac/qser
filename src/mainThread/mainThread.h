@@ -18,7 +18,7 @@
  * @file mainThread.h
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Header File for The Main Thread.
+ * @brief  Cabeçalho para a main thread.
  */
 
 

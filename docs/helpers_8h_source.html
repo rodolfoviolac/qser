@@ -119,33 +119,36 @@ $(document).ready(function(){initNavTree('helpers_8h_source.html','');});
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifndef QSER_HELPERS_H</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define QSER_HELPERS_H</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define IS_RUNNING_LOCAL 0</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define DEBUG 0</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define TRUE 1</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define FALSE 0</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define PI 3.141592653589793238462643383279</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define MAX_RANGE 180.00</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define CONST_UNIT_RAD_MATH 0.01745329251</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define RAD2G MAX_RANGE/PI</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">int</span> <a class="code" href="helpers_8h.html#a11518359bc1427b7f3fc6f3ce336db15">writeHandler</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> filePath[], <span class="keyword">const</span> <span class="keywordtype">char</span> data[]);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="helpers_8h.html#a4f1fdf6fe9d7c767dec3b9ace03ce89c">readHandler</a>(<span class="keywordtype">char</span> *data, <span class="keywordtype">int</span> size, <span class="keyword">const</span> <span class="keywordtype">char</span> filePath[]);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="helpers_8h.html#afb786d718c78c0731bb746dd2bdb9372">   27</a></span>&#160;<span class="preprocessor">#define IS_RUNNING_LOCAL 0</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="helpers_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">   29</a></span>&#160;<span class="preprocessor">#define DEBUG 0</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define TRUE 1</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define FALSE 0</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="helpers_8h.html#a598a3330b3c21701223ee0ca14316eca">   33</a></span>&#160;<span class="preprocessor">#define PI 3.141592653589793238462643383279</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define MAX_RANGE 180.00</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define CONST_UNIT_RAD_MATH 0.01745329251</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define RAD2G MAX_RANGE/PI</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif //QSER_HELPERS_H</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">int</span> <a class="code" href="helpers_8h.html#a11518359bc1427b7f3fc6f3ce336db15">writeHandler</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> filePath[], <span class="keyword">const</span> <span class="keywordtype">char</span> data[]);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="helpers_8h.html#a4f1fdf6fe9d7c767dec3b9ace03ce89c">readHandler</a>(<span class="keywordtype">char</span> *data, <span class="keywordtype">int</span> size, <span class="keyword">const</span> <span class="keywordtype">char</span> filePath[]);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif //QSER_HELPERS_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="ahelpers_8h_html_a11518359bc1427b7f3fc6f3ce336db15"><div class="ttname"><a href="helpers_8h.html#a11518359bc1427b7f3fc6f3ce336db15">writeHandler</a></div><div class="ttdeci">int writeHandler(const char filePath[], const char data[])</div><div class="ttdoc">Write Handler For Helping Writing To Files Funcao para facilitar a escrita em arquivos.</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00032">helpers.c:32</a></div></div>
-<div class="ttc" id="ahelpers_8h_html_a4f1fdf6fe9d7c767dec3b9ace03ce89c"><div class="ttname"><a href="helpers_8h.html#a4f1fdf6fe9d7c767dec3b9ace03ce89c">readHandler</a></div><div class="ttdeci">char * readHandler(char *data, int size, const char filePath[])</div><div class="ttdoc">Read Handler For Helping Reading From Files Funcao Para Facilitar a Leitra de Arquivos.</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00055">helpers.c:55</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a11518359bc1427b7f3fc6f3ce336db15"><div class="ttname"><a href="helpers_8h.html#a11518359bc1427b7f3fc6f3ce336db15">writeHandler</a></div><div class="ttdeci">int writeHandler(const char filePath[], const char data[])</div><div class="ttdoc">Função Para Ajudar a Escrita Rotina para facilitar a escrita em arquivos.</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00033">helpers.c:33</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a4f1fdf6fe9d7c767dec3b9ace03ce89c"><div class="ttname"><a href="helpers_8h.html#a4f1fdf6fe9d7c767dec3b9ace03ce89c">readHandler</a></div><div class="ttdeci">char * readHandler(char *data, int size, const char filePath[])</div><div class="ttdoc">Função para Ajudar a Leitura. Rotina para facilitar a leitura de arquivos.</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00058">helpers.c:58</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0c26bd22f254302c4dfbaa95bf527e9d.html">helpers</a></li><li class="navelem"><a class="el" href="helpers_8h.html">helpers.h</a></li>
-    <li class="footer">Generated on Wed Dec 11 2019 02:48:27 for Qser_RoGaFe_19/2 by
+    <li class="footer">Generated on Wed Dec 11 2019 04:55:29 for Qser_RoGaFe_19/2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

@@ -18,7 +18,7 @@
  * @file mainThread.c
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Principal Function For Handling User Flow. Listening For Commands.
+ * @brief  Thread Principal para controlar fluxo do usuário e comandos.
  */
 
 #include "mainThread.h"
@@ -29,7 +29,7 @@ int JPL_REACHED_STATUS_TWO = 0;
 
 
 /**
- * @brief Main Thread For Hanling User Interface and Commands.
+ * @brief Main Thread para interface com usuário e controle de fluxo.
  * Thread responsável por esperar comando do usuário e fazer a chamad necessária da API para executar a ação.
  *
  * É nessa thread que é feita excutada as funções da biblioteca, repetidamente espera em um loop infito um comando de um usuário

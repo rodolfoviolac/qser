@@ -18,7 +18,7 @@
  * @file decoderInterface.c
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Interface Functions For Handling The Decoder
+ * @brief  Funções para fazer a interface com o decoder
  */
 
 #include "decoderInterface.h"
@@ -30,7 +30,7 @@ int fileDescriptor = -1;
 uint32_t frequencyRate = 0;
 
 /**
- * @brief Read Decoder Register CNTR With SPI IOC TRANSFER
+ * @brief Leitura do Registrador CNTR do Decoder com SPI IOC TRANSFER
  * Funcao para Fazer a Leitura do Decoder CNTR e Retornar Valor do Contador Lido.
  * @return Int Retorna o Status da Inicializacao Sendo, 1 feita com Sucesso.
  */
@@ -73,7 +73,7 @@ int readDecoderCounter(){
 }
 
 /**
- * @brief Initializer The Decoder With Pre Definied Tokens for Handling Couting
+ * @brief Inicialização do Decoder com Tokens pré definidor para fazer a contagem
  * Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder Juntamente Com o SPI
  * Sao as Seguintes Configuracoes Para o MDR0: WRITE_MDR0, QUADRX1 | FREE_RUN | DISABLE_INDX | FILTER_2
  * Sao as Seguintes Configuracoes Para o MDR1: WRITE_MDR1, NO_FLAGS | BYTE_4 | EN_CNTR
@@ -184,8 +184,8 @@ void decoderInitializer(int spiSpeed){
 
 
 /**
- * @brief Function For Cleaning Decoder
- * Funcao para Zerar o Contador do Decoder, faz isso por meio da instrucao CLR_CNTR
+ * @brief Função Para Limpar o Contador do Decoder.
+ * Rotina para Zerar o Contador do Decoder, faz isso por meio da instrução CLR_CNTR
  * @return Void
  */
 void clearDecoder(){
@@ -215,7 +215,7 @@ void clearDecoder(){
 }
 
 /**
- * @brief Function For Exiting and Restart Variables Of Decoder
+ * @brief Função para desligamento e reset das variáveis do decoder.
  * Funcao para fazer a limpeza das variaveis, setar decoder como nao inicializado e fechar a comunicacao SPI
  * @return Void
  */

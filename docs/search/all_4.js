@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['filter_5f1_8',['FILTER_1',['../decoderInterface_8h.html#ad868c8b55c4dfcc54eae872431d2113e',1,'decoderInterface.h']]],
-  ['free_5frun_9',['FREE_RUN',['../decoderInterface_8h.html#a0a9f6fa936390e8bdc58e536b95d9c29',1,'decoderInterface.h']]]
+  ['en_5fcntr_15',['EN_CNTR',['../decoderInterface_8h.html#a6d53c8a07c6a28b77606d9adac788e1e',1,'decoderInterface.h']]],
+  ['errordeviation_16',['errorDeviation',['../pidController_8c.html#a900bffdedb5b76779215d899eaac9235',1,'pidController.c']]]
 ];

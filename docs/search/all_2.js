@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['decoderinitializer_3',['decoderInitializer',['../decoderInterface_8c.html#aa643b06f53912de8c90b619803eb27a6',1,'decoderInitializer(int spiSpeed):&#160;decoderInterface.c'],['../decoderInterface_8h.html#aa643b06f53912de8c90b619803eb27a6',1,'decoderInitializer(int spiSpeed):&#160;decoderInterface.c']]],
-  ['decoderinterface_2ec_4',['decoderInterface.c',['../decoderInterface_8c.html',1,'']]],
-  ['decoderinterface_2eh_5',['decoderInterface.h',['../decoderInterface_8h.html',1,'']]],
-  ['disable_5findx_6',['DISABLE_INDX',['../decoderInterface_8h.html#a9c85cd3313959f783e982dc29f5894b4',1,'decoderInterface.h']]]
+  ['cleardecoder_3',['clearDecoder',['../decoderInterface_8c.html#a82fe1a26c4a03de6dc52798635d4ca27',1,'clearDecoder():&#160;decoderInterface.c'],['../decoderInterface_8h.html#a82fe1a26c4a03de6dc52798635d4ca27',1,'clearDecoder():&#160;decoderInterface.c']]],
+  ['clr_5fmdr0_4',['CLR_MDR0',['../decoderInterface_8h.html#aa1401b1c9a0fa1cf60ae9736e3286479',1,'decoderInterface.h']]],
+  ['controlkd_5',['controlKd',['../pidController_8c.html#ab032dbb879b584cedb078654339a3a97',1,'pidController.c']]],
+  ['controlki_6',['controlKi',['../pidController_8c.html#a8467e669549465248016d01cc5f9f0ad',1,'pidController.c']]],
+  ['controlkp_7',['controlKp',['../pidController_8c.html#add21ccb04e1708df9847b3537c3c160d',1,'pidController.c']]],
+  ['conversioncoefficientunit_8',['conversionCoefficientUnit',['../mainThread_8h.html#a965fbbe1d8f665ae26133d817d846cf3',1,'conversionCoefficientUnit():&#160;pidController.c'],['../pidController_8c.html#a965fbbe1d8f665ae26133d817d846cf3',1,'conversionCoefficientUnit():&#160;pidController.c']]]
 ];

@@ -121,38 +121,38 @@ $(document).ready(function(){initNavTree('userInterface_8h_source.html','');});
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define QSER_USERINTERFACE_H</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define OPTION_INVALID 0</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define OPTION_EXIT 1</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define OPTION_HELP 2</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define OPTION_SPEED 3</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define OPTION_JPL 4</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define OPTION_GO_FOR_V 5</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define OPTION_QSER_BREAK 6</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define OPTION_SHIFT_RAD 7</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define OPTION_SET_KP 8</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define OPTION_SET_KD 9</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define OPTION_SET_KI 10</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define OPTION_SET_CCU 11</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define OPTION_CLEAR_DEC 12</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define OPTION_READ_DEC 13</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define OPTION_READ_DEC_RAD 14</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="userInterface_8h.html#a58a559802dc87f303b0505b79f28a4fc">   29</a></span>&#160;<span class="preprocessor">#define OPTION_INVALID 0</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define OPTION_EXIT 1</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define OPTION_HELP 2</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define OPTION_SPEED 3</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define OPTION_JPL 4</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define OPTION_GO_FOR_V 5</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define OPTION_QSER_BREAK 6</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define OPTION_SHIFT_RAD 7</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define OPTION_SET_KP 8</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define OPTION_SET_KD 9</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define OPTION_SET_KI 10</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define OPTION_SET_CCU 11</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define OPTION_CLEAR_DEC 12</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define OPTION_READ_DEC 13</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define OPTION_READ_DEC_RAD 14</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> <a class="code" href="userInterface_8h.html#a4b9e2beb67256f2c06b39d24bc83e28d">printUserOptions</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="userInterface_8h.html#ad08d5cb2ed8e6805573049fd31dab2db">printUserGroupsName</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">int</span> <a class="code" href="userInterface_8h.html#a6091a80fd6f480466b254b3653ca5d27">resolveOption</a>(<span class="keywordtype">char</span>* input);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif //QSER_USERINTERFACE_H</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="userInterface_8h.html#a4b9e2beb67256f2c06b39d24bc83e28d">printUserOptions</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="userInterface_8h.html#ad08d5cb2ed8e6805573049fd31dab2db">printUserGroupsName</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">int</span> <a class="code" href="userInterface_8h.html#a6091a80fd6f480466b254b3653ca5d27">resolveOption</a>(<span class="keywordtype">char</span>* input);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif //QSER_USERINTERFACE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="auserInterface_8h_html_ad08d5cb2ed8e6805573049fd31dab2db"><div class="ttname"><a href="userInterface_8h.html#ad08d5cb2ed8e6805573049fd31dab2db">printUserGroupsName</a></div><div class="ttdeci">void printUserGroupsName()</div><div class="ttdoc">Function For Print Members Name Funcao para Imprimir no Terminal os Nomes dos Integrantes do Grupo.</div><div class="ttdef"><b>Definition:</b> <a href="userInterface_8c_source.html#l00049">userInterface.c:49</a></div></div>
-<div class="ttc" id="auserInterface_8h_html_a6091a80fd6f480466b254b3653ca5d27"><div class="ttname"><a href="userInterface_8h.html#a6091a80fd6f480466b254b3653ca5d27">resolveOption</a></div><div class="ttdeci">int resolveOption(char *input)</div><div class="ttdoc">Function For Handling User Input Options Funcao para retornar a opcao escolhida pelo usuario no menu ...</div><div class="ttdef"><b>Definition:</b> <a href="userInterface_8c_source.html#l00063">userInterface.c:63</a></div></div>
-<div class="ttc" id="auserInterface_8h_html_a4b9e2beb67256f2c06b39d24bc83e28d"><div class="ttname"><a href="userInterface_8h.html#a4b9e2beb67256f2c06b39d24bc83e28d">printUserOptions</a></div><div class="ttdeci">void printUserOptions()</div><div class="ttdoc">Function For Print Users Options Funcao para imprimir no Terminal os Comandos Possiveis para o usuari...</div><div class="ttdef"><b>Definition:</b> <a href="userInterface_8c_source.html#l00030">userInterface.c:30</a></div></div>
+<div class="ttc" id="auserInterface_8h_html_ad08d5cb2ed8e6805573049fd31dab2db"><div class="ttname"><a href="userInterface_8h.html#ad08d5cb2ed8e6805573049fd31dab2db">printUserGroupsName</a></div><div class="ttdeci">void printUserGroupsName()</div><div class="ttdoc">Função para imprimir nome de integrantes.</div><div class="ttdef"><b>Definition:</b> <a href="userInterface_8c_source.html#l00056">userInterface.c:56</a></div></div>
+<div class="ttc" id="auserInterface_8h_html_a6091a80fd6f480466b254b3653ca5d27"><div class="ttname"><a href="userInterface_8h.html#a6091a80fd6f480466b254b3653ca5d27">resolveOption</a></div><div class="ttdeci">int resolveOption(char *input)</div><div class="ttdoc">Função de validação de comando. Rotina para mapear a opções digitada pelo usuário no menu de opções.</div><div class="ttdef"><b>Definition:</b> <a href="userInterface_8c_source.html#l00070">userInterface.c:70</a></div></div>
+<div class="ttc" id="auserInterface_8h_html_a4b9e2beb67256f2c06b39d24bc83e28d"><div class="ttname"><a href="userInterface_8h.html#a4b9e2beb67256f2c06b39d24bc83e28d">printUserOptions</a></div><div class="ttdeci">void printUserOptions()</div><div class="ttdoc">Função para imprimir opções para usuário. Rotina para imprimir no terminal os comandos possíveis para...</div><div class="ttdef"><b>Definition:</b> <a href="userInterface_8c_source.html#l00034">userInterface.c:34</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_8f83ca4ebc6646d7cbbd2f1830916c8f.html">userInterface</a></li><li class="navelem"><a class="el" href="userInterface_8h.html">userInterface.h</a></li>
-    <li class="footer">Generated on Wed Dec 11 2019 02:48:27 for Qser_RoGaFe_19/2 by
+    <li class="footer">Generated on Wed Dec 11 2019 04:55:29 for Qser_RoGaFe_19/2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

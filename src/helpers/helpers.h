@@ -18,7 +18,7 @@
  * @file helpers.h
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Header Files for the Helpers Functions and Universal Variables
+ * @brief Cabeçalho para as funções de ajuda e definições de variáveis globais.
  */
 
 #ifndef QSER_HELPERS_H

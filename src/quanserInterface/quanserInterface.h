@@ -18,7 +18,7 @@
  * @file quanserInterface.h
  * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
  * @date 11 Dec 2019
- * @brief  Header File for The Quanser Interface.
+ * @brief  Arquivo de cabeçalho da interface do quanser.
  */
 
 #ifndef QSER_QUANSERINTERFACE_H

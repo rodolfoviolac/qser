@@ -2,7 +2,7 @@
 \label{decoderInterface_8h}\index{src/decoderInterface/decoderInterface.h@{src/decoderInterface/decoderInterface.h}}
 
 
-Header Files for the decoder Interface.  
+Cabeçalho para a Interface do Decoder.  
 
 
 {\ttfamily \#include $<$fcntl.\+h$>$}\newline
@@ -18,11 +18,11 @@ Header Files for the decoder Interface.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{decoderInterface_8h_a677a5a2cb49ba023b28f16a3c0d38b0e}\label{decoderInterface_8h_a677a5a2cb49ba023b28f16a3c0d38b0e}} 
-\#define {\bfseries S\+P\+I\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+P\+E\+ED}~10000
-\item 
+\#define \mbox{\hyperlink{decoderInterface_8h_a677a5a2cb49ba023b28f16a3c0d38b0e}{S\+P\+I\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+P\+E\+ED}}~10000
+\begin{DoxyCompactList}\small\item\em Define A Velocidade Do S\+PI. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{decoderInterface_8h_af859a98f57110e5243e8f0541319e43b}\label{decoderInterface_8h_af859a98f57110e5243e8f0541319e43b}} 
-\#define {\bfseries B\+I\+T\+S\+\_\+\+P\+E\+R\+\_\+\+W\+O\+RD}~8
-\item 
+\#define \mbox{\hyperlink{decoderInterface_8h_af859a98f57110e5243e8f0541319e43b}{B\+I\+T\+S\+\_\+\+P\+E\+R\+\_\+\+W\+O\+RD}}~8
+\begin{DoxyCompactList}\small\item\em Define Quantidade de Bits por Palavra do Decoder. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{decoderInterface_8h_ac8551bdc3d8c10962b07b67d9558c6c8}\label{decoderInterface_8h_ac8551bdc3d8c10962b07b67d9558c6c8}} 
 \#define \mbox{\hyperlink{decoderInterface_8h_ac8551bdc3d8c10962b07b67d9558c6c8}{N\+Q\+U\+AD}}~0x00
 \begin{DoxyCompactList}\small\item\em Tokens Para Codificacao de Contagem de Quadratura. \end{DoxyCompactList}\item 
@@ -149,21 +149,18 @@ Header Files for the decoder Interface.
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{decoderInterface_8h_aa643b06f53912de8c90b619803eb27a6}\label{decoderInterface_8h_aa643b06f53912de8c90b619803eb27a6}} 
 void \mbox{\hyperlink{decoderInterface_8h_aa643b06f53912de8c90b619803eb27a6}{decoder\+Initializer}} (int spi\+Speed)
-\begin{DoxyCompactList}\small\item\em Initializer The Decoder With Pre Definied Tokens for Handling Couting Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inicialização do Decoder com Tokens pré definidor para fazer a contagem Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder Juntamente Com o S\+PI Sao as Seguintes Configuracoes Para o M\+D\+R0\+: W\+R\+I\+T\+E\+\_\+\+M\+D\+R0, Q\+U\+A\+D\+R\+X1 $\vert$ F\+R\+E\+E\+\_\+\+R\+UN $\vert$ D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+N\+DX $\vert$ F\+I\+L\+T\+E\+R\+\_\+2 Sao as Seguintes Configuracoes Para o M\+D\+R1\+: W\+R\+I\+T\+E\+\_\+\+M\+D\+R1, N\+O\+\_\+\+F\+L\+A\+GS $\vert$ B\+Y\+T\+E\+\_\+4 $\vert$ E\+N\+\_\+\+C\+N\+TR. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{decoderInterface_8h_af5872793a562a54c455d94fef27f3a2b}{read\+Decoder\+Counter}} ()
-\begin{DoxyCompactList}\small\item\em Read Decoder With S\+PI I\+OC T\+R\+A\+N\+S\+F\+ER Funcao para Fazer a Leitura do Decoder e Retornar Valor do Contador Lido. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{decoderInterface_8h_a82fe1a26c4a03de6dc52798635d4ca27}\label{decoderInterface_8h_a82fe1a26c4a03de6dc52798635d4ca27}} 
+\begin{DoxyCompactList}\small\item\em Leitura do Registrador C\+N\+TR do Decoder com S\+PI I\+OC T\+R\+A\+N\+S\+F\+ER Funcao para Fazer a Leitura do Decoder C\+N\+TR e Retornar Valor do Contador Lido. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{decoderInterface_8h_a82fe1a26c4a03de6dc52798635d4ca27}{clear\+Decoder}} ()
-\begin{DoxyCompactList}\small\item\em Function For Cleaning Decoder Funcao para Zerar o Contador do Decoder. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{decoderInterface_8h_a75971fdf1e347a1d330cae5e15250edf}\label{decoderInterface_8h_a75971fdf1e347a1d330cae5e15250edf}} 
+\begin{DoxyCompactList}\small\item\em Função Para Limpar o Contador do Decoder. Rotina para Zerar o Contador do Decoder, faz isso por meio da instrução C\+L\+R\+\_\+\+C\+N\+TR. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{decoderInterface_8h_a75971fdf1e347a1d330cae5e15250edf}{wrap\+Up\+Decoder}} ()
-\begin{DoxyCompactList}\small\item\em Function For Exiting and Restart Variables Of Decoder Funcao para fazer a limpeza das variaveis e setar decoder como nao inicializado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Função para desligamento e reset das variáveis do decoder. Funcao para fazer a limpeza das variaveis, setar decoder como nao inicializado e fechar a comunicacao S\+PI. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Header Files for the decoder Interface. 
+Cabeçalho para a Interface do Decoder. 
 
 \begin{DoxyAuthor}{Author}
 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis 
@@ -174,6 +171,178 @@ Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{decoderInterface_8h_a82fe1a26c4a03de6dc52798635d4ca27}\label{decoderInterface_8h_a82fe1a26c4a03de6dc52798635d4ca27}} 
+\index{decoderInterface.h@{decoderInterface.h}!clearDecoder@{clearDecoder}}
+\index{clearDecoder@{clearDecoder}!decoderInterface.h@{decoderInterface.h}}
+\doxysubsubsection{\texorpdfstring{clearDecoder()}{clearDecoder()}}
+{\footnotesize\ttfamily void clear\+Decoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função Para Limpar o Contador do Decoder. Rotina para Zerar o Contador do Decoder, faz isso por meio da instrução C\+L\+R\+\_\+\+C\+N\+TR. 
+
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 191 of file decoder\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{191                    \{}
+\DoxyCodeLine{192     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting clearDecoder Function \(\backslash\)n"});}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#if IS\_RUNNING\_LOCAL == FALSE}}
+\DoxyCodeLine{194     \textcolor{keywordflow}{if}(\mbox{\hyperlink{decoderInterface_8c_a025bd94ca9413d426082b6586d09aa9b}{decoderInitialized}} == FALSE)\{}
+\DoxyCodeLine{195         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ SPI Device Not Initialized. Cant Clear Decoder \(\backslash\)n"});}
+\DoxyCodeLine{196         exit(1);}
+\DoxyCodeLine{197     \}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ clearDecoder Setting Message Clear Content \(\backslash\)n"});}
+\DoxyCodeLine{200     \textcolor{keyword}{struct }spi\_ioc\_transfer message;}
+\DoxyCodeLine{201     uint8\_t txBuffer[1] = \{ CLR\_CNTR \};}
+\DoxyCodeLine{202     uint8\_t rxBuffer[1] = \{ 0xFF \};}
+\DoxyCodeLine{203     message.tx\_buf = (\textcolor{keywordtype}{unsigned} long) \&txBuffer;}
+\DoxyCodeLine{204     message.rx\_buf = (\textcolor{keywordtype}{unsigned} long) \&rxBuffer;}
+\DoxyCodeLine{205     message.bits\_per\_word = \mbox{\hyperlink{decoderInterface_8h_af859a98f57110e5243e8f0541319e43b}{BITS\_PER\_WORD}};}
+\DoxyCodeLine{206     message.speed\_hz = \mbox{\hyperlink{decoderInterface_8c_acee492bc7671a012db2f39d5b1a17227}{frequencyRate}};}
+\DoxyCodeLine{207     message.len = \textcolor{keyword}{sizeof}(txBuffer);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ clearDecoder Before SPI\_IOC\_MESSAGE \(\backslash\)n"});}
+\DoxyCodeLine{210     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_MESSAGE(1), \&message) < 0)\{}
+\DoxyCodeLine{211         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ While Trying To Clear Decoder \(\backslash\)n"});}
+\DoxyCodeLine{212     \};}
+\DoxyCodeLine{213     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{215 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{decoderInterface_8h_aa643b06f53912de8c90b619803eb27a6}\label{decoderInterface_8h_aa643b06f53912de8c90b619803eb27a6}} 
+\index{decoderInterface.h@{decoderInterface.h}!decoderInitializer@{decoderInitializer}}
+\index{decoderInitializer@{decoderInitializer}!decoderInterface.h@{decoderInterface.h}}
+\doxysubsubsection{\texorpdfstring{decoderInitializer()}{decoderInitializer()}}
+{\footnotesize\ttfamily void decoder\+Initializer (\begin{DoxyParamCaption}\item[{int}]{spi\+Speed }\end{DoxyParamCaption})}
+
+
+
+Inicialização do Decoder com Tokens pré definidor para fazer a contagem Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder Juntamente Com o S\+PI Sao as Seguintes Configuracoes Para o M\+D\+R0\+: W\+R\+I\+T\+E\+\_\+\+M\+D\+R0, Q\+U\+A\+D\+R\+X1 $\vert$ F\+R\+E\+E\+\_\+\+R\+UN $\vert$ D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+N\+DX $\vert$ F\+I\+L\+T\+E\+R\+\_\+2 Sao as Seguintes Configuracoes Para o M\+D\+R1\+: W\+R\+I\+T\+E\+\_\+\+M\+D\+R1, N\+O\+\_\+\+F\+L\+A\+GS $\vert$ B\+Y\+T\+E\+\_\+4 $\vert$ E\+N\+\_\+\+C\+N\+TR. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Speed} & Frequencia (Hz) Para Comunicacao S\+PI \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file decoder\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84                                      \{}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting decoderInitializer Function \(\backslash\)n"});}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#if IS\_RUNNING\_LOCAL == FALSE}}
+\DoxyCodeLine{87     \textcolor{keywordflow}{if}(\mbox{\hyperlink{decoderInterface_8c_a025bd94ca9413d426082b6586d09aa9b}{decoderInitialized}} == TRUE) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \mbox{\hyperlink{decoderInterface_8c_acee492bc7671a012db2f39d5b1a17227}{frequencyRate}} = spiSpeed;}
+\DoxyCodeLine{90     uint8\_t bpw = \mbox{\hyperlink{decoderInterface_8h_af859a98f57110e5243e8f0541319e43b}{BITS\_PER\_WORD}};}
+\DoxyCodeLine{91     uint8\_t mode = SPI\_MODE\_0;}
+\DoxyCodeLine{92     uint8\_t lsb = 0;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before Opening SPI Device \(\backslash\)n"});}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if}((\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}} = open(\textcolor{stringliteral}{"/dev/spidev1.0"}, O\_RDWR)) == -\/1) \{}
+\DoxyCodeLine{96         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Trying To Open SPI Device /dev/spidev1.0 \(\backslash\)n"});}
+\DoxyCodeLine{97         exit(1);}
+\DoxyCodeLine{98     \}}
+\DoxyCodeLine{99     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before Writing SPI\_IOC\_WR\_MODE on SPI Device \(\backslash\)n"});}
+\DoxyCodeLine{100     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_WR\_MODE, \&mode)) \{}
+\DoxyCodeLine{101         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Not Possible To Write Clock On SPI device \(\backslash\)n"});}
+\DoxyCodeLine{102         exit(1);}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before Writing SPI\_IOC\_WR\_LSB\_FIRST on SPI Device \(\backslash\)n"});}
+\DoxyCodeLine{105     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_WR\_LSB\_FIRST, \&lsb)) \{}
+\DoxyCodeLine{106         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Not Possible To Write Justify Bits On SPI device \(\backslash\)n"});}
+\DoxyCodeLine{107         exit(1);}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before Writing SPI\_IOC\_WR\_BITS\_PER\_WORD on SPI Device \(\backslash\)n"});}
+\DoxyCodeLine{110     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_WR\_BITS\_PER\_WORD, \&bpw)) \{}
+\DoxyCodeLine{111         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Not Possible To Write Quantity Bits per Word On SPI device \(\backslash\)n"});}
+\DoxyCodeLine{112         exit(1);}
+\DoxyCodeLine{113     \}}
+\DoxyCodeLine{114     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before Writing SPI\_IOC\_WR\_MAX\_SPEED\_HZ on SPI Device \(\backslash\)n"});}
+\DoxyCodeLine{115     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_WR\_MAX\_SPEED\_HZ, \&\mbox{\hyperlink{decoderInterface_8c_acee492bc7671a012db2f39d5b1a17227}{frequencyRate}})) \{}
+\DoxyCodeLine{116         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Not Possible To Write Frequency Rate On SPI device \(\backslash\)n"});}
+\DoxyCodeLine{117         exit(1);}
+\DoxyCodeLine{118     \}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ decoderInitializer Setting Up Message \(\backslash\)n"});}
+\DoxyCodeLine{121     \textcolor{keyword}{struct }spi\_ioc\_transfer message;}
+\DoxyCodeLine{122     uint8\_t rxBuffer1[2] = \{ 0xFF, 0xFF \};}
+\DoxyCodeLine{123     uint8\_t txBuffer1[2] = \{ WRITE\_MDR0, QUADRX1 | \mbox{\hyperlink{decoderInterface_8h_a0a9f6fa936390e8bdc58e536b95d9c29}{FREE\_RUN}} | \mbox{\hyperlink{decoderInterface_8h_a9c85cd3313959f783e982dc29f5894b4}{DISABLE\_INDX}} | FILTER\_2 \};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ decoderInitializer Before Tx and Rx Buff \(\backslash\)n"});}
+\DoxyCodeLine{126     message.rx\_buf = (\textcolor{keywordtype}{unsigned} long) \&rxBuffer1;}
+\DoxyCodeLine{127     message.tx\_buf = (\textcolor{keywordtype}{unsigned} long) \&txBuffer1;}
+\DoxyCodeLine{128     message.bits\_per\_word = \mbox{\hyperlink{decoderInterface_8h_af859a98f57110e5243e8f0541319e43b}{BITS\_PER\_WORD}};}
+\DoxyCodeLine{129     message.speed\_hz = spiSpeed;}
+\DoxyCodeLine{130     message.len = \textcolor{keyword}{sizeof}(txBuffer1);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before Setting MDR0 Register \(\backslash\)n"});}
+\DoxyCodeLine{133     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_MESSAGE(1), \&message) < 0)\{}
+\DoxyCodeLine{134         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ While Trying to Set MDR0 Register \(\backslash\)n"});}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     uint8\_t rxBuffer2[2] = \{ 0xFF, 0xFF \};}
+\DoxyCodeLine{138     uint8\_t txBuffer2[2] = \{ WRITE\_MDR1, \mbox{\hyperlink{decoderInterface_8h_a9cfcd032e38e55938e02821e97fe3660}{NO\_FLAGS}} | \mbox{\hyperlink{decoderInterface_8h_a331a010a3845e67f2cb06ba4c51e46f2}{BYTE\_4}} | \mbox{\hyperlink{decoderInterface_8h_a6d53c8a07c6a28b77606d9adac788e1e}{EN\_CNTR}} \};}
+\DoxyCodeLine{139     message.tx\_buf = (\textcolor{keywordtype}{unsigned} long) \&txBuffer2;}
+\DoxyCodeLine{140     message.rx\_buf = (\textcolor{keywordtype}{unsigned} long) \&rxBuffer2;}
+\DoxyCodeLine{141     message.len = \textcolor{keyword}{sizeof}(txBuffer2);}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before Setting MDR1 Register \(\backslash\)n"});}
+\DoxyCodeLine{144     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_MESSAGE(1), \&message) < 0) \{}
+\DoxyCodeLine{145         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ While Trying to Set MDR1 Register \(\backslash\)n"});}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     uint8\_t txBuffer3[1] = \{ CLR\_CNTR \};}
+\DoxyCodeLine{149     uint8\_t rxBuffer3[1] = \{ 0xFF \};}
+\DoxyCodeLine{150     message.tx\_buf = (\textcolor{keywordtype}{unsigned} long) \&txBuffer3;}
+\DoxyCodeLine{151     message.rx\_buf = (\textcolor{keywordtype}{unsigned} long) \&rxBuffer3;}
+\DoxyCodeLine{152     message.len = \textcolor{keyword}{sizeof}(txBuffer3);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before First Cleaning Decoder \(\backslash\)n"});}
+\DoxyCodeLine{155     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_MESSAGE(1), \&message) < 0)\{}
+\DoxyCodeLine{156         printf(\textcolor{stringliteral}{"[ERROR] -\/ While Cleaning Decoder\(\backslash\)n"});}
+\DoxyCodeLine{157     \}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     uint8\_t rxBuffer4[5] = \{ 0xFF, 0xFF, 0xFF, 0xFF, 0xFF \};}
+\DoxyCodeLine{160     uint8\_t txBuffer4[5] = \{ WRITE\_DTR, 0x00, 0x00, 0x00, 0x00 \};}
+\DoxyCodeLine{161     message.tx\_buf = (\textcolor{keywordtype}{unsigned} long) \&txBuffer4;}
+\DoxyCodeLine{162     message.rx\_buf = (\textcolor{keywordtype}{unsigned} long) \&rxBuffer4;}
+\DoxyCodeLine{163     message.len = \textcolor{keyword}{sizeof}(txBuffer4);}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before Setting DTR \(\backslash\)n"});}
+\DoxyCodeLine{166     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_MESSAGE(1), \&message) < 0) \{}
+\DoxyCodeLine{167         printf(\textcolor{stringliteral}{"[ERROR] -\/ While Setting DTR \(\backslash\)n"});}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     uint8\_t txBuffer5[1] = \{ LOAD\_CNTR \};}
+\DoxyCodeLine{171     uint8\_t rxBuffer5[1] = \{ 0xFF \};}
+\DoxyCodeLine{172     message.tx\_buf = (\textcolor{keywordtype}{unsigned} long) \&txBuffer5;}
+\DoxyCodeLine{173     message.rx\_buf = (\textcolor{keywordtype}{unsigned} long) \&rxBuffer5;}
+\DoxyCodeLine{174     message.len = \textcolor{keyword}{sizeof}(txBuffer5);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Before Setting LOAD\_CNTR \(\backslash\)n"});}
+\DoxyCodeLine{177     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_MESSAGE(1), \&message) < 0)\{}
+\DoxyCodeLine{178         printf(\textcolor{stringliteral}{"[ERROR] -\/ While Setting CNTR\(\backslash\)n"});}
+\DoxyCodeLine{179     \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     \mbox{\hyperlink{decoderInterface_8c_a025bd94ca9413d426082b6586d09aa9b}{decoderInitialized}} = TRUE;}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{183 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{decoderInterface_8h_af5872793a562a54c455d94fef27f3a2b}\label{decoderInterface_8h_af5872793a562a54c455d94fef27f3a2b}} 
 \index{decoderInterface.h@{decoderInterface.h}!readDecoderCounter@{readDecoderCounter}}
 \index{readDecoderCounter@{readDecoderCounter}!decoderInterface.h@{decoderInterface.h}}
@@ -182,53 +351,86 @@ Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
 
 
 
-Read Decoder With S\+PI I\+OC T\+R\+A\+N\+S\+F\+ER Funcao para Fazer a Leitura do Decoder e Retornar Valor do Contador Lido. 
+Leitura do Registrador C\+N\+TR do Decoder com S\+PI I\+OC T\+R\+A\+N\+S\+F\+ER Funcao para Fazer a Leitura do Decoder C\+N\+TR e Retornar Valor do Contador Lido. 
 
 \begin{DoxyReturn}{Returns}
-Retorna o Status da Inicializacao Sendo, 1 feita com Sucesso. 
+Int Retorna o Status da Inicializacao Sendo, 1 feita com Sucesso. 
 \end{DoxyReturn}
 
 
-Definition at line 34 of file decoder\+Interface.\+c.
+Definition at line 37 of file decoder\+Interface.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{34                         \{}
-\DoxyCodeLine{35     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting readDecoderCounter Function \(\backslash\)n"});}
-\DoxyCodeLine{36 \textcolor{preprocessor}{\#if IS\_RUNNING\_LOCAL == FALSE}}
-\DoxyCodeLine{37     \textcolor{keywordflow}{if}(decoderInitialized == FALSE) \{}
-\DoxyCodeLine{38         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ SPI Device Not Initialized. Cant Read Decoder \(\backslash\)n"});}
-\DoxyCodeLine{39         exit(1);}
-\DoxyCodeLine{40     \}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42     \textcolor{keyword}{struct }spi\_ioc\_transfer message;}
-\DoxyCodeLine{43     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter Before Setting txBuf and rxBuff \(\backslash\)n"});}
-\DoxyCodeLine{44     uint8\_t rxbuf[5] = \{ 0xF0, 0xF1, 0xF2, 0xF3, 0xF4 \};}
-\DoxyCodeLine{45     uint8\_t txbuf[5] = \{ READ\_CNTR, 0x00, 0x00, 0x00, 0x00 \};}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter Setting message \(\backslash\)n"});}
-\DoxyCodeLine{48     message.tx\_buf = (\textcolor{keywordtype}{unsigned} long) \&txbuf;}
-\DoxyCodeLine{49     message.rx\_buf = (\textcolor{keywordtype}{unsigned} long) \&rxbuf;}
-\DoxyCodeLine{50     message.bits\_per\_word = BITS\_PER\_WORD;}
-\DoxyCodeLine{51     message.speed\_hz = frequencyRate;}
-\DoxyCodeLine{52     message.len = \textcolor{keyword}{sizeof}(txbuf);}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter Before SPI\_IOC\_MESSAGE \(\backslash\)n"});}
-\DoxyCodeLine{55     \textcolor{keywordflow}{if}(ioctl(fileDescriptor, SPI\_IOC\_MESSAGE(1), \&message) < 0)\{}
-\DoxyCodeLine{56         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ While Trying to Read SPI Decoder \(\backslash\)n"});}
-\DoxyCodeLine{57     \}}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter assign rxBuffer \(\backslash\)n"});}
-\DoxyCodeLine{60     uint32\_t byte1 = rxbuf[4];}
-\DoxyCodeLine{61     uint32\_t byte2 = rxbuf[3] << 8;}
-\DoxyCodeLine{62     uint32\_t byte3 = rxbuf[2] << 16;}
-\DoxyCodeLine{63     uint32\_t byte4 = rxbuf[1] << 24;}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{65     uint32\_t readOut = byte1 | byte2 | byte3 | byte4;}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter readOut: \%d \(\backslash\)n"}, readOut);}
-\DoxyCodeLine{68     \textcolor{keywordflow}{return} readOut;}
-\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{70 \}}
+\DoxyCodeLine{37                         \{}
+\DoxyCodeLine{38     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting readDecoderCounter Function \(\backslash\)n"});}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#if IS\_RUNNING\_LOCAL == FALSE}}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}(\mbox{\hyperlink{decoderInterface_8c_a025bd94ca9413d426082b6586d09aa9b}{decoderInitialized}} == FALSE) \{}
+\DoxyCodeLine{41         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ SPI Device Not Initialized. Cant Read Decoder \(\backslash\)n"});}
+\DoxyCodeLine{42         exit(1);}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{struct }spi\_ioc\_transfer message;}
+\DoxyCodeLine{46     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter Before Setting txBuf and rxBuff \(\backslash\)n"});}
+\DoxyCodeLine{47     uint8\_t rxbuf[5] = \{ 0xF0, 0xF1, 0xF2, 0xF3, 0xF4 \};}
+\DoxyCodeLine{48     uint8\_t txbuf[5] = \{ READ\_CNTR, 0x00, 0x00, 0x00, 0x00 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter Setting message \(\backslash\)n"});}
+\DoxyCodeLine{51     message.tx\_buf = (\textcolor{keywordtype}{unsigned} long) \&txbuf;}
+\DoxyCodeLine{52     message.rx\_buf = (\textcolor{keywordtype}{unsigned} long) \&rxbuf;}
+\DoxyCodeLine{53     message.bits\_per\_word = \mbox{\hyperlink{decoderInterface_8h_af859a98f57110e5243e8f0541319e43b}{BITS\_PER\_WORD}};}
+\DoxyCodeLine{54     message.speed\_hz = \mbox{\hyperlink{decoderInterface_8c_acee492bc7671a012db2f39d5b1a17227}{frequencyRate}};}
+\DoxyCodeLine{55     message.len = \textcolor{keyword}{sizeof}(txbuf);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter Before SPI\_IOC\_MESSAGE \(\backslash\)n"});}
+\DoxyCodeLine{58     \textcolor{keywordflow}{if}(ioctl(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}}, SPI\_IOC\_MESSAGE(1), \&message) < 0)\{}
+\DoxyCodeLine{59         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ While Trying to Read SPI Decoder \(\backslash\)n"});}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter assign rxBuffer \(\backslash\)n"});}
+\DoxyCodeLine{63     uint32\_t byte1 = rxbuf[4];}
+\DoxyCodeLine{64     uint32\_t byte2 = rxbuf[3] << 8;}
+\DoxyCodeLine{65     uint32\_t byte3 = rxbuf[2] << 16;}
+\DoxyCodeLine{66     uint32\_t byte4 = rxbuf[1] << 24;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     uint32\_t readOut = byte1 | byte2 | byte3 | byte4;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter readOut: \%d \(\backslash\)n"}, readOut);}
+\DoxyCodeLine{71     \textcolor{keywordflow}{return} readOut;}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{73 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{decoderInterface_8h_a75971fdf1e347a1d330cae5e15250edf}\label{decoderInterface_8h_a75971fdf1e347a1d330cae5e15250edf}} 
+\index{decoderInterface.h@{decoderInterface.h}!wrapUpDecoder@{wrapUpDecoder}}
+\index{wrapUpDecoder@{wrapUpDecoder}!decoderInterface.h@{decoderInterface.h}}
+\doxysubsubsection{\texorpdfstring{wrapUpDecoder()}{wrapUpDecoder()}}
+{\footnotesize\ttfamily void wrap\+Up\+Decoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função para desligamento e reset das variáveis do decoder. Funcao para fazer a limpeza das variaveis, setar decoder como nao inicializado e fechar a comunicacao S\+PI. 
+
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line 222 of file decoder\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{222                     \{}
+\DoxyCodeLine{223     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting wrapUpDecoder Function \(\backslash\)n"});}
+\DoxyCodeLine{224     \textcolor{keywordflow}{if}(\mbox{\hyperlink{decoderInterface_8c_a025bd94ca9413d426082b6586d09aa9b}{decoderInitialized}} == FALSE)\{}
+\DoxyCodeLine{225         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ SPI Device Not Initialized. Cant Wrap Up Decoder \(\backslash\)n"});}
+\DoxyCodeLine{226         exit(1);}
+\DoxyCodeLine{227     \}}
+\DoxyCodeLine{228     \mbox{\hyperlink{decoderInterface_8c_a025bd94ca9413d426082b6586d09aa9b}{decoderInitialized}} = FALSE;}
+\DoxyCodeLine{229     \mbox{\hyperlink{decoderInterface_8c_acee492bc7671a012db2f39d5b1a17227}{frequencyRate}} = 0;}
+\DoxyCodeLine{230     close(\mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}});}
+\DoxyCodeLine{231     \mbox{\hyperlink{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}{fileDescriptor}} = -\/1;}
+\DoxyCodeLine{232     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Done wrapUpDecoder Function \(\backslash\)n"});}
+\DoxyCodeLine{233 \}}
 
 \end{DoxyCode}

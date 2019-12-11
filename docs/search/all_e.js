@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['setcontrolkd_38',['setControlKd',['../pidController_8c.html#a0a8eecf482506155e3b690c45f4c4e4b',1,'setControlKd(double newKd):&#160;pidController.c'],['../pidController_8h.html#a0a8eecf482506155e3b690c45f4c4e4b',1,'setControlKd(double newKd):&#160;pidController.c']]],
-  ['setcontrolki_39',['setControlKi',['../pidController_8c.html#a315d3a9847f641c407ef6b32a65fd640',1,'setControlKi(double newKi):&#160;pidController.c'],['../pidController_8h.html#a315d3a9847f641c407ef6b32a65fd640',1,'setControlKi(double newKi):&#160;pidController.c']]],
-  ['setcontrolkp_40',['setControlKp',['../pidController_8c.html#a8d8cec964229574d5f0af312a00e5935',1,'setControlKp(double newKp):&#160;pidController.c'],['../pidController_8h.html#a8d8cec964229574d5f0af312a00e5935',1,'setControlKp(double newKp):&#160;pidController.c']]],
-  ['setconversioncoefficientunit_41',['setConversionCoefficientUnit',['../pidController_8c.html#a84419a84b7812ac95cdd67086b4d2585',1,'setConversionCoefficientUnit(double newConversionCoefficientUnit):&#160;pidController.c'],['../pidController_8h.html#a84419a84b7812ac95cdd67086b4d2585',1,'setConversionCoefficientUnit(double newConversionCoefficientUnit):&#160;pidController.c']]],
-  ['settarget_42',['setTarget',['../pidController_8c.html#abe99aea2237bf45370f11475aab83cdd',1,'setTarget(int newTarget):&#160;pidController.c'],['../pidController_8h.html#abe99aea2237bf45370f11475aab83cdd',1,'setTarget(int newTarget):&#160;pidController.c']]]
+  ['pi_39',['PI',['../helpers_8h.html#a598a3330b3c21701223ee0ca14316eca',1,'helpers.h']]],
+  ['pidcontroller_2ec_40',['pidController.c',['../pidController_8c.html',1,'']]],
+  ['pidcontroller_2eh_41',['pidController.h',['../pidController_8h.html',1,'']]],
+  ['pidhandler_42',['pidHandler',['../pidController_8c.html#ad2327b73379de6859aafb872d874273d',1,'pidHandler(int currentPosition):&#160;pidController.c'],['../pidController_8h.html#ad2327b73379de6859aafb872d874273d',1,'pidHandler(int currentPosition):&#160;pidController.c']]],
+  ['pidstatus_43',['pidStatus',['../mainThread_8h.html#a11837efa2f154aaa978a9c69a16e88e2',1,'pidStatus():&#160;pidController.c'],['../pidController_8c.html#a11837efa2f154aaa978a9c69a16e88e2',1,'pidStatus():&#160;pidController.c'],['../quanserInterface_8h.html#a11837efa2f154aaa978a9c69a16e88e2',1,'pidStatus():&#160;pidController.c']]],
+  ['printusergroupsname_44',['printUserGroupsName',['../userInterface_8c.html#ad08d5cb2ed8e6805573049fd31dab2db',1,'printUserGroupsName():&#160;userInterface.c'],['../userInterface_8h.html#ad08d5cb2ed8e6805573049fd31dab2db',1,'printUserGroupsName():&#160;userInterface.c']]],
+  ['printuseroptions_45',['printUserOptions',['../userInterface_8c.html#a4b9e2beb67256f2c06b39d24bc83e28d',1,'printUserOptions():&#160;userInterface.c'],['../userInterface_8h.html#a4b9e2beb67256f2c06b39d24bc83e28d',1,'printUserOptions():&#160;userInterface.c']]],
+  ['pwm_5fperiod_46',['PWM_PERIOD',['../quanserInterface_8h.html#aacaca0988244bd3a888ca5befa89f44b',1,'quanserInterface.h']]]
 ];

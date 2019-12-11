@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['cleardecoder_1',['clearDecoder',['../decoderInterface_8c.html#a82fe1a26c4a03de6dc52798635d4ca27',1,'clearDecoder():&#160;decoderInterface.c'],['../decoderInterface_8h.html#a82fe1a26c4a03de6dc52798635d4ca27',1,'clearDecoder():&#160;decoderInterface.c']]],
-  ['clr_5fmdr0_2',['CLR_MDR0',['../decoderInterface_8h.html#aa1401b1c9a0fa1cf60ae9736e3286479',1,'decoderInterface.h']]]
+  ['bits_5fper_5fword_1',['BITS_PER_WORD',['../decoderInterface_8h.html#af859a98f57110e5243e8f0541319e43b',1,'decoderInterface.h']]],
+  ['byte_5f4_2',['BYTE_4',['../decoderInterface_8h.html#a331a010a3845e67f2cb06ba4c51e46f2',1,'decoderInterface.h']]]
 ];
