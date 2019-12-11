@@ -1,5 +1,32 @@
+// Quanser Qser Aplication
+// Copyright (C) 2019 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+/**
+ * @file helpers.c
+ * @author Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis
+ * @date 11 Dec 2019
+ * @brief  Helpers Functions For Handling General Purpose
+ */
+
 #include "helpers.h"
 
+/**
+ * @brief Write Handler For Helping Writing To Files
+ * Funcao para facilitar a escrita em arquivos.
+ */
 int writeHandler(const char filePath[], const char data[]){
     if(DEBUG) printf("[DEBUG] - Starting Writing File");
     int fileHandler = open(filePath, O_WRONLY);
@@ -17,6 +44,10 @@ int writeHandler(const char filePath[], const char data[]){
     return returnHandler;
 }
 
+/**
+ * @brief Read Handler For Helping Reading From Files
+ * Funcao Para Facilitar a Leitra de Arquivos.
+ */
 char *readHandler(char *data, int size, const char filePath[]){
     if(DEBUG) printf("[DEBUG] - Starting Reading File");
     int fileHandler;
