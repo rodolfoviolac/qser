@@ -101,35 +101,72 @@ $(document).ready(function(){initNavTree('main_8c_source.html','');});
 <div class="title">main.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;pthread.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;math.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;mainThread/mainThread.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">int</span> main() {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Starting Application&quot;</span>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    pthread_t userThread;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    pthread_t positionHandlerOneThread;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    pthread_t positionHandlerTwoThread;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Calling JPL Thread&quot;</span>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    pthread_create(&amp;positionHandlerOneThread, NULL, jointPositionLimitOneHandler, NULL);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    pthread_create(&amp;positionHandlerTwoThread, NULL, jointPositionLimitTwoHandler, NULL);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Calling User Thread&quot;</span>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    pthread_create(&amp;userThread, NULL, handlerMainThread, NULL);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    pthread_join(positionHandlerOneThread, NULL);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    pthread_join(positionHandlerTwoThread, NULL);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    pthread_join(userThread, NULL);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<a href="main_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Qser Aplication</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Copyright (C) 2019 Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (at your option) any later version.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;pthread.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;math.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mainThread_8h.html">mainThread/mainThread.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   33</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Starting Application \n&quot;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    pthread_t userThread;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    pthread_t positionHandlerOneThread;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    pthread_t positionHandlerTwoThread;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    pthread_t PIDThread;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="quanserInterface_8c.html#a2cb713f85c500012763209e2ffc0acf7">qserInitializer</a>() == TRUE){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        printf(<span class="stringliteral">&quot;\n\n---------------------------------\n&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        printf(<span class="stringliteral">&quot;[INFO] - Qser Is Booming! \n&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        printf(<span class="stringliteral">&quot;---------------------------------\n\n&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        printf(<span class="stringliteral">&quot;[ERROR] - Not Possible To Initializer Qser! \n&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Calling JPL Thread \n&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    pthread_create(&amp;positionHandlerOneThread, NULL, <a class="code" href="quanserInterface_8c.html#aae0d60cf64732012d55de41aa4ed5d75">jointPositionLimitOneHandler</a>, NULL);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    pthread_create(&amp;positionHandlerTwoThread, NULL, <a class="code" href="quanserInterface_8c.html#af380e7b0608373355426a5ba9382824c">jointPositionLimitTwoHandler</a>, NULL);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Calling User Thread \n&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    pthread_create(&amp;userThread, NULL, <a class="code" href="mainThread_8c.html#a59426b0c771489c349fbd9ddc7cf9f7a">handlerMainThread</a>, NULL);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span>(DEBUG) printf(<span class="stringliteral">&quot;[DEBUG] - Calling PID Thread \n&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    pthread_create(&amp;PIDThread, NULL, <a class="code" href="quanserInterface_8c.html#a6b0fef0560db647615037ae9085ee266">goToTargetPositionHandler</a>, NULL);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    pthread_join(positionHandlerOneThread, NULL);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    pthread_join(positionHandlerTwoThread, NULL);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    pthread_join(userThread, NULL);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    pthread_join(PIDThread, NULL);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="amainThread_8h_html"><div class="ttname"><a href="mainThread_8h.html">mainThread.h</a></div><div class="ttdoc">Header File for The Main Thread.</div></div>
+<div class="ttc" id="aquanserInterface_8c_html_aae0d60cf64732012d55de41aa4ed5d75"><div class="ttname"><a href="quanserInterface_8c.html#aae0d60cf64732012d55de41aa4ed5d75">jointPositionLimitOneHandler</a></div><div class="ttdeci">void * jointPositionLimitOneHandler()</div><div class="ttdoc">Thread For Handling Side One Position Limiter Thread Reponseavel por escutar interrupcoes de fim de c...</div><div class="ttdef"><b>Definition:</b> <a href="quanserInterface_8c_source.html#l00096">quanserInterface.c:96</a></div></div>
+<div class="ttc" id="aquanserInterface_8c_html_af380e7b0608373355426a5ba9382824c"><div class="ttname"><a href="quanserInterface_8c.html#af380e7b0608373355426a5ba9382824c">jointPositionLimitTwoHandler</a></div><div class="ttdeci">void * jointPositionLimitTwoHandler()</div><div class="ttdoc">Thread For Handling Side Two Position Limiter Thread Reponseavel por escutar interrupcoes de fim de c...</div><div class="ttdef"><b>Definition:</b> <a href="quanserInterface_8c_source.html#l00142">quanserInterface.c:142</a></div></div>
+<div class="ttc" id="aquanserInterface_8c_html_a2cb713f85c500012763209e2ffc0acf7"><div class="ttname"><a href="quanserInterface_8c.html#a2cb713f85c500012763209e2ffc0acf7">qserInitializer</a></div><div class="ttdeci">int qserInitializer()</div><div class="ttdoc">Function Responsable For The Decoder and Motor Initialization Funcao responsavel pela inicializacao d...</div><div class="ttdef"><b>Definition:</b> <a href="quanserInterface_8c_source.html#l00050">quanserInterface.c:50</a></div></div>
+<div class="ttc" id="aquanserInterface_8c_html_a6b0fef0560db647615037ae9085ee266"><div class="ttname"><a href="quanserInterface_8c.html#a6b0fef0560db647615037ae9085ee266">goToTargetPositionHandler</a></div><div class="ttdeci">void * goToTargetPositionHandler()</div><div class="ttdoc">Thread For Handling Changing Position Thread Reponseavel por executar a mudanca do braco do robo para...</div><div class="ttdef"><b>Definition:</b> <a href="quanserInterface_8c_source.html#l00188">quanserInterface.c:188</a></div></div>
+<div class="ttc" id="amainThread_8c_html_a59426b0c771489c349fbd9ddc7cf9f7a"><div class="ttname"><a href="mainThread_8c.html#a59426b0c771489c349fbd9ddc7cf9f7a">handlerMainThread</a></div><div class="ttdeci">void * handlerMainThread()</div><div class="ttdoc">Main Thread For Hanling User Interface and Commands. Thread responsavel por esperar comando do usuari...</div><div class="ttdef"><b>Definition:</b> <a href="mainThread_8c_source.html#l00033">mainThread.c:33</a></div></div>
+<div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">Main File For Entrance Of The Qser Funcao main responsavel pela criacao das thread do usuario.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00033">main.c:33</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>main.c</b></li>
-    <li class="footer">Generated on Mon Nov 25 2019 23:36:19 for Qser_RoGaFe_19/2 by
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8c.html">main.c</a></li>
+    <li class="footer">Generated on Wed Dec 11 2019 02:48:27 for Qser_RoGaFe_19/2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

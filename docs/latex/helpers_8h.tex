@@ -1,0 +1,141 @@
+\hypertarget{helpers_8h}{}\doxysection{src/helpers/helpers.h File Reference}
+\label{helpers_8h}\index{src/helpers/helpers.h@{src/helpers/helpers.h}}
+
+
+Header Files for the Helpers Functions and Universal Variables.  
+
+
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{helpers_8h_afb786d718c78c0731bb746dd2bdb9372}\label{helpers_8h_afb786d718c78c0731bb746dd2bdb9372}} 
+\#define {\bfseries I\+S\+\_\+\+R\+U\+N\+N\+I\+N\+G\+\_\+\+L\+O\+C\+AL}~0
+\item 
+\mbox{\Hypertarget{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}\label{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}} 
+\#define {\bfseries D\+E\+B\+UG}~0
+\item 
+\mbox{\Hypertarget{helpers_8h_aa8cecfc5c5c054d2875c03e77b7be15d}\label{helpers_8h_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\#define {\bfseries T\+R\+UE}~1
+\item 
+\mbox{\Hypertarget{helpers_8h_aa93f0eb578d23995850d61f7d61c55c1}\label{helpers_8h_aa93f0eb578d23995850d61f7d61c55c1}} 
+\#define {\bfseries F\+A\+L\+SE}~0
+\item 
+\mbox{\Hypertarget{helpers_8h_a598a3330b3c21701223ee0ca14316eca}\label{helpers_8h_a598a3330b3c21701223ee0ca14316eca}} 
+\#define {\bfseries PI}~3.\+141592653589793238462643383279
+\item 
+\mbox{\Hypertarget{helpers_8h_ab06d3e8dbb4b7ee5c62d9cf3df4aa3e3}\label{helpers_8h_ab06d3e8dbb4b7ee5c62d9cf3df4aa3e3}} 
+\#define {\bfseries M\+A\+X\+\_\+\+R\+A\+N\+GE}~180.\+00
+\item 
+\mbox{\Hypertarget{helpers_8h_aea5f906e546d7fcb8724b827b88fff8a}\label{helpers_8h_aea5f906e546d7fcb8724b827b88fff8a}} 
+\#define {\bfseries C\+O\+N\+S\+T\+\_\+\+U\+N\+I\+T\+\_\+\+R\+A\+D\+\_\+\+M\+A\+TH}~0.\+01745329251
+\item 
+\mbox{\Hypertarget{helpers_8h_ac58a626c358abd20f41433ad440d38bf}\label{helpers_8h_ac58a626c358abd20f41433ad440d38bf}} 
+\#define {\bfseries R\+A\+D2G}~M\+A\+X\+\_\+\+R\+A\+N\+GE/PI
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{helpers_8h_a11518359bc1427b7f3fc6f3ce336db15}{write\+Handler}} (const char file\+Path\mbox{[}$\,$\mbox{]}, const char data\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Write Handler For Helping Writing To Files Funcao para facilitar a escrita em arquivos. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{helpers_8h_a4f1fdf6fe9d7c767dec3b9ace03ce89c}{read\+Handler}} (char $\ast$data, int size, const char file\+Path\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Read Handler For Helping Reading From Files Funcao Para Facilitar a Leitra de Arquivos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header Files for the Helpers Functions and Universal Variables. 
+
+\begin{DoxyAuthor}{Author}
+Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{helpers_8h_a4f1fdf6fe9d7c767dec3b9ace03ce89c}\label{helpers_8h_a4f1fdf6fe9d7c767dec3b9ace03ce89c}} 
+\index{helpers.h@{helpers.h}!readHandler@{readHandler}}
+\index{readHandler@{readHandler}!helpers.h@{helpers.h}}
+\doxysubsubsection{\texorpdfstring{readHandler()}{readHandler()}}
+{\footnotesize\ttfamily char$\ast$ read\+Handler (\begin{DoxyParamCaption}\item[{char $\ast$}]{data,  }\item[{int}]{size,  }\item[{const char}]{file\+Path\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Read Handler For Helping Reading From Files Funcao Para Facilitar a Leitra de Arquivos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Caminho} & do Arquivo e a Informacao de Leitura e Tamannho \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna a Informacao Lida 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file helpers.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55                                                               \{}
+\DoxyCodeLine{56     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting Reading File"});}
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} fileHandler;}
+\DoxyCodeLine{58     \textcolor{keywordflow}{if}(( fileHandler = open(filePath,O\_RDONLY)) == -\/1) \{}
+\DoxyCodeLine{59         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Not Possible To Read File \%s.\(\backslash\)n"}, filePath);}
+\DoxyCodeLine{60         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62     read(fileHandler,data,size);}
+\DoxyCodeLine{63     close(fileHandler);}
+\DoxyCodeLine{64     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Reading File: \%s"}, data);}
+\DoxyCodeLine{65     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Successful Reading File"});}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{67 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{helpers_8h_a11518359bc1427b7f3fc6f3ce336db15}\label{helpers_8h_a11518359bc1427b7f3fc6f3ce336db15}} 
+\index{helpers.h@{helpers.h}!writeHandler@{writeHandler}}
+\index{writeHandler@{writeHandler}!helpers.h@{helpers.h}}
+\doxysubsubsection{\texorpdfstring{writeHandler()}{writeHandler()}}
+{\footnotesize\ttfamily int write\+Handler (\begin{DoxyParamCaption}\item[{const char}]{file\+Path\mbox{[}$\,$\mbox{]},  }\item[{const char}]{data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Write Handler For Helping Writing To Files Funcao para facilitar a escrita em arquivos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Caminho} & do Arquivo e a Informacao de Escrita \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o Status da Escrita 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file helpers.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32                                                           \{}
+\DoxyCodeLine{33     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting Writing File"});}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} fileHandler = open(filePath, O\_WRONLY);}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if}(fileHandler == -\/1) \{}
+\DoxyCodeLine{36         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Not Possible To Open File \%s.\(\backslash\)n"}, filePath);}
+\DoxyCodeLine{37         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} returnHandler = write(fileHandler, data, strlen(data));}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}(returnHandler == -\/1) \{}
+\DoxyCodeLine{41         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Not Possible to Write [ \%s ] on \%s.\(\backslash\)n"}, data, filePath);}
+\DoxyCodeLine{42         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44     close(fileHandler);}
+\DoxyCodeLine{45     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Successful Writing File"});}
+\DoxyCodeLine{46     \textcolor{keywordflow}{return} returnHandler;}
+\DoxyCodeLine{47 \}}
+
+\end{DoxyCode}

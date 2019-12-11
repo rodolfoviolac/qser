@@ -1,17 +1,42 @@
-Q\+S\+ER is a application and hardware shield interface to manage and fully control a engine motor (Quanser Robots) on Galileo v2 shield. On this repository you will find the shield design under {\ttfamily shield} and the resources under {\ttfamily src}.
+Q\+S\+ER is a application and hardware shield interface to manage and fully control a engine motor (Quanser Robots) on Galileo v2 shield. On this repository you will find the shield hardware design under {\ttfamily /shield} and the software resources under {\ttfamily /src}.
 
 
 
 \doxysection*{Build}
 
-You can build using the root makefile or you can use the cmake under cmake-\/build-\/release.
+\doxysubsection*{Project Local}
+
+This project is using cmake to automate build releases and versioning.
+\begin{DoxyItemize}
+\item Compile the full project with {\ttfamily /cmake-\/build-\/release/make}.
+\item Clean built files with {\ttfamily /cmake-\/build-\/release/make clean}.
+\end{DoxyItemize}
+
+\doxysubsection*{Project Target Galileo}
 
 
+\begin{DoxyItemize}
+\item Compile the full project with {\ttfamily make}.
+\item Clean built files with {\ttfamily make clean}.
+\end{DoxyItemize}
+
+\doxysubsection*{Documentation}
+
+Compile the project documentation to {\ttfamily docs/} folder. 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{-\/ Compile the full project with `make`.}
-\DoxyCodeLine{-\/ Clean built files with `make clean`.}
+\DoxyCodeLine{\$ make docs}
 \end{DoxyCode}
 
+
+\doxysection*{Modules}
+
+\doxysubsubsection*{Debugger\+:}
+
+This project contain a built in debugger for handling execution path helping the developers find out eventual bugs or errors. To enable this feature you need to enable the debugger options under {\ttfamily /src/helpers/helpers.h}.
+
+\doxysubsubsection*{Run Local\+:}
+
+This project contain a local template simulation to help developers simulate the code that will run on the Galileo shield, this feature enable developers to build and run the code without the physical shield device. To enable this feature you need to enable the Run Local option under {\ttfamily /src/helpers/helpers.h}.
 
 \doxysection*{Roadmap}
 
@@ -19,7 +44,7 @@ See the \href{https://github.com/rodolfoviolac/qser/issues}{\texttt{ open issues
 
 \doxysection*{Contributing}
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are {\bfseries{greatly appreciated}}. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
+For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
 
 
 \begin{DoxyEnumerate}
@@ -30,12 +55,29 @@ Contributions are what make the open source community such an amazing place to b
 \item Open a Pull Request
 \end{DoxyEnumerate}
 
-\doxysection*{Contact}
+\doxysection*{Team}
 
-Rodolfo Viola -\/ \href{https://github.com/rodolfoviolac}{\texttt{ @rodolfoviolac}} Gabriel Zillmer -\/ \href{https://github.com/gazillmer}{\texttt{ @gazillmer}} Felipe Fuhr -\/ \href{https://github.com/felipefuhr}{\texttt{ @felipefuhr}}
+\begin{quote}
+Or Contributors \end{quote}
 
-Project Link\+: \href{https://github.com/rodolfoviolac/qser}{\texttt{ https\+://github.\+com/rodolfoviolac/qser}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/rodolfoviolac}{\texttt{ $\ast$$\ast$\+Rodolfo Viola$\ast$$\ast$}}  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/gazillmer}{\texttt{ $\ast$$\ast$\+Gabriel Zillmer$\ast$$\ast$}}  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/felipefuhr}{\texttt{ $\ast$$\ast$\+Felipe Fuhr$\ast$$\ast$}}   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/rodolfoviolac}{\texttt{ $\ast$$\ast$\+Rodolfo Viola$\ast$$\ast$}}  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/gazillmer}{\texttt{ $\ast$$\ast$\+Gabriel Zillmer$\ast$$\ast$}}  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/felipefuhr}{\texttt{ $\ast$$\ast$\+Felipe Fuhr$\ast$$\ast$}}   }\\\cline{1-3}
+\endhead
+\PBS\centering \href{https://github.com/rodolfoviolac}{\texttt{ }}  &\PBS\centering \href{https://github.com/gazillmer}{\texttt{ }}  &\PBS\centering \href{https://github.com/felipefuhr}{\texttt{ !\mbox{[}felipefuhr\mbox{]}()}}   \\\cline{1-3}
+\PBS\centering \href{https://github.com/rodolfoviolac}{\texttt{ {\ttfamily github.\+com/rodolfoviolac}}}  &\PBS\centering \href{https://github.com/gazillmer}{\texttt{ {\ttfamily github.\+com/gazillmer}}}  &\PBS\centering \href{https://github.com/felipefuhr}{\texttt{ {\ttfamily github.\+com/felipefuhr}}}   \\\cline{1-3}
+\end{longtabu}
+
 
 \doxysection*{License}
 
-\href{https://github.com/rodolfoviolac/qser/LICENSE.md}{\texttt{ M\+IT}} 
+\href{https://github.com/rodolfoviolac/qser/LICENSE.md}{\texttt{ M\+IT}}
+
+Project Link\+: \href{https://github.com/rodolfoviolac/qser}{\texttt{ https\+://github.\+com/rodolfoviolac/qser}} 

@@ -1,0 +1,125 @@
+\hypertarget{userInterface_8h}{}\doxysection{src/user\+Interface/user\+Interface.h File Reference}
+\label{userInterface_8h}\index{src/userInterface/userInterface.h@{src/userInterface/userInterface.h}}
+
+
+Header File for The User Interface.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{userInterface_8h_a58a559802dc87f303b0505b79f28a4fc}\label{userInterface_8h_a58a559802dc87f303b0505b79f28a4fc}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+I\+N\+V\+A\+L\+ID}~0
+\item 
+\mbox{\Hypertarget{userInterface_8h_a472eff3daee8fab8a7de9cd3e1af9626}\label{userInterface_8h_a472eff3daee8fab8a7de9cd3e1af9626}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+E\+X\+IT}~1
+\item 
+\mbox{\Hypertarget{userInterface_8h_af8c78c47d312521ecb9ea0117d25009e}\label{userInterface_8h_af8c78c47d312521ecb9ea0117d25009e}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+H\+E\+LP}~2
+\item 
+\mbox{\Hypertarget{userInterface_8h_a700124718ddc0a99c0c3627119af32e6}\label{userInterface_8h_a700124718ddc0a99c0c3627119af32e6}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+S\+P\+E\+ED}~3
+\item 
+\mbox{\Hypertarget{userInterface_8h_ae94d09b8c155d8741eaa1e8972e40c7c}\label{userInterface_8h_ae94d09b8c155d8741eaa1e8972e40c7c}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+J\+PL}~4
+\item 
+\mbox{\Hypertarget{userInterface_8h_a49819416950a2a4323739a5dbb674bcc}\label{userInterface_8h_a49819416950a2a4323739a5dbb674bcc}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+G\+O\+\_\+\+F\+O\+R\+\_\+V}~5
+\item 
+\mbox{\Hypertarget{userInterface_8h_a265d171a915f16593b3e6f02698906af}\label{userInterface_8h_a265d171a915f16593b3e6f02698906af}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+Q\+S\+E\+R\+\_\+\+B\+R\+E\+AK}~6
+\item 
+\mbox{\Hypertarget{userInterface_8h_a1fa84cb17fbadcf9f9e3bd47f7aa749e}\label{userInterface_8h_a1fa84cb17fbadcf9f9e3bd47f7aa749e}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+S\+H\+I\+F\+T\+\_\+\+R\+AD}~7
+\item 
+\mbox{\Hypertarget{userInterface_8h_acc41743904afd8b1f48c22888ae21008}\label{userInterface_8h_acc41743904afd8b1f48c22888ae21008}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+KP}~8
+\item 
+\mbox{\Hypertarget{userInterface_8h_a7c29f2416b8f470ca6eb08839ce66955}\label{userInterface_8h_a7c29f2416b8f470ca6eb08839ce66955}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+KD}~9
+\item 
+\mbox{\Hypertarget{userInterface_8h_ae0c2cfe65cfbbe0c337edf11baa0023a}\label{userInterface_8h_ae0c2cfe65cfbbe0c337edf11baa0023a}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+KI}~10
+\item 
+\mbox{\Hypertarget{userInterface_8h_ab9218a792bac3a40bda1edbf862546ff}\label{userInterface_8h_ab9218a792bac3a40bda1edbf862546ff}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+C\+CU}~11
+\item 
+\mbox{\Hypertarget{userInterface_8h_ab2951ecba62167bf10a0650cc986a622}\label{userInterface_8h_ab2951ecba62167bf10a0650cc986a622}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+EC}~12
+\item 
+\mbox{\Hypertarget{userInterface_8h_a48ba51fa967838089bffa25a8dc4f2c2}\label{userInterface_8h_a48ba51fa967838089bffa25a8dc4f2c2}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+R\+E\+A\+D\+\_\+\+D\+EC}~13
+\item 
+\mbox{\Hypertarget{userInterface_8h_a5b807783a04cace9807bd4be778b9240}\label{userInterface_8h_a5b807783a04cace9807bd4be778b9240}} 
+\#define {\bfseries O\+P\+T\+I\+O\+N\+\_\+\+R\+E\+A\+D\+\_\+\+D\+E\+C\+\_\+\+R\+AD}~14
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{userInterface_8h_a4b9e2beb67256f2c06b39d24bc83e28d}\label{userInterface_8h_a4b9e2beb67256f2c06b39d24bc83e28d}} 
+void \mbox{\hyperlink{userInterface_8h_a4b9e2beb67256f2c06b39d24bc83e28d}{print\+User\+Options}} ()
+\begin{DoxyCompactList}\small\item\em Function For Print Users Options Funcao para imprimir no Terminal os Comandos Possiveis para o usuario. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{userInterface_8h_ad08d5cb2ed8e6805573049fd31dab2db}\label{userInterface_8h_ad08d5cb2ed8e6805573049fd31dab2db}} 
+void \mbox{\hyperlink{userInterface_8h_ad08d5cb2ed8e6805573049fd31dab2db}{print\+User\+Groups\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Function For Print Members Name Funcao para Imprimir no Terminal os Nomes dos Integrantes do Grupo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{userInterface_8h_a6091a80fd6f480466b254b3653ca5d27}{resolve\+Option}} (char $\ast$input)
+\begin{DoxyCompactList}\small\item\em Function For Handling User Input Options Funcao para retornar a opcao escolhida pelo usuario no menu de opcoes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header File for The User Interface. 
+
+\begin{DoxyAuthor}{Author}
+Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{userInterface_8h_a6091a80fd6f480466b254b3653ca5d27}\label{userInterface_8h_a6091a80fd6f480466b254b3653ca5d27}} 
+\index{userInterface.h@{userInterface.h}!resolveOption@{resolveOption}}
+\index{resolveOption@{resolveOption}!userInterface.h@{userInterface.h}}
+\doxysubsubsection{\texorpdfstring{resolveOption()}{resolveOption()}}
+{\footnotesize\ttfamily int resolve\+Option (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Function For Handling User Input Options Funcao para retornar a opcao escolhida pelo usuario no menu de opcoes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Valor} & digitado pelo usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o ID do do Comando Digitado Pelo Usuario 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file user\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                              \{}
+\DoxyCodeLine{64     \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"speed"}, 5) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SPEED; \}}
+\DoxyCodeLine{65     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"jpl\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_JPL; \}}
+\DoxyCodeLine{66     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"goforv"}, 6) == 0) \{ \textcolor{keywordflow}{return} OPTION\_GO\_FOR\_V; \}}
+\DoxyCodeLine{67     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"break\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_QSER\_BREAK; \}}
+\DoxyCodeLine{68     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"help\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_HELP; \}}
+\DoxyCodeLine{69     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"exit\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_EXIT; \}}
+\DoxyCodeLine{70     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"shiftrad"}, 8) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SHIFT\_RAD; \}}
+\DoxyCodeLine{71     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"setkp"}, 5) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SET\_KP; \}}
+\DoxyCodeLine{72     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"setkd"}, 5) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SET\_KD; \}}
+\DoxyCodeLine{73     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"setki"}, 5) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SET\_KI; \}}
+\DoxyCodeLine{74     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"setccu"}, 6) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SET\_CCU; \}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"cleardec\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_CLEAR\_DEC; \}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"getdec\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_READ\_DEC; \}}
+\DoxyCodeLine{77     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"getdecrad\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_READ\_DEC\_RAD; \}}
+\DoxyCodeLine{78     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} OPTION\_INVALID;}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}

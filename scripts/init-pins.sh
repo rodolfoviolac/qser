@@ -6,7 +6,7 @@
 # Required-Stop:
 # Default-Start: S
 # Default-Stop:
-# Short-Description: Configures Galileo for qser.
+# Short-Description: Configuracoes de Pinos Para A Galileo.
 # Description: Configures Galileo for qser.
 ### END INIT INFO
 

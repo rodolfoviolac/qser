@@ -1,0 +1,76 @@
+\hypertarget{userInterface_8c}{}\doxysection{src/user\+Interface/user\+Interface.c File Reference}
+\label{userInterface_8c}\index{src/userInterface/userInterface.c@{src/userInterface/userInterface.c}}
+
+
+Header File for The User Interface.  
+
+
+{\ttfamily \#include \char`\"{}user\+Interface.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{userInterface_8c_a4b9e2beb67256f2c06b39d24bc83e28d}\label{userInterface_8c_a4b9e2beb67256f2c06b39d24bc83e28d}} 
+void \mbox{\hyperlink{userInterface_8c_a4b9e2beb67256f2c06b39d24bc83e28d}{print\+User\+Options}} ()
+\begin{DoxyCompactList}\small\item\em Function For Print Users Options Funcao para imprimir no Terminal os Comandos Possiveis para o usuario. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{userInterface_8c_ad08d5cb2ed8e6805573049fd31dab2db}\label{userInterface_8c_ad08d5cb2ed8e6805573049fd31dab2db}} 
+void \mbox{\hyperlink{userInterface_8c_ad08d5cb2ed8e6805573049fd31dab2db}{print\+User\+Groups\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Function For Print Members Name Funcao para Imprimir no Terminal os Nomes dos Integrantes do Grupo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{userInterface_8c_ace06aeff812973e632f2da24f34dcd39}{resolve\+Option}} (char $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Function For Handling User Input Options Funcao para retornar a opcao escolhida pelo usuario no menu de opcoes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header File for The User Interface. 
+
+\begin{DoxyAuthor}{Author}
+Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{userInterface_8c_ace06aeff812973e632f2da24f34dcd39}\label{userInterface_8c_ace06aeff812973e632f2da24f34dcd39}} 
+\index{userInterface.c@{userInterface.c}!resolveOption@{resolveOption}}
+\index{resolveOption@{resolveOption}!userInterface.c@{userInterface.c}}
+\doxysubsubsection{\texorpdfstring{resolveOption()}{resolveOption()}}
+{\footnotesize\ttfamily int resolve\+Option (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Function For Handling User Input Options Funcao para retornar a opcao escolhida pelo usuario no menu de opcoes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Valor} & digitado pelo usuario \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o ID do do Comando Digitado Pelo Usuario 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file user\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                              \{}
+\DoxyCodeLine{64     \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"speed"}, 5) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SPEED; \}}
+\DoxyCodeLine{65     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"jpl\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_JPL; \}}
+\DoxyCodeLine{66     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"goforv"}, 6) == 0) \{ \textcolor{keywordflow}{return} OPTION\_GO\_FOR\_V; \}}
+\DoxyCodeLine{67     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"break\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_QSER\_BREAK; \}}
+\DoxyCodeLine{68     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"help\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_HELP; \}}
+\DoxyCodeLine{69     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"exit\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_EXIT; \}}
+\DoxyCodeLine{70     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"shiftrad"}, 8) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SHIFT\_RAD; \}}
+\DoxyCodeLine{71     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"setkp"}, 5) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SET\_KP; \}}
+\DoxyCodeLine{72     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"setkd"}, 5) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SET\_KD; \}}
+\DoxyCodeLine{73     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"setki"}, 5) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SET\_KI; \}}
+\DoxyCodeLine{74     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp(cmd, \textcolor{stringliteral}{"setccu"}, 6) == 0) \{ \textcolor{keywordflow}{return} OPTION\_SET\_CCU; \}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"cleardec\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_CLEAR\_DEC; \}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"getdec\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_READ\_DEC; \}}
+\DoxyCodeLine{77     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(cmd, \textcolor{stringliteral}{"getdecrad\(\backslash\)n"}) == 0) \{ \textcolor{keywordflow}{return} OPTION\_READ\_DEC\_RAD; \}}
+\DoxyCodeLine{78     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} OPTION\_INVALID;}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}

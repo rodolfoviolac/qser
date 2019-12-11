@@ -1,0 +1,106 @@
+\hypertarget{decoderInterface_8c}{}\doxysection{src/decoder\+Interface/decoder\+Interface.c File Reference}
+\label{decoderInterface_8c}\index{src/decoderInterface/decoderInterface.c@{src/decoderInterface/decoderInterface.c}}
+
+
+Interface Functions For Handling The Decoder.  
+
+
+{\ttfamily \#include \char`\"{}decoder\+Interface.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{read\+Decoder\+Counter}} ()
+\begin{DoxyCompactList}\small\item\em Read Decoder With S\+PI I\+OC T\+R\+A\+N\+S\+F\+ER Funcao para Fazer a Leitura do Decoder e Retornar Valor do Contador Lido. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{decoderInterface_8c_aa643b06f53912de8c90b619803eb27a6}\label{decoderInterface_8c_aa643b06f53912de8c90b619803eb27a6}} 
+void \mbox{\hyperlink{decoderInterface_8c_aa643b06f53912de8c90b619803eb27a6}{decoder\+Initializer}} (int spi\+Speed)
+\begin{DoxyCompactList}\small\item\em Initializer The Decoder With Pre Definied Tokens for Handling Couting Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{decoderInterface_8c_a82fe1a26c4a03de6dc52798635d4ca27}\label{decoderInterface_8c_a82fe1a26c4a03de6dc52798635d4ca27}} 
+void \mbox{\hyperlink{decoderInterface_8c_a82fe1a26c4a03de6dc52798635d4ca27}{clear\+Decoder}} ()
+\begin{DoxyCompactList}\small\item\em Function For Cleaning Decoder Funcao para Zerar o Contador do Decoder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{decoderInterface_8c_a75971fdf1e347a1d330cae5e15250edf}\label{decoderInterface_8c_a75971fdf1e347a1d330cae5e15250edf}} 
+void \mbox{\hyperlink{decoderInterface_8c_a75971fdf1e347a1d330cae5e15250edf}{wrap\+Up\+Decoder}} ()
+\begin{DoxyCompactList}\small\item\em Function For Exiting and Restart Variables Of Decoder Funcao para fazer a limpeza das variaveis e setar decoder como nao inicializado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{decoderInterface_8c_a025bd94ca9413d426082b6586d09aa9b}\label{decoderInterface_8c_a025bd94ca9413d426082b6586d09aa9b}} 
+int {\bfseries decoder\+Initialized} = F\+A\+L\+SE
+\item 
+\mbox{\Hypertarget{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}\label{decoderInterface_8c_a57acc7a88386e5b7723454c0641d68e5}} 
+int {\bfseries file\+Descriptor} = -\/1
+\item 
+\mbox{\Hypertarget{decoderInterface_8c_acee492bc7671a012db2f39d5b1a17227}\label{decoderInterface_8c_acee492bc7671a012db2f39d5b1a17227}} 
+uint32\+\_\+t {\bfseries frequency\+Rate} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface Functions For Handling The Decoder. 
+
+\begin{DoxyAuthor}{Author}
+Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}\label{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}} 
+\index{decoderInterface.c@{decoderInterface.c}!readDecoderCounter@{readDecoderCounter}}
+\index{readDecoderCounter@{readDecoderCounter}!decoderInterface.c@{decoderInterface.c}}
+\doxysubsubsection{\texorpdfstring{readDecoderCounter()}{readDecoderCounter()}}
+{\footnotesize\ttfamily int read\+Decoder\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read Decoder With S\+PI I\+OC T\+R\+A\+N\+S\+F\+ER Funcao para Fazer a Leitura do Decoder e Retornar Valor do Contador Lido. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o Status da Inicializacao Sendo, 1 feita com Sucesso. 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file decoder\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                         \{}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting readDecoderCounter Function \(\backslash\)n"});}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#if IS\_RUNNING\_LOCAL == FALSE}}
+\DoxyCodeLine{37     \textcolor{keywordflow}{if}(decoderInitialized == FALSE) \{}
+\DoxyCodeLine{38         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ SPI Device Not Initialized. Cant Read Decoder \(\backslash\)n"});}
+\DoxyCodeLine{39         exit(1);}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{struct }spi\_ioc\_transfer message;}
+\DoxyCodeLine{43     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter Before Setting txBuf and rxBuff \(\backslash\)n"});}
+\DoxyCodeLine{44     uint8\_t rxbuf[5] = \{ 0xF0, 0xF1, 0xF2, 0xF3, 0xF4 \};}
+\DoxyCodeLine{45     uint8\_t txbuf[5] = \{ READ\_CNTR, 0x00, 0x00, 0x00, 0x00 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter Setting message \(\backslash\)n"});}
+\DoxyCodeLine{48     message.tx\_buf = (\textcolor{keywordtype}{unsigned} long) \&txbuf;}
+\DoxyCodeLine{49     message.rx\_buf = (\textcolor{keywordtype}{unsigned} long) \&rxbuf;}
+\DoxyCodeLine{50     message.bits\_per\_word = BITS\_PER\_WORD;}
+\DoxyCodeLine{51     message.speed\_hz = frequencyRate;}
+\DoxyCodeLine{52     message.len = \textcolor{keyword}{sizeof}(txbuf);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter Before SPI\_IOC\_MESSAGE \(\backslash\)n"});}
+\DoxyCodeLine{55     \textcolor{keywordflow}{if}(ioctl(fileDescriptor, SPI\_IOC\_MESSAGE(1), \&message) < 0)\{}
+\DoxyCodeLine{56         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ While Trying to Read SPI Decoder \(\backslash\)n"});}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter assign rxBuffer \(\backslash\)n"});}
+\DoxyCodeLine{60     uint32\_t byte1 = rxbuf[4];}
+\DoxyCodeLine{61     uint32\_t byte2 = rxbuf[3] << 8;}
+\DoxyCodeLine{62     uint32\_t byte3 = rxbuf[2] << 16;}
+\DoxyCodeLine{63     uint32\_t byte4 = rxbuf[1] << 24;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     uint32\_t readOut = byte1 | byte2 | byte3 | byte4;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ readDecoderCounter readOut: \%d \(\backslash\)n"}, readOut);}
+\DoxyCodeLine{68     \textcolor{keywordflow}{return} readOut;}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 \}}
+
+\end{DoxyCode}

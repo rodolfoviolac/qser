@@ -1,0 +1,241 @@
+\hypertarget{pidController_8h}{}\doxysection{src/pid\+Controler/pid\+Controller.h File Reference}
+\label{pidController_8h}\index{src/pidControler/pidController.h@{src/pidControler/pidController.h}}
+
+
+Header File for The P\+ID Controller.  
+
+
+{\ttfamily \#include \char`\"{}../helpers/helpers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../quanser\+Interface/quanser\+Interface.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pidController_8h_abe99aea2237bf45370f11475aab83cdd}{set\+Target}} (int new\+Target)
+\begin{DoxyCompactList}\small\item\em Function For Setting New Target Position Funcao Repsonsavel por Setar uma nova possicao desejada. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pidController_8h_ad44a79f712b96530f491cf5a841c9817}\label{pidController_8h_ad44a79f712b96530f491cf5a841c9817}} 
+void \mbox{\hyperlink{pidController_8h_ad44a79f712b96530f491cf5a841c9817}{turn\+On\+Pid}} ()
+\begin{DoxyCompactList}\small\item\em Function For Turn On P\+ID Funcao Responsavel Por Ligar O P\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pidController_8h_aa2a62b6c21f82bd7e19c63e02d2cf01c}\label{pidController_8h_aa2a62b6c21f82bd7e19c63e02d2cf01c}} 
+void \mbox{\hyperlink{pidController_8h_aa2a62b6c21f82bd7e19c63e02d2cf01c}{turn\+Off\+Pid}} ()
+\begin{DoxyCompactList}\small\item\em Function For Turn Off P\+ID Funcao Responsavel Por Desligar O P\+ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pidController_8h_a8d8cec964229574d5f0af312a00e5935}{set\+Control\+Kp}} (double new\+Kp)
+\begin{DoxyCompactList}\small\item\em Function For Setting Kp Integral Value Funcao Repsonsavel por Setar Kp, valor parte da integral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pidController_8h_a0a8eecf482506155e3b690c45f4c4e4b}{set\+Control\+Kd}} (double new\+Kd)
+\begin{DoxyCompactList}\small\item\em Function For Setting Kd Integral Value Funcao Repsonsavel por Setar Kd, valor parte da integral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pidController_8h_a315d3a9847f641c407ef6b32a65fd640}{set\+Control\+Ki}} (double new\+Ki)
+\begin{DoxyCompactList}\small\item\em Function For Setting Ki Integral Value Funcao Repsonsavel por Setar Ki, valor parte da integral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pidController_8h_a84419a84b7812ac95cdd67086b4d2585}{set\+Conversion\+Coefficient\+Unit}} (double new\+Conversion\+Coefficient\+Unit)
+\begin{DoxyCompactList}\small\item\em Function For Setting New Conversion Coefficinet Funcao Responsavel por setar um novo coeficiente de conversao de controle do P\+ID. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{pidController_8h_ad2327b73379de6859aafb872d874273d}{pid\+Handler}} (int current\+Position)
+\begin{DoxyCompactList}\small\item\em Function For Handling P\+ID Funcao Para Fazer os Calculos do P\+ID e suas variaveis tal como Desvio e Erros, retornando o valor de tensao que deve ser aplicado no motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header File for The P\+ID Controller. 
+
+\begin{DoxyAuthor}{Author}
+Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pidController_8h_ad2327b73379de6859aafb872d874273d}\label{pidController_8h_ad2327b73379de6859aafb872d874273d}} 
+\index{pidController.h@{pidController.h}!pidHandler@{pidHandler}}
+\index{pidHandler@{pidHandler}!pidController.h@{pidController.h}}
+\doxysubsubsection{\texorpdfstring{pidHandler()}{pidHandler()}}
+{\footnotesize\ttfamily double pid\+Handler (\begin{DoxyParamCaption}\item[{int}]{current\+Position }\end{DoxyParamCaption})}
+
+
+
+Function For Handling P\+ID Funcao Para Fazer os Calculos do P\+ID e suas variaveis tal como Desvio e Erros, retornando o valor de tensao que deve ser aplicado no motor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Posicao} & Corrente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor de Tensão que deve ser aplicado no Motor 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file pid\+Controller.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124                                       \{}
+\DoxyCodeLine{125     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting pidHandler pidControler \(\backslash\)n"});}
+\DoxyCodeLine{126     \textcolor{keywordtype}{double} pidUnitVoltage;}
+\DoxyCodeLine{127     \textcolor{keywordtype}{double} pPart;}
+\DoxyCodeLine{128     \textcolor{keywordtype}{double} iPart;}
+\DoxyCodeLine{129     \textcolor{keywordtype}{double} dPart;}
+\DoxyCodeLine{130     \textcolor{keywordtype}{double} deviation;}
+\DoxyCodeLine{131     \textcolor{keywordtype}{double} tempErrorDeviation = targetLocation -\/ currentPosition;}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     allErrorsSummation += tempErrorDeviation;}
+\DoxyCodeLine{134     deviation = tempErrorDeviation -\/ errorDeviation;}
+\DoxyCodeLine{135     errorDeviation = tempErrorDeviation;}
+\DoxyCodeLine{136     pPart = controlKp * tempErrorDeviation;}
+\DoxyCodeLine{137     iPart = controlKi * allErrorsSummation;}
+\DoxyCodeLine{138     dPart = controlKd * deviation;}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     pidUnitVoltage = pPart + iPart + dPart;}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{keywordflow}{if}(pidUnitVoltage > QSER\_VOLTAGE) pidUnitVoltage = QSER\_VOLTAGE;}
+\DoxyCodeLine{143     \textcolor{keywordflow}{if}(pidUnitVoltage < -\/QSER\_VOLTAGE) pidUnitVoltage = -\/QSER\_VOLTAGE;}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     printf(\textcolor{stringliteral}{"[INFO] -\/ PID Voltage Result \%f \(\backslash\)n"}, pidUnitVoltage);}
+\DoxyCodeLine{146     \textcolor{keywordflow}{return} pidUnitVoltage;}
+\DoxyCodeLine{147 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pidController_8h_a0a8eecf482506155e3b690c45f4c4e4b}\label{pidController_8h_a0a8eecf482506155e3b690c45f4c4e4b}} 
+\index{pidController.h@{pidController.h}!setControlKd@{setControlKd}}
+\index{setControlKd@{setControlKd}!pidController.h@{pidController.h}}
+\doxysubsubsection{\texorpdfstring{setControlKd()}{setControlKd()}}
+{\footnotesize\ttfamily void set\+Control\+Kd (\begin{DoxyParamCaption}\item[{double}]{new\+Kd }\end{DoxyParamCaption})}
+
+
+
+Function For Setting Kd Integral Value Funcao Repsonsavel por Setar Kd, valor parte da integral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Novo} & KD \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file pid\+Controller.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90                                \{}
+\DoxyCodeLine{91     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setControlKd pidControler \(\backslash\)n"});}
+\DoxyCodeLine{92     controlKd = newKd;}
+\DoxyCodeLine{93     printf(\textcolor{stringliteral}{"[INFO] -\/ controlKd Value: \%f \(\backslash\)n"}, controlKd);}
+\DoxyCodeLine{94 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pidController_8h_a315d3a9847f641c407ef6b32a65fd640}\label{pidController_8h_a315d3a9847f641c407ef6b32a65fd640}} 
+\index{pidController.h@{pidController.h}!setControlKi@{setControlKi}}
+\index{setControlKi@{setControlKi}!pidController.h@{pidController.h}}
+\doxysubsubsection{\texorpdfstring{setControlKi()}{setControlKi()}}
+{\footnotesize\ttfamily void set\+Control\+Ki (\begin{DoxyParamCaption}\item[{double}]{new\+Ki }\end{DoxyParamCaption})}
+
+
+
+Function For Setting Ki Integral Value Funcao Repsonsavel por Setar Ki, valor parte da integral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Novo} & KI \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file pid\+Controller.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101                                \{}
+\DoxyCodeLine{102     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setControlKi pidControler \(\backslash\)n"});}
+\DoxyCodeLine{103     controlKi = newKi;}
+\DoxyCodeLine{104     printf(\textcolor{stringliteral}{"[INFO] -\/ controlKi Value: \%f \(\backslash\)n"}, controlKi);}
+\DoxyCodeLine{105 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pidController_8h_a8d8cec964229574d5f0af312a00e5935}\label{pidController_8h_a8d8cec964229574d5f0af312a00e5935}} 
+\index{pidController.h@{pidController.h}!setControlKp@{setControlKp}}
+\index{setControlKp@{setControlKp}!pidController.h@{pidController.h}}
+\doxysubsubsection{\texorpdfstring{setControlKp()}{setControlKp()}}
+{\footnotesize\ttfamily void set\+Control\+Kp (\begin{DoxyParamCaption}\item[{double}]{new\+Kp }\end{DoxyParamCaption})}
+
+
+
+Function For Setting Kp Integral Value Funcao Repsonsavel por Setar Kp, valor parte da integral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Novo} & KP \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file pid\+Controller.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{79                                \{}
+\DoxyCodeLine{80     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setControlKp pidControler \(\backslash\)n"});}
+\DoxyCodeLine{81     controlKp = newKp;}
+\DoxyCodeLine{82     printf(\textcolor{stringliteral}{"[INFO] -\/ controlKp Value: \%f \(\backslash\)n"}, controlKp);}
+\DoxyCodeLine{83 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pidController_8h_a84419a84b7812ac95cdd67086b4d2585}\label{pidController_8h_a84419a84b7812ac95cdd67086b4d2585}} 
+\index{pidController.h@{pidController.h}!setConversionCoefficientUnit@{setConversionCoefficientUnit}}
+\index{setConversionCoefficientUnit@{setConversionCoefficientUnit}!pidController.h@{pidController.h}}
+\doxysubsubsection{\texorpdfstring{setConversionCoefficientUnit()}{setConversionCoefficientUnit()}}
+{\footnotesize\ttfamily void set\+Conversion\+Coefficient\+Unit (\begin{DoxyParamCaption}\item[{double}]{new\+Conversion\+Coefficient\+Unit }\end{DoxyParamCaption})}
+
+
+
+Function For Setting New Conversion Coefficinet Funcao Responsavel por setar um novo coeficiente de conversao de controle do P\+ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Novo} & Coeficiente de Conversao \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 112 of file pid\+Controller.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112                                                                       \{}
+\DoxyCodeLine{113     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setConversionCoefficientUnit pidControler \(\backslash\)n"});}
+\DoxyCodeLine{114     conversionCoefficientUnit = newConversionCoefficientUnit;}
+\DoxyCodeLine{115     printf(\textcolor{stringliteral}{"[INFO] -\/ conversionCoefficientUnit Value: \%f \(\backslash\)n"}, conversionCoefficientUnit);}
+\DoxyCodeLine{116 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pidController_8h_abe99aea2237bf45370f11475aab83cdd}\label{pidController_8h_abe99aea2237bf45370f11475aab83cdd}} 
+\index{pidController.h@{pidController.h}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!pidController.h@{pidController.h}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
+{\footnotesize\ttfamily int set\+Target (\begin{DoxyParamCaption}\item[{int}]{new\+Target }\end{DoxyParamCaption})}
+
+
+
+Function For Setting New Target Position Funcao Repsonsavel por Setar uma nova possicao desejada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Nova} & Posicao \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna Positivo Caso Consiga Setar Nova Posicao. 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file pid\+Controller.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                              \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting setTarget pidControler \(\backslash\)n"});}
+\DoxyCodeLine{42     targetLocation = newTarget;}
+\DoxyCodeLine{43     errorDeviation = 0.0;}
+\DoxyCodeLine{44     allErrorsSummation = 0.0;}
+\DoxyCodeLine{45     printf(\textcolor{stringliteral}{"[INFO] -\/ new Target Location set to \%d \(\backslash\)n"}, targetLocation);}
+\DoxyCodeLine{46     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Set targetLocation to \%d \(\backslash\)n"}, targetLocation);}
+\DoxyCodeLine{47     \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{48 \}}
+
+\end{DoxyCode}

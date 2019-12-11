@@ -26,14 +26,19 @@ var NAVTREE =
     [ "QSER", "index.html", null ],
     [ "LICENSE", "md_LICENSE.html", null ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "Globals", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"dir_0c26bd22f254302c4dfbaa95bf527e9d.html"
+"decoderInterface_8c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,0 +1,332 @@
+\hypertarget{quanserInterface_8c}{}\doxysection{src/quanser\+Interface/quanser\+Interface.c File Reference}
+\label{quanserInterface_8c}\index{src/quanserInterface/quanserInterface.c@{src/quanserInterface/quanserInterface.c}}
+
+
+Header File for The Quanser Interface.  
+
+
+{\ttfamily \#include \char`\"{}quanser\+Interface.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{quanserInterface_8c_a72cb6672e7a2002cb3eed86f8d58781f}{handle\+Pwm}} (int dc\+Amount)
+\begin{DoxyCompactList}\small\item\em Function For Setting P\+WM with dc amount and enabling P\+WM Funcao responsavel por setar o valor do duty cycle em funcao do valor de tensao passado por parametro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quanserInterface_8c_a2cb713f85c500012763209e2ffc0acf7}{qser\+Initializer}} ()
+\begin{DoxyCompactList}\small\item\em Function Responsable For The Decoder and Motor Initialization Funcao responsavel pela inicializacao do motor e tambem do decoder. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}{qser\+Break}} ()
+\begin{DoxyCompactList}\small\item\em Function Responsable Disabling H Bridge Funcao responsavel por desabilitar a Ponte H. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quanserInterface_8c_a0c496c62c73c815a5b92cd2935452dbb}{qser\+Voltage}} (float voltage)
+\begin{DoxyCompactList}\small\item\em Function For Handling Volage To Duty Cycle Funcao responsavel por transformar os valores de tensao em Duty Cycle e fazer a chamada para execucao. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{quanserInterface_8c_aae0d60cf64732012d55de41aa4ed5d75}{joint\+Position\+Limit\+One\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Thread For Handling Side One Position Limiter Thread Reponseavel por escutar interrupcoes de fim de curso assim como fazer a pausa do motor e o desligamento do P\+ID. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{quanserInterface_8c_af380e7b0608373355426a5ba9382824c}{joint\+Position\+Limit\+Two\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Thread For Handling Side Two Position Limiter Thread Reponseavel por escutar interrupcoes de fim de curso assim como fazer a pausa do motor e o desligamento do P\+ID. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{quanserInterface_8c_a6b0fef0560db647615037ae9085ee266}{go\+To\+Target\+Position\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Thread For Handling Changing Position Thread Reponseavel por executar a mudanca do braco do robo para uma posicao previamente adicionada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header File for The Quanser Interface. 
+
+\begin{DoxyAuthor}{Author}
+Rodolfo Viola Carvalho, Gabriel Alexandre Zillmer, Felipe Fuhr Dos Reis 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{quanserInterface_8c_a6b0fef0560db647615037ae9085ee266}\label{quanserInterface_8c_a6b0fef0560db647615037ae9085ee266}} 
+\index{quanserInterface.c@{quanserInterface.c}!goToTargetPositionHandler@{goToTargetPositionHandler}}
+\index{goToTargetPositionHandler@{goToTargetPositionHandler}!quanserInterface.c@{quanserInterface.c}}
+\doxysubsubsection{\texorpdfstring{goToTargetPositionHandler()}{goToTargetPositionHandler()}}
+{\footnotesize\ttfamily void$\ast$ go\+To\+Target\+Position\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Thread For Handling Changing Position Thread Reponseavel por executar a mudanca do braco do robo para uma posicao previamente adicionada. 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+Retorna um Ponteiro Para Null 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Definition at line 188 of file quanser\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{188                                  \{}
+\DoxyCodeLine{189     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting goTo Target Position Handler Thread \(\backslash\)n"});}
+\DoxyCodeLine{190     \textcolor{keywordtype}{int} currentPosition = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
+\DoxyCodeLine{191     \textcolor{keywordflow}{while}(TRUE) \{}
+\DoxyCodeLine{192         \textcolor{keywordflow}{if}(pidStatus == TRUE) \{}
+\DoxyCodeLine{193             \textcolor{keywordtype}{float} voltage = (float)\mbox{\hyperlink{pidController_8c_ad2327b73379de6859aafb872d874273d}{pidHandler}}(currentPosition);}
+\DoxyCodeLine{194             \textcolor{keywordflow}{if}(\mbox{\hyperlink{quanserInterface_8c_a0c496c62c73c815a5b92cd2935452dbb}{qserVoltage}}(voltage) == 0) \{}
+\DoxyCodeLine{195                 fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Error While Trying To Move Motor Position\(\backslash\)n"});}
+\DoxyCodeLine{196                 \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{197             \}}
+\DoxyCodeLine{198             currentPosition = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
+\DoxyCodeLine{199         \}}
+\DoxyCodeLine{200         usleep(100);}
+\DoxyCodeLine{201     \}}
+\DoxyCodeLine{202     printf(\textcolor{stringliteral}{"[INFO] -\/ Reached The End goToTargetPositionHandler Thread\(\backslash\)n"});}
+\DoxyCodeLine{203     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{204 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{quanserInterface_8c_a72cb6672e7a2002cb3eed86f8d58781f}\label{quanserInterface_8c_a72cb6672e7a2002cb3eed86f8d58781f}} 
+\index{quanserInterface.c@{quanserInterface.c}!handlePwm@{handlePwm}}
+\index{handlePwm@{handlePwm}!quanserInterface.c@{quanserInterface.c}}
+\doxysubsubsection{\texorpdfstring{handlePwm()}{handlePwm()}}
+{\footnotesize\ttfamily int handle\+Pwm (\begin{DoxyParamCaption}\item[{int}]{dc\+Amount }\end{DoxyParamCaption})}
+
+
+
+Function For Setting P\+WM with dc amount and enabling P\+WM Funcao responsavel por setar o valor do duty cycle em funcao do valor de tensao passado por parametro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Valor} & em nano segundos do Duty Cycle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna Positivo Caso Consiga Setar um novo Duty Cycle. 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file quanser\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32                             \{}
+\DoxyCodeLine{33     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting handlePwm\(\backslash\)n"});}
+\DoxyCodeLine{34     \textcolor{keywordflow}{if}(IS\_RUNNING\_LOCAL) \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{35     \textcolor{keywordtype}{char} dataFull[20];}
+\DoxyCodeLine{36     snprintf(dataFull, \textcolor{keyword}{sizeof}(dataFull), \textcolor{stringliteral}{"\%d\(\backslash\)n"}, dcAmount);}
+\DoxyCodeLine{37     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8c_a11518359bc1427b7f3fc6f3ce336db15}{writeHandler}}(\textcolor{stringliteral}{"/sys/class/gpio/gpio38/value"}, \textcolor{stringliteral}{"1"}) < 0) \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{38     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8c_a11518359bc1427b7f3fc6f3ce336db15}{writeHandler}}(\textcolor{stringliteral}{"/sys/class/pwm/pwmchip0/pwm1/enable"}, \textcolor{stringliteral}{"1"}) < 0) \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{39     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8c_a11518359bc1427b7f3fc6f3ce336db15}{writeHandler}}(\textcolor{stringliteral}{"/sys/class/pwm/pwmchip0/device/pwm\_period"}, PWM\_PERIOD) < 0) \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8c_a11518359bc1427b7f3fc6f3ce336db15}{writeHandler}}(\textcolor{stringliteral}{"/sys/class/pwm/pwmchip0/pwm1/duty\_cycle"}, dataFull) < 0) \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{41     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Finishing handlePwm"});}
+\DoxyCodeLine{42     \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{quanserInterface_8c_aae0d60cf64732012d55de41aa4ed5d75}\label{quanserInterface_8c_aae0d60cf64732012d55de41aa4ed5d75}} 
+\index{quanserInterface.c@{quanserInterface.c}!jointPositionLimitOneHandler@{jointPositionLimitOneHandler}}
+\index{jointPositionLimitOneHandler@{jointPositionLimitOneHandler}!quanserInterface.c@{quanserInterface.c}}
+\doxysubsubsection{\texorpdfstring{jointPositionLimitOneHandler()}{jointPositionLimitOneHandler()}}
+{\footnotesize\ttfamily void$\ast$ joint\+Position\+Limit\+One\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Thread For Handling Side One Position Limiter Thread Reponseavel por escutar interrupcoes de fim de curso assim como fazer a pausa do motor e o desligamento do P\+ID. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um Ponteiro Para Null 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file quanser\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96                                      \{}
+\DoxyCodeLine{97     \textcolor{keywordflow}{if}(IS\_RUNNING\_LOCAL) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{98     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting Joint Position Limiter Handler Thread \(\backslash\)n"});}
+\DoxyCodeLine{99     \textcolor{keywordtype}{char} rootPathLimiterOneValue[100] = \textcolor{stringliteral}{"/sys/class/gpio/gpio6/value"};}
+\DoxyCodeLine{100     \textcolor{keywordtype}{char} rootPathLimiterOneEdge[100] = \textcolor{stringliteral}{"/sys/class/gpio/gpio6/edge"};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} dataOne;}
+\DoxyCodeLine{103     \textcolor{keyword}{struct }pollfd pollFileHandlerOne;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ JPL Opening First File GPIO 6\(\backslash\)n"});}
+\DoxyCodeLine{106     \textcolor{keywordflow}{if}((pollFileHandlerOne.fd = open(rootPathLimiterOneValue, O\_RDONLY)) < 0) \{}
+\DoxyCodeLine{107         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Joint Position Limiter One Open File Descriptor Error \%s.\(\backslash\)n"}, rootPathLimiterOneValue);}
+\DoxyCodeLine{108         exit(11);}
+\DoxyCodeLine{109     \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     read(pollFileHandlerOne.fd,\&dataOne,1);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting Joint Position Limiter Handler While \(\backslash\)n"});}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} shouldNeverStop = TRUE;}
+\DoxyCodeLine{115     \textcolor{keywordflow}{while}(shouldNeverStop) \{}
+\DoxyCodeLine{116         \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Checking Joint Position Limiter \(\backslash\)n"});}
+\DoxyCodeLine{117         pollFileHandlerOne.events = POLLPRI;}
+\DoxyCodeLine{118         \mbox{\hyperlink{helpers_8c_a11518359bc1427b7f3fc6f3ce336db15}{writeHandler}}(rootPathLimiterOneEdge,\textcolor{stringliteral}{"both"});}
+\DoxyCodeLine{119         poll(\&pollFileHandlerOne,1,-\/1);}
+\DoxyCodeLine{120         lseek(pollFileHandlerOne.fd,0,SEEK\_SET);}
+\DoxyCodeLine{121         \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ JPL Reading First File GPIO 0\(\backslash\)n"});}
+\DoxyCodeLine{122         \textcolor{keywordflow}{if}(read(pollFileHandlerOne.fd, \&dataOne, 1) < 0) \{}
+\DoxyCodeLine{123             fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ JPL One Reading Error \%s\(\backslash\)n\(\backslash\)n"}, rootPathLimiterOneValue);}
+\DoxyCodeLine{124             exit(2);}
+\DoxyCodeLine{125         \}}
+\DoxyCodeLine{126         \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ JPL Testing For End\(\backslash\)n"});}
+\DoxyCodeLine{127         \textcolor{keywordflow}{if}(dataOne == JPL\_REACHED) \{}
+\DoxyCodeLine{128             printf(\textcolor{stringliteral}{"[INFO] -\/ JPL ONE Reached End \(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{129             \mbox{\hyperlink{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}{qserBreak}}();}
+\DoxyCodeLine{130             \mbox{\hyperlink{pidController_8c_aa2a62b6c21f82bd7e19c63e02d2cf01c}{turnOffPid}}();}
+\DoxyCodeLine{131         \}}
+\DoxyCodeLine{132         JPL\_REACHED\_STATUS\_ONE = dataOne;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \}}
+\DoxyCodeLine{135     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{136 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{quanserInterface_8c_af380e7b0608373355426a5ba9382824c}\label{quanserInterface_8c_af380e7b0608373355426a5ba9382824c}} 
+\index{quanserInterface.c@{quanserInterface.c}!jointPositionLimitTwoHandler@{jointPositionLimitTwoHandler}}
+\index{jointPositionLimitTwoHandler@{jointPositionLimitTwoHandler}!quanserInterface.c@{quanserInterface.c}}
+\doxysubsubsection{\texorpdfstring{jointPositionLimitTwoHandler()}{jointPositionLimitTwoHandler()}}
+{\footnotesize\ttfamily void$\ast$ joint\+Position\+Limit\+Two\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Thread For Handling Side Two Position Limiter Thread Reponseavel por escutar interrupcoes de fim de curso assim como fazer a pausa do motor e o desligamento do P\+ID. 
+
+\begin{DoxyReturn}{Returns}
+Retorna um Ponteiro Para Null 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file quanser\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{142                                      \{}
+\DoxyCodeLine{143     \textcolor{keywordflow}{if}(IS\_RUNNING\_LOCAL) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{144     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting Joint Position Limiter Handler Thread \(\backslash\)n"});}
+\DoxyCodeLine{145     \textcolor{keywordtype}{char} rootPathLimiterTwoValue[100] = \textcolor{stringliteral}{"/sys/class/gpio/gpio0/value"};}
+\DoxyCodeLine{146     \textcolor{keywordtype}{char} rootPathLimiterTwoEdge[100] = \textcolor{stringliteral}{"/sys/class/gpio/gpio0/edge"};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} dataTwo;}
+\DoxyCodeLine{149     \textcolor{keyword}{struct }pollfd pollFileHandlerTwo;}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ JPL Opening First File GPIO 6\(\backslash\)n"});}
+\DoxyCodeLine{152     \textcolor{keywordflow}{if}((pollFileHandlerTwo.fd = open(rootPathLimiterTwoValue, O\_RDONLY)) < 0) \{}
+\DoxyCodeLine{153         fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ Joint Position Limiter Two Open File Descriptor Error \%s.\(\backslash\)n"}, rootPathLimiterTwoValue);}
+\DoxyCodeLine{154         exit(11);}
+\DoxyCodeLine{155     \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     read(pollFileHandlerTwo.fd, \&dataTwo, 1);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting Joint Position Limiter Handler While \(\backslash\)n"});}
+\DoxyCodeLine{160     \textcolor{keywordtype}{int} shouldNeverStop = TRUE;}
+\DoxyCodeLine{161     \textcolor{keywordflow}{while}(shouldNeverStop) \{}
+\DoxyCodeLine{162         \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Checking Joint Position Limiter \(\backslash\)n"});}
+\DoxyCodeLine{163         pollFileHandlerTwo.events = POLLPRI;}
+\DoxyCodeLine{164         \mbox{\hyperlink{helpers_8c_a11518359bc1427b7f3fc6f3ce336db15}{writeHandler}}(rootPathLimiterTwoEdge,\textcolor{stringliteral}{"both"});}
+\DoxyCodeLine{165         poll(\&pollFileHandlerTwo, 1, -\/1);}
+\DoxyCodeLine{166         lseek(pollFileHandlerTwo.fd, 0, SEEK\_SET);}
+\DoxyCodeLine{167         \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ JPL Reading First File GPIO 0\(\backslash\)n"});}
+\DoxyCodeLine{168         \textcolor{keywordflow}{if}(read(pollFileHandlerTwo.fd, \&dataTwo, 1) < 0) \{}
+\DoxyCodeLine{169             fprintf(stderr, \textcolor{stringliteral}{"[ERROR] -\/ JPL Two Reading Error \%s\(\backslash\)n\(\backslash\)n"}, rootPathLimiterTwoValue);}
+\DoxyCodeLine{170             exit(2);}
+\DoxyCodeLine{171         \}}
+\DoxyCodeLine{172         \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ JPL Testing For End\(\backslash\)n"});}
+\DoxyCodeLine{173         \textcolor{keywordflow}{if}(dataTwo == JPL\_REACHED) \{}
+\DoxyCodeLine{174             printf(\textcolor{stringliteral}{"[INFO] -\/ JPL TWO Reached End \(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{175             \mbox{\hyperlink{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}{qserBreak}}();}
+\DoxyCodeLine{176             \mbox{\hyperlink{pidController_8c_aa2a62b6c21f82bd7e19c63e02d2cf01c}{turnOffPid}}();}
+\DoxyCodeLine{177         \}}
+\DoxyCodeLine{178         JPL\_REACHED\_STATUS\_TWO = dataTwo;}
+\DoxyCodeLine{179     \}}
+\DoxyCodeLine{180     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{181 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}\label{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}} 
+\index{quanserInterface.c@{quanserInterface.c}!qserBreak@{qserBreak}}
+\index{qserBreak@{qserBreak}!quanserInterface.c@{quanserInterface.c}}
+\doxysubsubsection{\texorpdfstring{qserBreak()}{qserBreak()}}
+{\footnotesize\ttfamily int qser\+Break (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function Responsable Disabling H Bridge Funcao responsavel por desabilitar a Ponte H. 
+
+\begin{DoxyReturn}{Returns}
+Retorna Positivo Caso Consiga Desabilitar. 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file quanser\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68                 \{}
+\DoxyCodeLine{69     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting qserBreak\(\backslash\)n"});}
+\DoxyCodeLine{70     \textcolor{keywordflow}{if}(IS\_RUNNING\_LOCAL) \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{71     \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8c_a11518359bc1427b7f3fc6f3ce336db15}{writeHandler}}(\textcolor{stringliteral}{"/sys/class/gpio/gpio38/value"}, \textcolor{stringliteral}{"0"}) < 0) \{}
+\DoxyCodeLine{72         printf(\textcolor{stringliteral}{"[INFO] -\/ Error Writing qserBreak File Value to Zero"});}
+\DoxyCodeLine{73         \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Finishing qserBreak\(\backslash\)n"});}
+\DoxyCodeLine{76     \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{quanserInterface_8c_a2cb713f85c500012763209e2ffc0acf7}\label{quanserInterface_8c_a2cb713f85c500012763209e2ffc0acf7}} 
+\index{quanserInterface.c@{quanserInterface.c}!qserInitializer@{qserInitializer}}
+\index{qserInitializer@{qserInitializer}!quanserInterface.c@{quanserInterface.c}}
+\doxysubsubsection{\texorpdfstring{qserInitializer()}{qserInitializer()}}
+{\footnotesize\ttfamily int qser\+Initializer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function Responsable For The Decoder and Motor Initialization Funcao responsavel pela inicializacao do motor e tambem do decoder. 
+
+\begin{DoxyReturn}{Returns}
+Retorna Positivo Caso Consiga inicializar. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file quanser\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                       \{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[INFO] -\/ Initializing Qser \(\backslash\)n"});}
+\DoxyCodeLine{52 \textcolor{comment}{//    int initialPwaValue = 0;}}
+\DoxyCodeLine{53 \textcolor{comment}{//    if(handlePwm(initialPwaValue) ==  FALSE)\{}}
+\DoxyCodeLine{54 \textcolor{comment}{//        fprintf(stderr, "[ERROR] -\/ Error While Trying To Set PWM Initialization\(\backslash\)n");}}
+\DoxyCodeLine{55 \textcolor{comment}{//        exit(0);}}
+\DoxyCodeLine{56 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{57     \mbox{\hyperlink{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}{qserBreak}}();}
+\DoxyCodeLine{58     \mbox{\hyperlink{decoderInterface_8c_aa643b06f53912de8c90b619803eb27a6}{decoderInitializer}}(SPI\_DEFAULT\_SPEED);}
+\DoxyCodeLine{59     \mbox{\hyperlink{decoderInterface_8c_a82fe1a26c4a03de6dc52798635d4ca27}{clearDecoder}}();}
+\DoxyCodeLine{60     \textcolor{keywordflow}{return} TRUE;}
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{quanserInterface_8c_a0c496c62c73c815a5b92cd2935452dbb}\label{quanserInterface_8c_a0c496c62c73c815a5b92cd2935452dbb}} 
+\index{quanserInterface.c@{quanserInterface.c}!qserVoltage@{qserVoltage}}
+\index{qserVoltage@{qserVoltage}!quanserInterface.c@{quanserInterface.c}}
+\doxysubsubsection{\texorpdfstring{qserVoltage()}{qserVoltage()}}
+{\footnotesize\ttfamily int qser\+Voltage (\begin{DoxyParamCaption}\item[{float}]{voltage }\end{DoxyParamCaption})}
+
+
+
+Function For Handling Volage To Duty Cycle Funcao responsavel por transformar os valores de tensao em Duty Cycle e fazer a chamada para execucao. 
+
+\begin{DoxyReturn}{Returns}
+Retorna o Status 1 Caso Consiga Fazer A Alteracao do Duty Cycle 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file quanser\+Interface.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84                                \{}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Starting qserVoltage\(\backslash\)n"});}
+\DoxyCodeLine{86     \textcolor{keywordtype}{float} dcAmount = (( voltage + QSER\_VOLTAGE ) / ( 2 * QSER\_VOLTAGE )) * atof(PWM\_PERIOD);}
+\DoxyCodeLine{87     \textcolor{keywordflow}{if}(DEBUG) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Finishing qserVoltage\(\backslash\)n"});}
+\DoxyCodeLine{88     \textcolor{keywordflow}{return} \mbox{\hyperlink{quanserInterface_8c_a72cb6672e7a2002cb3eed86f8d58781f}{handlePwm}}((\textcolor{keywordtype}{int})dcAmount);}
+\DoxyCodeLine{89 \}}
+
+\end{DoxyCode}
