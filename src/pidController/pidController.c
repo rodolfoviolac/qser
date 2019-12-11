@@ -38,7 +38,7 @@ int pidStatus = 0;
  * @return Retorna Positivo Caso Consiga Setar Nova Posicao.
  */
 int setTarget(int newTarget) {
-    if(DEBUG) printf("[DEBUG] - Starting setTarget pidControler \n");
+    if(DEBUG) printf("[DEBUG] - Starting setTarget pidController \n");
     targetLocation = newTarget;
     errorDeviation = 0.0;
     allErrorsSummation = 0.0;
@@ -52,7 +52,7 @@ int setTarget(int newTarget) {
  * Funcao Responsavel Por Ligar O PID
  */
 void turnOnPid(){
-    if(DEBUG) printf("[DEBUG] - Starting turnOnPidStatus pidControler \n");
+    if(DEBUG) printf("[DEBUG] - Starting turnOnPidStatus pidController \n");
     if(pidStatus == FALSE){
         if(DEBUG) printf("[DEBUG] - Setting pidStatus TRUE \n");
         pidStatus = TRUE;
@@ -64,7 +64,7 @@ void turnOnPid(){
  * Funcao Responsavel Por Desligar O PID
  */
 void turnOffPid(){
-    if(DEBUG) printf("[DEBUG] - Starting turnOffPidStatus pidControler \n");
+    if(DEBUG) printf("[DEBUG] - Starting turnOffPidStatus pidController \n");
     if(pidStatus == TRUE){
         if(DEBUG) printf("[DEBUG] - Setting pidStatus FALSE \n");
         pidStatus = FALSE;
@@ -77,7 +77,7 @@ void turnOffPid(){
  * @param Novo KP
  */
 void setControlKp(double newKp){
-    if(DEBUG) printf("[DEBUG] - Starting setControlKp pidControler \n");
+    if(DEBUG) printf("[DEBUG] - Starting setControlKp pidController \n");
     controlKp = newKp;
     printf("[INFO] - controlKp Value: %f \n", controlKp);
 }
@@ -88,7 +88,7 @@ void setControlKp(double newKp){
  * @param Novo KD
  */
 void setControlKd(double newKd){
-    if(DEBUG) printf("[DEBUG] - Starting setControlKd pidControler \n");
+    if(DEBUG) printf("[DEBUG] - Starting setControlKd pidController \n");
     controlKd = newKd;
     printf("[INFO] - controlKd Value: %f \n", controlKd);
 }
@@ -99,7 +99,7 @@ void setControlKd(double newKd){
  * @param Novo KI
  */
 void setControlKi(double newKi){
-    if(DEBUG) printf("[DEBUG] - Starting setControlKi pidControler \n");
+    if(DEBUG) printf("[DEBUG] - Starting setControlKi pidController \n");
     controlKi = newKi;
     printf("[INFO] - controlKi Value: %f \n", controlKi);
 }
@@ -110,7 +110,7 @@ void setControlKi(double newKi){
  * @param Novo Coeficiente de Conversao
  */
 void setConversionCoefficientUnit(double newConversionCoefficientUnit){
-    if(DEBUG) printf("[DEBUG] - Starting setConversionCoefficientUnit pidControler \n");
+    if(DEBUG) printf("[DEBUG] - Starting setConversionCoefficientUnit pidController \n");
     conversionCoefficientUnit = newConversionCoefficientUnit;
     printf("[INFO] - conversionCoefficientUnit Value: %f \n", conversionCoefficientUnit);
 }
@@ -122,7 +122,7 @@ void setConversionCoefficientUnit(double newConversionCoefficientUnit){
  * @return Valor de Tensão que deve ser aplicado no Motor
  */
 double pidHandler(int currentPosition){
-    if(DEBUG) printf("[DEBUG] - Starting pidHandler pidControler \n");
+    if(DEBUG) printf("[DEBUG] - Starting pidHandler pidController \n");
     double pidUnitVoltage;
     double pPart;
     double iPart;

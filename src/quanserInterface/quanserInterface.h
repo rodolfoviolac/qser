@@ -28,7 +28,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include "../helpers/helpers.h"
-#include "../pidControler/pidController.h"
+#include "../pidController/pidController.h"
 #include "../decoderInterface/decoderInterface.h"
 #define PWM_PERIOD "1000000"
 #define QSER_VOLTAGE 27.0

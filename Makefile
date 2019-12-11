@@ -24,8 +24,8 @@ quanserInterface.o: $(SRCPATH)quanserInterface/quanserInterface.c
 userInterface.o: $(SRCPATH)userInterface/userInterface.c
 	$(CC) $(FLAGS) -c $(SRCPATH)userInterface/userInterface.c -o $(OBJPATH)userInterface.o
 
-pidController.o: $(SRCPATH)pidControler/pidControler.c
-	$(CC) $(FLAGS) -c $(SRCPATH)pidControler/pidControler.c -o $(OBJPATH)pidController.o
+pidController.o: $(SRCPATH)pidController/pidController.c
+	$(CC) $(FLAGS) -c $(SRCPATH)pidController/pidController.c -o $(OBJPATH)pidController.o
 
 decoderInterface.o: $(SRCPATH)decoderInterface/decoderInterface.c
 	$(CC) $(FLAGS) -c $(SRCPATH)decoderInterface/decoderInterface.c -o $(OBJPATH)decoderInterface.o
