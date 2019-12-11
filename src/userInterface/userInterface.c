@@ -25,7 +25,11 @@
 
 /**
  * @brief Function For Print Users Options
- * Funcao para imprimir no Terminal os Comandos Possiveis para o usuario
+ * Funcao para imprimir no terminal os comandos possíveis para o usuário.
+ *
+ * São Commandos Possíveis: Speed, goforv, shiftrad, cleardec, getdec, getdecrad, jpl, break, help e exit
+ *
+ * @return Void
  */
 void printUserOptions(){
     printf("########### QSER OPTIONS ##############\n\n");
@@ -44,7 +48,10 @@ void printUserOptions(){
 
 /**
  * @brief Function For Print Members Name
- * Funcao para Imprimir no Terminal os Nomes dos Integrantes do Grupo
+ *
+ * Função para imprimir no terminal os nome dos integrantes do grupo
+ *
+ *  @return Void
  */
 void printUserGroupsName(){
     printf("########### QSER 2019/2 ##############\n");
@@ -56,9 +63,9 @@ void printUserGroupsName(){
 
 /**
  * @brief Function For Handling User Input Options
- * Funcao para retornar a opcao escolhida pelo usuario no menu de opcoes.
- * @param Valor digitado pelo usuario
- * @return Retorna o ID do do Comando Digitado Pelo Usuario
+ * Função para mapear a opções digitada pelo usuário no menu de opções.
+ * @param  cmd Comando digitado pelo usuário
+ * @return retorna o ID do comando digitado pelo usuário
  */
 int resolveOption(char* cmd) {
     if (strncmp(cmd, "speed", 5) == 0) { return OPTION_SPEED; }

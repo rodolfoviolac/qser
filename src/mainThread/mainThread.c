@@ -22,13 +22,20 @@
  */
 
 #include "mainThread.h"
+/** @brief Status do final de curso um */
 int JPL_REACHED_STATUS_ONE = 0;
+/** @brief Status do final de curso dois */
 int JPL_REACHED_STATUS_TWO = 0;
 
 
 /**
  * @brief Main Thread For Hanling User Interface and Commands.
- * Thread responsavel por esperar comando do usuario e fazer a chamad necessaria da API para executar a acao.
+ * Thread responsável por esperar comando do usuário e fazer a chamad necessária da API para executar a ação.
+ *
+ * É nessa thread que é feita excutada as funções da biblioteca, repetidamente espera em um loop infito um comando de um usuário
+ * para sair e encerrar o programa é necessario um comando Exit.
+ *
+ * @return Retorna um Ponteiro para Null
  */
 void* handlerMainThread() {
     if(DEBUG) printf("[DEBUG] - Starting handlerMainThread \n");

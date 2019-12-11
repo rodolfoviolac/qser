@@ -25,8 +25,11 @@
 
 /**
  * @brief Function For Setting PWM with dc amount and enabling PWM
- * Funcao responsavel por setar o valor do duty cycle em funcao do valor de tensao passado por parametro
- * @param Valor em nano segundos do Duty Cycle
+ * Função responsável por setar o valor do duty cycle em função do valor de tensão passado por parâmetro
+ *
+ * Também é papel desta função de habilitar o pino de enable ponte h e setar o período do PWM,
+ *
+ * @param dcAmount Valor em nano segundos do Duty Cycle a ser aplicado
  * @return Retorna Positivo Caso Consiga Setar um novo Duty Cycle.
  */
 int handlePwm(int dcAmount) {
@@ -44,16 +47,19 @@ int handlePwm(int dcAmount) {
 
 /**
  * @brief Function Responsable For The Decoder and Motor Initialization
- * Funcao responsavel pela inicializacao do motor e tambem do decoder.
+ * Função responsável pela inicialização do motor e também do decoder.
+ *
+ * A princípal função é garantir que os PWM, Ponte H, Decoder estão aptos a funcionarem.
+ *
  * @return Retorna Positivo Caso Consiga inicializar.
  */
 int qserInitializer() {
     if(DEBUG) printf("[INFO] - Initializing Qser \n");
-//    int initialPwaValue = 0;
-//    if(handlePwm(initialPwaValue) ==  FALSE){
-//        fprintf(stderr, "[ERROR] - Error While Trying To Set PWM Initialization\n");
-//        exit(0);
-//    }
+    int initialPwaValue = 0;
+    if(handlePwm(initialPwaValue) ==  FALSE){
+        fprintf(stderr, "[ERROR] - Error While Trying To Set PWM Initialization\n");
+        exit(0);
+    }
     qserBreak();
     decoderInitializer(SPI_DEFAULT_SPEED);
     clearDecoder();
@@ -62,7 +68,7 @@ int qserInitializer() {
 
 /**
  * @brief Function Responsable Disabling H Bridge
- * Funcao responsavel por desabilitar a Ponte H
+ * Função responsável por desabilitar a Ponte H
  * @return Retorna Positivo Caso Consiga Desabilitar.
  */
 int qserBreak() {
@@ -78,7 +84,11 @@ int qserBreak() {
 
 /**
  * @brief Function For Handling Volage To Duty Cycle
- * Funcao responsavel por transformar os valores de tensao em Duty Cycle e fazer a chamada para execucao.
+ * Função responsável por transformar os valores de tensão em Duty Cycle.
+ *
+ * Esse função tem como objetivo transformar um valor de tensão em um valor correspondente ao percentual de 0 a 100% do duty cycle
+ *
+ * @param voltage Valor da voltagem a ser aplicada no Motor
  * @return Retorna o Status 1 Caso Consiga Fazer A Alteracao do Duty Cycle
  */
 int qserVoltage(float voltage) {
@@ -90,7 +100,10 @@ int qserVoltage(float voltage) {
 
 /**
  * @brief Thread For Handling Side One Position Limiter
- * Thread Reponseavel por escutar interrupcoes de fim de curso assim como fazer a pausa do motor e o desligamento do PID
+ * Thread responsável por escutar interrupções de fim de curso assim como fazer a pausa do motor e o desligamento do PID.
+ *
+ * Interrupções sensíveis aos níveis de borda de subida e descida
+ *
  * @return Retorna um Ponteiro Para Null
  */
 void* jointPositionLimitOneHandler() {
@@ -137,6 +150,9 @@ void* jointPositionLimitOneHandler() {
 /**
  * @brief Thread For Handling Side Two Position Limiter
  * Thread Reponseavel por escutar interrupcoes de fim de curso assim como fazer a pausa do motor e o desligamento do PID
+ *
+ * Interrupções sensíveis aos níveis de borda de subida e descida
+ *
  * @return Retorna um Ponteiro Para Null
  */
 void* jointPositionLimitTwoHandler() {
@@ -182,7 +198,12 @@ void* jointPositionLimitTwoHandler() {
 
 /**
  * @brief Thread For Handling Changing Position
- * Thread Reponseavel por executar a mudanca do braco do robo para uma posicao previamente adicionada
+ * Thread Responsável por executar a alteração do braço para uma nova posição.
+ *
+ *
+ *  Loop Infinito que verifica se o PID está ativo para aplicar as tensão necessárias.
+ *
+ *
  *  * @return Retorna um Ponteiro Para Null
  */
 void* goToTargetPositionHandler(){

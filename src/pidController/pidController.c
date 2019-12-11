@@ -22,19 +22,29 @@
  */
 
 #include "pidController.h"
+/** @brief Define Parte de Controle de Ki */
 double controlKi = 0.0;
+/** @brief Define Parte de Controle de Kp */
 double controlKp = 0.005;
+/** @brief Define Parte de Controle de Kd */
 double controlKd = 0.0;
+/** @brief Define uma posição de destino */
 int targetLocation = 0;
+/** @brief Define o desvio do erro */
 double errorDeviation = 0.00;
+/** @brief Define somatório de todos os erros */
 double allErrorsSummation = 0.0;
+/** @brief Coeficiente de Conversão De Contagem e Efetuada */
 double conversionCoefficientUnit = 294.0;
+/** @brief Define o Status do PID */
 int pidStatus = 0;
 
 /**
  * @brief Function For Setting New Target Position
  * Funcao Repsonsavel por Setar uma nova possicao desejada.
- * @param Nova Posicao
+ * É nesta função que são zerados os valores de parte de erros e outras variáveis já calculadas.
+ * A nova posição é convertida e armazenada em targetLocation.
+ * @param newTarget Nova Posicao
  * @return Retorna Positivo Caso Consiga Setar Nova Posicao.
  */
 int setTarget(int newTarget) {
@@ -50,6 +60,7 @@ int setTarget(int newTarget) {
 /**
  * @brief Function For Turn On PID
  * Funcao Responsavel Por Ligar O PID
+ * @return Void
  */
 void turnOnPid(){
     if(DEBUG) printf("[DEBUG] - Starting turnOnPidStatus pidController \n");
@@ -62,6 +73,7 @@ void turnOnPid(){
 /**
  * @brief Function For Turn Off PID
  * Funcao Responsavel Por Desligar O PID
+ *  * @return Void
  */
 void turnOffPid(){
     if(DEBUG) printf("[DEBUG] - Starting turnOffPidStatus pidController \n");
@@ -117,8 +129,11 @@ void setConversionCoefficientUnit(double newConversionCoefficientUnit){
 
 /**
  * @brief Function For Handling PID
- * Funcao Para Fazer os Calculos do PID e suas variaveis tal como Desvio e Erros, retornando o valor de tensao que deve ser aplicado no motor
- * @param Posicao Corrente
+ * Funcao Para Fazer os Calculos do PID e suas variaveis tal como Desvio e Erros, retornando o valor de tensao que deve ser aplicado no motor.
+ *
+ * O cálculo nesta função basea-se na leitura atual da posição do motor dessa maneira gera um valor de tensão para que atinja o alvo.
+ *
+ * @param currentPosition Posicao Corrente
  * @return Valor de Tensão que deve ser aplicado no Motor
  */
 double pidHandler(int currentPosition){

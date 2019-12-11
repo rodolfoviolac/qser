@@ -30,7 +30,9 @@
 #include "../helpers/helpers.h"
 #include "../pidController/pidController.h"
 #include "../decoderInterface/decoderInterface.h"
+/** @brief Define o Período do PWM */
 #define PWM_PERIOD "1000000"
+/** @brief Define Valor de Tensão Máxima */
 #define QSER_VOLTAGE 27.0
 #define JPL_REACHED '0'
 #define JPL_UNREACHED '1'

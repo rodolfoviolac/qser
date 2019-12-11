@@ -25,6 +25,7 @@
 #define QSER_USERINTERFACE_H
 #include <stdio.h>
 #include <string.h>
+/** @brief Define os Ids para as opções para o menu */
 #define OPTION_INVALID 0
 #define OPTION_EXIT 1
 #define OPTION_HELP 2
