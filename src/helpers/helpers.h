@@ -23,10 +23,13 @@
 
 #ifndef QSER_HELPERS_H
 #define QSER_HELPERS_H
+/** @brief Modulo Para Execucao Do Qser Local */
 #define IS_RUNNING_LOCAL 0
+/** @brief Modulo Para Depuracao */
 #define DEBUG 0
 #define TRUE 1
 #define FALSE 0
+/** @brief Define Valor de Pi */
 #define PI 3.141592653589793238462643383279
 #define MAX_RANGE 180.00
 #define CONST_UNIT_RAD_MATH 0.01745329251

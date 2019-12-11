@@ -22,14 +22,17 @@
  */
 
 #include "decoderInterface.h"
+/** @brief Variavel Global De Inicializacao Do Decoder Com Finalidade De Fluxo De Codigo */
 int decoderInitialized = FALSE;
+/** @brief Descritor de Arquivo do SPI */
 int fileDescriptor = -1;
+/** @brief Variavel Global Com Finalidade De Controlar Frequencia de Comunicacao do SPI */
 uint32_t frequencyRate = 0;
 
 /**
- * @brief Read Decoder With SPI IOC TRANSFER
- * Funcao para Fazer a Leitura do Decoder e Retornar Valor do Contador Lido.
- * @return Retorna o Status da Inicializacao Sendo, 1 feita com Sucesso.
+ * @brief Read Decoder Register CNTR With SPI IOC TRANSFER
+ * Funcao para Fazer a Leitura do Decoder CNTR e Retornar Valor do Contador Lido.
+ * @return Int Retorna o Status da Inicializacao Sendo, 1 feita com Sucesso.
  */
 int readDecoderCounter(){
     if(DEBUG) printf("[DEBUG] - Starting readDecoderCounter Function \n");
@@ -71,7 +74,12 @@ int readDecoderCounter(){
 
 /**
  * @brief Initializer The Decoder With Pre Definied Tokens for Handling Couting
- * Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder
+ * Funcao para Fazer a Inicializacao dos Tokens Necessarios para Funcionamento do Decoder Juntamente Com o SPI
+ * Sao as Seguintes Configuracoes Para o MDR0: WRITE_MDR0, QUADRX1 | FREE_RUN | DISABLE_INDX | FILTER_2
+ * Sao as Seguintes Configuracoes Para o MDR1: WRITE_MDR1, NO_FLAGS | BYTE_4 | EN_CNTR
+ *
+ * @param spiSpeed Frequencia (Hz) Para Comunicacao SPI
+ * @return Void
  */
 void decoderInitializer(int spiSpeed){
     if(DEBUG) printf("[DEBUG] - Starting decoderInitializer Function \n");
@@ -177,7 +185,8 @@ void decoderInitializer(int spiSpeed){
 
 /**
  * @brief Function For Cleaning Decoder
- * Funcao para Zerar o Contador do Decoder
+ * Funcao para Zerar o Contador do Decoder, faz isso por meio da instrucao CLR_CNTR
+ * @return Void
  */
 void clearDecoder(){
     if(DEBUG) printf("[DEBUG] - Starting clearDecoder Function \n");
@@ -207,7 +216,8 @@ void clearDecoder(){
 
 /**
  * @brief Function For Exiting and Restart Variables Of Decoder
- * Funcao para fazer a limpeza das variaveis e setar decoder como nao inicializado
+ * Funcao para fazer a limpeza das variaveis, setar decoder como nao inicializado e fechar a comunicacao SPI
+ * @return Void
  */
 void wrapUpDecoder(){
     if(DEBUG) printf("[DEBUG] - Starting wrapUpDecoder Function \n");

@@ -36,7 +36,9 @@
 #include <linux/spi/spidev.h>
 #endif
 
+/** @brief Define A Velocidade Do SPI. */
 #define SPI_DEFAULT_SPEED 10000
+/** @brief Define Quantidade de Bits por Palavra do Decoder. */
 #define BITS_PER_WORD 8
 
 
