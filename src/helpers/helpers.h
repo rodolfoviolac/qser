@@ -32,8 +32,6 @@
 /** @brief Define Valor de Pi */
 #define PI 3.141592653589793238462643383279
 #define MAX_RANGE 180.00
-#define CONST_UNIT_RAD_MATH 0.01745329251
-#define RAD2G MAX_RANGE/PI
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>

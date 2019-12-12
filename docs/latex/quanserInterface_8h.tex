@@ -21,6 +21,12 @@ Arquivo de cabeçalho da interface do quanser.
 \mbox{\Hypertarget{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}\label{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}} 
 \#define \mbox{\hyperlink{quanserInterface_8h_a85d3bb9e37fcff0e990ccd0ecb50f169}{Q\+S\+E\+R\+\_\+\+V\+O\+L\+T\+A\+GE}}~27.\+0
 \begin{DoxyCompactList}\small\item\em Define Valor de Tensão Máxima. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quanserInterface_8h_a4e111c8fe62388ff42a9878355034406}\label{quanserInterface_8h_a4e111c8fe62388ff42a9878355034406}} 
+\#define \mbox{\hyperlink{quanserInterface_8h_a4e111c8fe62388ff42a9878355034406}{M\+O\+T\+O\+R\+\_\+\+R\+E\+V\+O\+L\+U\+T\+I\+O\+NS}}~4096
+\begin{DoxyCompactList}\small\item\em Resolucão do Enconder Definida no Datasheet. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quanserInterface_8h_af1751c498e9ec2fe3c4e7b1aa7e85ef0}\label{quanserInterface_8h_af1751c498e9ec2fe3c4e7b1aa7e85ef0}} 
+\#define \mbox{\hyperlink{quanserInterface_8h_af1751c498e9ec2fe3c4e7b1aa7e85ef0}{M\+O\+T\+O\+R\+\_\+\+P\+U\+L\+S\+ES}}~1024
+\begin{DoxyCompactList}\small\item\em Pulsos por Rotacão Definida no Datasheet. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{quanserInterface_8h_aee0960e87ad9e83a0d8648502561f477}\label{quanserInterface_8h_aee0960e87ad9e83a0d8648502561f477}} 
 \#define {\bfseries J\+P\+L\+\_\+\+R\+E\+A\+C\+H\+ED}~\textquotesingle{}0\textquotesingle{}
 \item 
@@ -82,7 +88,7 @@ Thread para assegurar troca de posições Thread Responsável por executar a alt
 
 Loop Infinito que verifica se o P\+ID está ativo para aplicar as tensão necessárias.
 
-
+Tempo aguardado para cada rotação é de 10k micro segundos (100 Hz)
 \begin{DoxyItemize}
 \item \begin{DoxyReturn}{Returns}
 Retorna um Ponteiro Para Null 
@@ -106,7 +112,7 @@ Definition at line 209 of file quanser\+Interface.\+c.
 \DoxyCodeLine{218             \}}
 \DoxyCodeLine{219             currentPosition = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
 \DoxyCodeLine{220         \}}
-\DoxyCodeLine{221         usleep(100);}
+\DoxyCodeLine{221         usleep(10000);}
 \DoxyCodeLine{222     \}}
 \DoxyCodeLine{223     printf(\textcolor{stringliteral}{"[INFO] -\/ Reached The End goToTargetPositionHandler Thread\(\backslash\)n"});}
 \DoxyCodeLine{224     \textcolor{keywordflow}{return} NULL;}

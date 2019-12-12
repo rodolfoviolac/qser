@@ -203,7 +203,7 @@ void* jointPositionLimitTwoHandler() {
  *
  *  Loop Infinito que verifica se o PID está ativo para aplicar as tensão necessárias.
  *
- *
+ *  Tempo aguardado para cada rotação é de 10k micro segundos (100 Hz)
  *  * @return Retorna um Ponteiro Para Null
  */
 void* goToTargetPositionHandler(){
@@ -218,7 +218,7 @@ void* goToTargetPositionHandler(){
             }
             currentPosition = readDecoderCounter();
         }
-        usleep(100);
+        usleep(10000);
     }
     printf("[INFO] - Reached The End goToTargetPositionHandler Thread\n");
     return NULL;

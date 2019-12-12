@@ -2,6 +2,8 @@ var quanserInterface_8h =
 [
     [ "JPL_REACHED", "quanserInterface_8h.html#aee0960e87ad9e83a0d8648502561f477", null ],
     [ "JPL_UNREACHED", "quanserInterface_8h.html#a44ced238885c3a18dbc6b8475d6aabdd", null ],
+    [ "MOTOR_PULSES", "quanserInterface_8h.html#af1751c498e9ec2fe3c4e7b1aa7e85ef0", null ],
+    [ "MOTOR_REVOLUTIONS", "quanserInterface_8h.html#a4e111c8fe62388ff42a9878355034406", null ],
     [ "PWM_PERIOD", "quanserInterface_8h.html#aacaca0988244bd3a888ca5befa89f44b", null ],
     [ "QSER_VOLTAGE", "quanserInterface_8h.html#a85d3bb9e37fcff0e990ccd0ecb50f169", null ],
     [ "goToTargetPositionHandler", "quanserInterface_8h.html#a6b0fef0560db647615037ae9085ee266", null ],

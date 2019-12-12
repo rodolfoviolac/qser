@@ -30,7 +30,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-extern double conversionCoefficientUnit;
 extern int pidStatus;
 void* handlerMainThread();
 

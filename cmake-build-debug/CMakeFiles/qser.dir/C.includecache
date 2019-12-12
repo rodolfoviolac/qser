@@ -6,36 +6,12 @@
 
 #IncludeRegexTransform: 
 
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.c
-decoderInterface.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.c
+userInterface.h
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
 
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.h
-fcntl.h
--
-stdint.h
--
+/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
 stdio.h
--
-unistd.h
--
-string.h
--
-sys/ioctl.h
--
-./../helpers/helpers.h
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
-linux/spi/spidev.h
--
-
-/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
-fcntl.h
--
-unistd.h
--
-stdio.h
--
-stdlib.h
 -
 string.h
 -

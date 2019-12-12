@@ -49,7 +49,13 @@ Main Thread para interface com usuário e controle de fluxo. Thread responsável
 \begin{DoxyReturn}{Returns}
 Retorna um Ponteiro para Null 
 \end{DoxyReturn}
+Função para Setar Posição de Target em Radianos.
 
+Essa Rotina é responsável por fazer o cálculo de conversão de Radianos para uma posição do motor; Do datasheet do motor temos que 1 revolução é igual a 4096 counts. (4096 / 360) = 1 grau ou 0.\+0174533 rad
+
+Leitura do decoder e transformação para Radianos.
+
+Essa Rotina é responsável por fazer o cálculo de conversão da leitura do decoder para posição em radianos; Do datasheet do motor temos que 1 revolução é igual a 4096 counts. (4096 / 360) = 1 grau ou 0.\+0174533 rad
 
 Definition at line 40 of file main\+Thread.\+c.
 
@@ -115,85 +121,81 @@ Definition at line 40 of file main\+Thread.\+c.
 \DoxyCodeLine{97                 \}}
 \DoxyCodeLine{98                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{99             \}}
-\DoxyCodeLine{100             \textcolor{keywordflow}{case} OPTION\_SHIFT\_RAD: \{}
-\DoxyCodeLine{101                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SHIFT\_RAD Option MainThread\(\backslash\)n"});}
-\DoxyCodeLine{102                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[9], NULL);}
-\DoxyCodeLine{103                 \textcolor{keywordflow}{if}(commandAmount < 0 || commandAmount > 2*\mbox{\hyperlink{helpers_8h_a598a3330b3c21701223ee0ca14316eca}{PI}})\{}
-\DoxyCodeLine{104                     printf(\textcolor{stringliteral}{"[Error] -\/ Radian Must Be On The Interval [0, \%f] \(\backslash\)n"}, 2*\mbox{\hyperlink{helpers_8h_a598a3330b3c21701223ee0ca14316eca}{PI}});}
-\DoxyCodeLine{105                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{106                 \}}
-\DoxyCodeLine{107                 \mbox{\hyperlink{pidController_8c_abe99aea2237bf45370f11475aab83cdd}{setTarget}}((\textcolor{keywordtype}{int})(commandAmount*RAD2G*\mbox{\hyperlink{mainThread_8h_a965fbbe1d8f665ae26133d817d846cf3}{conversionCoefficientUnit}}));}
-\DoxyCodeLine{108                 \mbox{\hyperlink{pidController_8c_ad44a79f712b96530f491cf5a841c9817}{turnOnPid}}();}
-\DoxyCodeLine{109                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{110             \}}
-\DoxyCodeLine{111             \textcolor{keywordflow}{case} OPTION\_SET\_KD: \{}
-\DoxyCodeLine{112                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_KD Option MainThread \(\backslash\)n"});}
-\DoxyCodeLine{113                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[6], NULL);}
-\DoxyCodeLine{114                 \mbox{\hyperlink{pidController_8c_a0a8eecf482506155e3b690c45f4c4e4b}{setControlKd}}(commandAmount);}
-\DoxyCodeLine{115                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{116             \}}
-\DoxyCodeLine{117             \textcolor{keywordflow}{case} OPTION\_SET\_KP: \{}
-\DoxyCodeLine{118                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_KP Option MainThread \(\backslash\)n"});}
-\DoxyCodeLine{119                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[6], NULL);}
-\DoxyCodeLine{120                 \mbox{\hyperlink{pidController_8c_a8d8cec964229574d5f0af312a00e5935}{setControlKp}}(commandAmount);}
-\DoxyCodeLine{121                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{122             \}}
-\DoxyCodeLine{123             \textcolor{keywordflow}{case} OPTION\_SET\_KI: \{}
-\DoxyCodeLine{124                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_KI Option MainThread \(\backslash\)n"});}
-\DoxyCodeLine{125                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[6], NULL);}
-\DoxyCodeLine{126                 \mbox{\hyperlink{pidController_8c_a315d3a9847f641c407ef6b32a65fd640}{setControlKi}}(commandAmount);}
-\DoxyCodeLine{127                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{128             \}}
-\DoxyCodeLine{129             \textcolor{keywordflow}{case} OPTION\_SET\_CCU: \{}
-\DoxyCodeLine{130                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_CCU Option MainThread\(\backslash\)n"});}
-\DoxyCodeLine{131                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[7], NULL);}
-\DoxyCodeLine{132                 \mbox{\hyperlink{pidController_8c_a84419a84b7812ac95cdd67086b4d2585}{setConversionCoefficientUnit}}(commandAmount);}
-\DoxyCodeLine{133                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{134             \}}
-\DoxyCodeLine{135             \textcolor{keywordflow}{case} OPTION\_CLEAR\_DEC: \{}
-\DoxyCodeLine{136                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_CLEAR\_DEC Option MainThread\(\backslash\)n"});}
-\DoxyCodeLine{137                 \mbox{\hyperlink{decoderInterface_8c_a82fe1a26c4a03de6dc52798635d4ca27}{clearDecoder}}();}
-\DoxyCodeLine{138                 printf(\textcolor{stringliteral}{"[INFO] -\/ Cleaning Decoder\(\backslash\)n\(\backslash\)n"});}
-\DoxyCodeLine{139                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{140             \}}
-\DoxyCodeLine{141             \textcolor{keywordflow}{case} OPTION\_READ\_DEC: \{}
-\DoxyCodeLine{142                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_READ\_DEC Option MainThread\(\backslash\)n"});}
-\DoxyCodeLine{143                 \textcolor{keywordtype}{int} counterDecoder = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
-\DoxyCodeLine{144                 printf(\textcolor{stringliteral}{"[INFO] -\/ Decoder Reading: \%d \(\backslash\)n\(\backslash\)n"}, counterDecoder);}
-\DoxyCodeLine{145                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{146             \}}
-\DoxyCodeLine{147             \textcolor{keywordflow}{case} OPTION\_READ\_DEC\_RAD: \{}
-\DoxyCodeLine{148                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_READ\_DEC\_RAD Option MainThread\(\backslash\)n"});}
-\DoxyCodeLine{149                 \textcolor{keywordtype}{int} counterDecoder = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
-\DoxyCodeLine{150                 \textcolor{keywordtype}{double} radDec = (counterDecoder / \mbox{\hyperlink{mainThread_8h_a965fbbe1d8f665ae26133d817d846cf3}{conversionCoefficientUnit}}) * CONST\_UNIT\_RAD\_MATH;}
-\DoxyCodeLine{151                 printf(\textcolor{stringliteral}{"[INFO] -\/ Decoder Reading: \%f \(\backslash\)n\(\backslash\)n"}, radDec);}
-\DoxyCodeLine{152                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{153             \}}
-\DoxyCodeLine{154             \textcolor{keywordflow}{case} OPTION\_HELP: \{}
-\DoxyCodeLine{155                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got HELP Option MainThread\(\backslash\)n"});}
-\DoxyCodeLine{156                 \mbox{\hyperlink{userInterface_8c_a4b9e2beb67256f2c06b39d24bc83e28d}{printUserOptions}}();}
-\DoxyCodeLine{157                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{158             \}}
-\DoxyCodeLine{159             \textcolor{keywordflow}{case} OPTION\_EXIT: \{}
-\DoxyCodeLine{160                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got EXIT Option MainThread\(\backslash\)n"});}
-\DoxyCodeLine{161                 \mbox{\hyperlink{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}{qserBreak}}();}
-\DoxyCodeLine{162                 \mbox{\hyperlink{pidController_8c_aa2a62b6c21f82bd7e19c63e02d2cf01c}{turnOffPid}}();}
-\DoxyCodeLine{163                 \mbox{\hyperlink{decoderInterface_8c_a75971fdf1e347a1d330cae5e15250edf}{wrapUpDecoder}}();}
-\DoxyCodeLine{164                 printf(\textcolor{stringliteral}{"[INFO] -\/ Finishing Application...\(\backslash\)n"});}
-\DoxyCodeLine{165                 exit(0);}
-\DoxyCodeLine{166             \}}
-\DoxyCodeLine{167             \textcolor{keywordflow}{case} \mbox{\hyperlink{userInterface_8h_a58a559802dc87f303b0505b79f28a4fc}{OPTION\_INVALID}}: \{}
-\DoxyCodeLine{168                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got INVALID Option MainThread\(\backslash\)n"});}
-\DoxyCodeLine{169                 printf(\textcolor{stringliteral}{"[ERROR] -\/ Command Invalid Type Help For The Command List\(\backslash\)n"});}
-\DoxyCodeLine{170                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{171             \}}
-\DoxyCodeLine{172             \textcolor{keywordflow}{default}: \{}
-\DoxyCodeLine{173                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got DEFAULT Option MainThread\(\backslash\)n"});}
-\DoxyCodeLine{174                 printf(\textcolor{stringliteral}{"[ERROR] -\/ Command Invalid Type Help For The Command List\(\backslash\)n"});}
-\DoxyCodeLine{175             \}}
-\DoxyCodeLine{176         \}}
-\DoxyCodeLine{177     \}}
-\DoxyCodeLine{178     \textcolor{keywordflow}{return} NULL;}
-\DoxyCodeLine{179 \}}
+\DoxyCodeLine{107             \textcolor{keywordflow}{case} OPTION\_SHIFT\_RAD: \{}
+\DoxyCodeLine{108                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SHIFT\_RAD Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{109                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[9], NULL);}
+\DoxyCodeLine{110                 \textcolor{keywordflow}{if}(commandAmount < 0 || commandAmount > \mbox{\hyperlink{helpers_8h_a598a3330b3c21701223ee0ca14316eca}{PI}})\{}
+\DoxyCodeLine{111                     printf(\textcolor{stringliteral}{"[Error] -\/ Radian Must Be On The Interval [0, \%f] \(\backslash\)n"}, \mbox{\hyperlink{helpers_8h_a598a3330b3c21701223ee0ca14316eca}{PI}});}
+\DoxyCodeLine{112                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{113                 \}}
+\DoxyCodeLine{114                 \textcolor{keywordtype}{int} targetMotorPosition = commandAmount * (MAX\_RANGE / \mbox{\hyperlink{helpers_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}) * \mbox{\hyperlink{quanserInterface_8h_a4e111c8fe62388ff42a9878355034406}{MOTOR\_REVOLUTIONS}};}
+\DoxyCodeLine{115                 \mbox{\hyperlink{pidController_8c_abe99aea2237bf45370f11475aab83cdd}{setTarget}}(targetMotorPosition);}
+\DoxyCodeLine{116                 \mbox{\hyperlink{pidController_8c_ad44a79f712b96530f491cf5a841c9817}{turnOnPid}}();}
+\DoxyCodeLine{117                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{118             \}}
+\DoxyCodeLine{119             \textcolor{keywordflow}{case} OPTION\_SET\_KD: \{}
+\DoxyCodeLine{120                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_KD Option MainThread \(\backslash\)n"});}
+\DoxyCodeLine{121                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[6], NULL);}
+\DoxyCodeLine{122                 \mbox{\hyperlink{pidController_8c_a0a8eecf482506155e3b690c45f4c4e4b}{setControlKd}}(commandAmount);}
+\DoxyCodeLine{123                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{124             \}}
+\DoxyCodeLine{125             \textcolor{keywordflow}{case} OPTION\_SET\_KP: \{}
+\DoxyCodeLine{126                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_KP Option MainThread \(\backslash\)n"});}
+\DoxyCodeLine{127                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[6], NULL);}
+\DoxyCodeLine{128                 \mbox{\hyperlink{pidController_8c_a8d8cec964229574d5f0af312a00e5935}{setControlKp}}(commandAmount);}
+\DoxyCodeLine{129                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{130             \}}
+\DoxyCodeLine{131             \textcolor{keywordflow}{case} OPTION\_SET\_KI: \{}
+\DoxyCodeLine{132                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_SET\_KI Option MainThread \(\backslash\)n"});}
+\DoxyCodeLine{133                 \textcolor{keywordtype}{double} commandAmount = (double)strtof(\&command[6], NULL);}
+\DoxyCodeLine{134                 \mbox{\hyperlink{pidController_8c_a315d3a9847f641c407ef6b32a65fd640}{setControlKi}}(commandAmount);}
+\DoxyCodeLine{135                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{136             \}}
+\DoxyCodeLine{137             \textcolor{keywordflow}{case} OPTION\_CLEAR\_DEC: \{}
+\DoxyCodeLine{138                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_CLEAR\_DEC Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{139                 \mbox{\hyperlink{decoderInterface_8c_a82fe1a26c4a03de6dc52798635d4ca27}{clearDecoder}}();}
+\DoxyCodeLine{140                 printf(\textcolor{stringliteral}{"[INFO] -\/ Cleaning Decoder\(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{141                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{142             \}}
+\DoxyCodeLine{143             \textcolor{keywordflow}{case} OPTION\_READ\_DEC: \{}
+\DoxyCodeLine{144                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_READ\_DEC Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{145                 \textcolor{keywordtype}{int} counterDecoder = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
+\DoxyCodeLine{146                 printf(\textcolor{stringliteral}{"[INFO] -\/ Decoder Reading: \%d \(\backslash\)n\(\backslash\)n"}, counterDecoder);}
+\DoxyCodeLine{147                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{148             \}}
+\DoxyCodeLine{156             \textcolor{keywordflow}{case} OPTION\_READ\_DEC\_RAD: \{}
+\DoxyCodeLine{157                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got OPTION\_READ\_DEC\_RAD Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{158                 \textcolor{keywordtype}{int} counterDecoder = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
+\DoxyCodeLine{159                 \textcolor{keywordtype}{double} revCount = (float)counterDecoder / \mbox{\hyperlink{quanserInterface_8h_a4e111c8fe62388ff42a9878355034406}{MOTOR\_REVOLUTIONS}};}
+\DoxyCodeLine{160                 \textcolor{keywordtype}{double} radDec = revCount * \mbox{\hyperlink{helpers_8h_a598a3330b3c21701223ee0ca14316eca}{PI}} / MAX\_RANGE;}
+\DoxyCodeLine{161                 printf(\textcolor{stringliteral}{"[INFO] -\/ Decoder Reading: \%f \(\backslash\)n\(\backslash\)n"}, radDec);}
+\DoxyCodeLine{162                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{163             \}}
+\DoxyCodeLine{164             \textcolor{keywordflow}{case} OPTION\_HELP: \{}
+\DoxyCodeLine{165                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got HELP Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{166                 \mbox{\hyperlink{userInterface_8c_a4b9e2beb67256f2c06b39d24bc83e28d}{printUserOptions}}();}
+\DoxyCodeLine{167                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{168             \}}
+\DoxyCodeLine{169             \textcolor{keywordflow}{case} OPTION\_EXIT: \{}
+\DoxyCodeLine{170                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got EXIT Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{171                 \mbox{\hyperlink{quanserInterface_8c_a0cd1c4a8a39f9776767a0a1c843e51f1}{qserBreak}}();}
+\DoxyCodeLine{172                 \mbox{\hyperlink{pidController_8c_aa2a62b6c21f82bd7e19c63e02d2cf01c}{turnOffPid}}();}
+\DoxyCodeLine{173                 \mbox{\hyperlink{decoderInterface_8c_a75971fdf1e347a1d330cae5e15250edf}{wrapUpDecoder}}();}
+\DoxyCodeLine{174                 printf(\textcolor{stringliteral}{"[INFO] -\/ Finishing Application...\(\backslash\)n"});}
+\DoxyCodeLine{175                 exit(0);}
+\DoxyCodeLine{176             \}}
+\DoxyCodeLine{177             \textcolor{keywordflow}{case} \mbox{\hyperlink{userInterface_8h_a58a559802dc87f303b0505b79f28a4fc}{OPTION\_INVALID}}: \{}
+\DoxyCodeLine{178                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got INVALID Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{179                 printf(\textcolor{stringliteral}{"[ERROR] -\/ Command Invalid Type Help For The Command List\(\backslash\)n"});}
+\DoxyCodeLine{180                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{181             \}}
+\DoxyCodeLine{182             \textcolor{keywordflow}{default}: \{}
+\DoxyCodeLine{183                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{helpers_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}) printf(\textcolor{stringliteral}{"[DEBUG] -\/ Got DEFAULT Option MainThread\(\backslash\)n"});}
+\DoxyCodeLine{184                 printf(\textcolor{stringliteral}{"[ERROR] -\/ Command Invalid Type Help For The Command List\(\backslash\)n"});}
+\DoxyCodeLine{185             \}}
+\DoxyCodeLine{186         \}}
+\DoxyCodeLine{187     \}}
+\DoxyCodeLine{188     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{189 \}}
 
 \end{DoxyCode}

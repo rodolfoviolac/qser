@@ -97,14 +97,22 @@ void* handlerMainThread() {
                 }
                 break;
             }
+                /** @brief  Função para Setar Posição de Target em Radianos.
+                 *
+                 * Essa Rotina é responsável por fazer o cálculo de conversão de Radianos para uma posição do motor;
+                 * Do datasheet do motor temos que 1 revolução é igual a 4096 counts.
+                 * (4096 / 360) = 1 grau ou 0.0174533 rad
+                 *
+                 */
             case OPTION_SHIFT_RAD: {
                 if(DEBUG) printf("[DEBUG] - Got OPTION_SHIFT_RAD Option MainThread\n");
                 double commandAmount = (double)strtof(&command[9], NULL);
-                if(commandAmount < 0 || commandAmount > 2*PI){
-                    printf("[Error] - Radian Must Be On The Interval [0, %f] \n", 2*PI);
+                if(commandAmount < 0 || commandAmount > PI){
+                    printf("[Error] - Radian Must Be On The Interval [0, %f] \n", PI);
                     break;
                 }
-                setTarget((int)(commandAmount*RAD2G*conversionCoefficientUnit));
+                int targetMotorPosition = commandAmount * (MAX_RANGE / PI) * MOTOR_REVOLUTIONS;
+                setTarget(targetMotorPosition);
                 turnOnPid();
                 break;
             }
@@ -126,12 +134,6 @@ void* handlerMainThread() {
                 setControlKi(commandAmount);
                 break;
             }
-            case OPTION_SET_CCU: {
-                if(DEBUG) printf("[DEBUG] - Got OPTION_SET_CCU Option MainThread\n");
-                double commandAmount = (double)strtof(&command[7], NULL);
-                setConversionCoefficientUnit(commandAmount);
-                break;
-            }
             case OPTION_CLEAR_DEC: {
                 if(DEBUG) printf("[DEBUG] - Got OPTION_CLEAR_DEC Option MainThread\n");
                 clearDecoder();
@@ -144,10 +146,18 @@ void* handlerMainThread() {
                 printf("[INFO] - Decoder Reading: %d \n\n", counterDecoder);
                 break;
             }
+            /** @brief  Leitura do decoder e transformação para Radianos.
+             *
+             * Essa Rotina é responsável por fazer o cálculo de conversão da leitura do decoder para posição em radianos;
+             * Do datasheet do motor temos que 1 revolução é igual a 4096 counts.
+             * (4096 / 360) = 1 grau ou 0.0174533 rad
+             *
+             * */
             case OPTION_READ_DEC_RAD: {
                 if(DEBUG) printf("[DEBUG] - Got OPTION_READ_DEC_RAD Option MainThread\n");
                 int counterDecoder = readDecoderCounter();
-                double radDec = (counterDecoder / conversionCoefficientUnit) * CONST_UNIT_RAD_MATH;
+                double revCount = (float)counterDecoder / MOTOR_REVOLUTIONS;
+                double radDec = revCount * PI / MAX_RANGE;
                 printf("[INFO] - Decoder Reading: %f \n\n", radDec);
                 break;
             }

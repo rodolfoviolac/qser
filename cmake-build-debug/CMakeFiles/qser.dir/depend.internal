@@ -13,7 +13,7 @@ CMakeFiles/qser.dir/src/main.c.o
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/main.c
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h
- /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h
+ /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o
@@ -21,19 +21,19 @@ CMakeFiles/qser.dir/src/mainThread/mainThread.c.o
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.c
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h
- /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h
+ /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/userInterface/userInterface.h
-CMakeFiles/qser.dir/src/pidControler/pidControler.c.o
+CMakeFiles/qser.dir/src/pidController/pidController.c.o
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
- /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.c
- /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h
+ /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c
+ /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
 CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/decoderInterface/decoderInterface.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h
- /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h
+ /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c
  /Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.h
 CMakeFiles/qser.dir/src/userInterface/userInterface.c.o

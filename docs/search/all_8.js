@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5frunning_5flocal_26',['IS_RUNNING_LOCAL',['../helpers_8h.html#afb786d718c78c0731bb746dd2bdb9372',1,'helpers.h']]]
+  ['is_5frunning_5flocal_25',['IS_RUNNING_LOCAL',['../helpers_8h.html#afb786d718c78c0731bb746dd2bdb9372',1,'helpers.h']]]
 ];

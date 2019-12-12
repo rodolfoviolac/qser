@@ -35,7 +35,7 @@ void printUserOptions(){
     printf("########### QSER OPTIONS ##############\n\n");
     printf("--> speed [0 - 100] \n");
     printf("--> goforv [-V - +V] \n");
-    printf("--> shiftrad [π - 2π] (double value) \n");
+    printf("--> shiftrad [0 - π] (double value) \n");
     printf("--> cleardec \n");
     printf("--> getdec \n");
     printf("--> getdecrad \n");

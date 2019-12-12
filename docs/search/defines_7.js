@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['option_5finvalid_133',['OPTION_INVALID',['../userInterface_8h.html#a58a559802dc87f303b0505b79f28a4fc',1,'userInterface.h']]]
+  ['no_5fflags_131',['NO_FLAGS',['../decoderInterface_8h.html#a9cfcd032e38e55938e02821e97fe3660',1,'decoderInterface.h']]],
+  ['nquad_132',['NQUAD',['../decoderInterface_8h.html#ac8551bdc3d8c10962b07b67d9558c6c8',1,'decoderInterface.h']]]
 ];

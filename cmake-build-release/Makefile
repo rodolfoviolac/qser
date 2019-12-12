@@ -231,32 +231,32 @@ src/mainThread/mainThread.c.s:
 	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/mainThread/mainThread.c.s
 .PHONY : src/mainThread/mainThread.c.s
 
-src/pidControler/pidControler.o: src/pidControler/pidControler.c.o
+src/pidController/pidController.o: src/pidController/pidController.c.o
 
-.PHONY : src/pidControler/pidControler.o
+.PHONY : src/pidController/pidController.o
 
 # target to build an object file
-src/pidControler/pidControler.c.o:
-	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidControler/pidControler.c.o
-.PHONY : src/pidControler/pidControler.c.o
+src/pidController/pidController.c.o:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidController/pidController.c.o
+.PHONY : src/pidController/pidController.c.o
 
-src/pidControler/pidControler.i: src/pidControler/pidControler.c.i
+src/pidController/pidController.i: src/pidController/pidController.c.i
 
-.PHONY : src/pidControler/pidControler.i
+.PHONY : src/pidController/pidController.i
 
 # target to preprocess a source file
-src/pidControler/pidControler.c.i:
-	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidControler/pidControler.c.i
-.PHONY : src/pidControler/pidControler.c.i
+src/pidController/pidController.c.i:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidController/pidController.c.i
+.PHONY : src/pidController/pidController.c.i
 
-src/pidControler/pidControler.s: src/pidControler/pidControler.c.s
+src/pidController/pidController.s: src/pidController/pidController.c.s
 
-.PHONY : src/pidControler/pidControler.s
+.PHONY : src/pidController/pidController.s
 
 # target to generate assembly for a file
-src/pidControler/pidControler.c.s:
-	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidControler/pidControler.c.s
-.PHONY : src/pidControler/pidControler.c.s
+src/pidController/pidController.c.s:
+	$(MAKE) -f CMakeFiles/qser.dir/build.make CMakeFiles/qser.dir/src/pidController/pidController.c.s
+.PHONY : src/pidController/pidController.c.s
 
 src/quanserInterface/quanserInterface.o: src/quanserInterface/quanserInterface.c.o
 
@@ -333,9 +333,9 @@ help:
 	@echo "... src/mainThread/mainThread.o"
 	@echo "... src/mainThread/mainThread.i"
 	@echo "... src/mainThread/mainThread.s"
-	@echo "... src/pidControler/pidControler.o"
-	@echo "... src/pidControler/pidControler.i"
-	@echo "... src/pidControler/pidControler.s"
+	@echo "... src/pidController/pidController.o"
+	@echo "... src/pidController/pidController.i"
+	@echo "... src/pidController/pidController.s"
 	@echo "... src/quanserInterface/quanserInterface.o"
 	@echo "... src/quanserInterface/quanserInterface.i"
 	@echo "... src/quanserInterface/quanserInterface.s"

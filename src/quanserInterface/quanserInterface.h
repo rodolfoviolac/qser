@@ -34,6 +34,10 @@
 #define PWM_PERIOD "1000000"
 /** @brief Define Valor de Tensão Máxima */
 #define QSER_VOLTAGE 27.0
+/** @brief Resolucão do Enconder Definida no Datasheet */
+#define MOTOR_REVOLUTIONS 4096
+/** @brief Pulsos por Rotacão Definida no Datasheet */
+#define MOTOR_PULSES 1024
 #define JPL_REACHED '0'
 #define JPL_UNREACHED '1'
 extern int JPL_REACHED_STATUS_ONE;

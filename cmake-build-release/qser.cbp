@@ -90,12 +90,6 @@
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/helpers.h">
 			<Option target="qser"/>
 		</Unit>
-		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/spidev.h">
-			<Option target="qser"/>
-		</Unit>
-		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/helpers/types.h">
-			<Option target="qser"/>
-		</Unit>
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/main.c">
 			<Option target="qser"/>
 		</Unit>
@@ -105,10 +99,10 @@
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/mainThread/mainThread.h">
 			<Option target="qser"/>
 		</Unit>
-		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.c">
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.c">
 			<Option target="qser"/>
 		</Unit>
-		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidControler/pidControler.h">
+		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/pidController/pidController.h">
 			<Option target="qser"/>
 		</Unit>
 		<Unit filename="/Users/Rodolfo/Documents/Mega/UFRGS/micros/qser/src/quanserInterface/quanserInterface.c">

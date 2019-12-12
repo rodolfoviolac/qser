@@ -3,7 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/qser.dir/src/helpers/helpers.c.o"
   "CMakeFiles/qser.dir/src/main.c.o"
   "CMakeFiles/qser.dir/src/mainThread/mainThread.c.o"
-  "CMakeFiles/qser.dir/src/pidControler/pidControler.c.o"
+  "CMakeFiles/qser.dir/src/pidController/pidController.c.o"
   "CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o"
   "CMakeFiles/qser.dir/src/userInterface/userInterface.c.o"
   "qser"

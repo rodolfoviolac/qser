@@ -34,8 +34,6 @@ int targetLocation = 0;
 double errorDeviation = 0.00;
 /** @brief Define somatório de todos os erros */
 double allErrorsSummation = 0.0;
-/** @brief Coeficiente de Conversão De Contagem e Efetuada */
-double conversionCoefficientUnit = 294.0;
 /** @brief Define o Status do PID */
 int pidStatus = 0;
 
@@ -114,17 +112,6 @@ void setControlKi(double newKi){
     if(DEBUG) printf("[DEBUG] - Starting setControlKi pidController \n");
     controlKi = newKi;
     printf("[INFO] - controlKi Value: %f \n", controlKi);
-}
-
-/**
- * @brief Função para setar novo valor de Coeficiênte.
- * Rotina responsável por setar um novo coeficiente de conversao de controle do PID
- * @param Novo Coeficiente de Conversao
- */
-void setConversionCoefficientUnit(double newConversionCoefficientUnit){
-    if(DEBUG) printf("[DEBUG] - Starting setConversionCoefficientUnit pidController \n");
-    conversionCoefficientUnit = newConversionCoefficientUnit;
-    printf("[INFO] - conversionCoefficientUnit Value: %f \n", conversionCoefficientUnit);
 }
 
 /**

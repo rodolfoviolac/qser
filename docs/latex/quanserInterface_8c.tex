@@ -49,7 +49,7 @@ Thread para assegurar troca de posições Thread Responsável por executar a alt
 
 Loop Infinito que verifica se o P\+ID está ativo para aplicar as tensão necessárias.
 
-
+Tempo aguardado para cada rotação é de 10k micro segundos (100 Hz)
 \begin{DoxyItemize}
 \item \begin{DoxyReturn}{Returns}
 Retorna um Ponteiro Para Null 
@@ -73,7 +73,7 @@ Definition at line 209 of file quanser\+Interface.\+c.
 \DoxyCodeLine{218             \}}
 \DoxyCodeLine{219             currentPosition = \mbox{\hyperlink{decoderInterface_8c_af5872793a562a54c455d94fef27f3a2b}{readDecoderCounter}}();}
 \DoxyCodeLine{220         \}}
-\DoxyCodeLine{221         usleep(100);}
+\DoxyCodeLine{221         usleep(10000);}
 \DoxyCodeLine{222     \}}
 \DoxyCodeLine{223     printf(\textcolor{stringliteral}{"[INFO] -\/ Reached The End goToTargetPositionHandler Thread\(\backslash\)n"});}
 \DoxyCodeLine{224     \textcolor{keywordflow}{return} NULL;}

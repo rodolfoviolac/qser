@@ -12,7 +12,7 @@ CMakeFiles/qser.dir/src/main.c.o: ../src/decoderInterface/decoderInterface.h
 CMakeFiles/qser.dir/src/main.c.o: ../src/helpers/helpers.h
 CMakeFiles/qser.dir/src/main.c.o: ../src/main.c
 CMakeFiles/qser.dir/src/main.c.o: ../src/mainThread/mainThread.h
-CMakeFiles/qser.dir/src/main.c.o: ../src/pidControler/pidControler.h
+CMakeFiles/qser.dir/src/main.c.o: ../src/pidController/pidController.h
 CMakeFiles/qser.dir/src/main.c.o: ../src/quanserInterface/quanserInterface.h
 CMakeFiles/qser.dir/src/main.c.o: ../src/userInterface/userInterface.h
 
@@ -20,19 +20,19 @@ CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/decoderInterface/decod
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/helpers/helpers.h
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/mainThread/mainThread.c
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/mainThread/mainThread.h
-CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/pidControler/pidControler.h
+CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/pidController/pidController.h
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/quanserInterface/quanserInterface.h
 CMakeFiles/qser.dir/src/mainThread/mainThread.c.o: ../src/userInterface/userInterface.h
 
-CMakeFiles/qser.dir/src/pidControler/pidControler.c.o: ../src/decoderInterface/decoderInterface.h
-CMakeFiles/qser.dir/src/pidControler/pidControler.c.o: ../src/helpers/helpers.h
-CMakeFiles/qser.dir/src/pidControler/pidControler.c.o: ../src/pidControler/pidControler.c
-CMakeFiles/qser.dir/src/pidControler/pidControler.c.o: ../src/pidControler/pidControler.h
-CMakeFiles/qser.dir/src/pidControler/pidControler.c.o: ../src/quanserInterface/quanserInterface.h
+CMakeFiles/qser.dir/src/pidController/pidController.c.o: ../src/decoderInterface/decoderInterface.h
+CMakeFiles/qser.dir/src/pidController/pidController.c.o: ../src/helpers/helpers.h
+CMakeFiles/qser.dir/src/pidController/pidController.c.o: ../src/pidController/pidController.c
+CMakeFiles/qser.dir/src/pidController/pidController.c.o: ../src/pidController/pidController.h
+CMakeFiles/qser.dir/src/pidController/pidController.c.o: ../src/quanserInterface/quanserInterface.h
 
 CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: ../src/decoderInterface/decoderInterface.h
 CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: ../src/helpers/helpers.h
-CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: ../src/pidControler/pidControler.h
+CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: ../src/pidController/pidController.h
 CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: ../src/quanserInterface/quanserInterface.c
 CMakeFiles/qser.dir/src/quanserInterface/quanserInterface.c.o: ../src/quanserInterface/quanserInterface.h
 
